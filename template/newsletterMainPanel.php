@@ -8,7 +8,7 @@
 </head>
 <body class="bodyAdminCategories">
 
- <?php include NEWSLETTER_DIR . 'templates/newsletterSideBar.php'; ?>
+ <?php include NEWSLETTER_DIR . 'template/newsletterSideBar.php'; ?>
 
 
  <div class="mainAdminCategories">

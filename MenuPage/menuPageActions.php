@@ -7,7 +7,7 @@
 if ( isset( $_GET['action'] ) ) {
 	$action = $_GET['action'];
 } else {
-	$action = 'view';
+	$action = 'subscribers';
 }
 
 /*if ( isset( $_POST['Prijava'] ) ) {
@@ -19,10 +19,22 @@ $turnirRepo = new Repository( $mapper );*/
 
 $page = $_GET['paginationPage'] ?? 1;
 switch ( $action ) {
-	case 'view':
+
+	case 'subscribers':
 		/*$items = $turnirRepo->getAll( $page, 20 );*/
-		$newsletterPage = 'templates/newsletterGeneral.php';
-		include NEWSLETTER_DIR . 'template/newsletterGeneral.php';
+		$newsletterPage = 'template/newsletterSubscriber.php';
+		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
+		break;
+
+	case 'newsletters':
+		/*$items = $turnirRepo->getAll( $page, 20 );*/
+		$newsletterPage = 'template/newsletterNewsletter.php';
+		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
+		break;
+	case 'description':
+		/*$items = $turnirRepo->getAll( $page, 20 );*/
+		$newsletterPage = 'template/newsletterDescription.php';
+		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
 	/*case 'update':
 		$data               = TournamentMenager\Service\PostFormatter::formatDataFromFormUpdate( $_POST );

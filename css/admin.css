@@ -1,0 +1,50 @@
+
+.sidenavAdminCategorieslist{
+    color: red;
+}
+.sidenavAdminCategories {
+    margin: 20px 0 0;
+    border: 2px;
+    color: red;
+    padding: 2px 0 0;
+    width: 150px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+.sidenavAdminCategories a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+}
+.sidenavAdminCategories a.active {
+    background-color: #9edeeb;
+    color: black;
+}
+.sidenavAdminCategories a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+
+}
+div.mainAdminCategories {
+    margin: 20px 0 0 150px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+@media screen and (max-width: 700px) {
+    .sidenavAdminCategories {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidenavAdminCategories a {float: left;}
+    div.mainAdminCategories {margin-left: 0;}
+}
+@media screen and (max-width: 400px) {
+    .sidenavAdminCategories a {
+        text-align: center;
+        float: none;
+    }}
+
