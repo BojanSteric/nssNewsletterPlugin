@@ -54,7 +54,7 @@ class Subscriber
     
     private function make($data): Model
     {
-        $subscriberId = null;
+        $userId = null;
         $wpUserId = null;
         $email = null;
         $emailStatus = null;
@@ -63,8 +63,8 @@ class Subscriber
         $createdAt = null;
         $updatedAt = null;
 
-        if (isset($data['subscriberId'])){
-            $subscriberId = $data['subscriberId'];
+        if (isset($data['userId'])){
+            $userId = $data['userId'];
         }
         if (isset($data['wpUserId'])) {
             $wpUserId = $data['wpUserId'];
@@ -75,7 +75,7 @@ class Subscriber
         if (isset($data['emailStatus'])) {
             $emailStatus = $data['emailStatus'];
         }
-        if (isset($data['fistName'])) {
+        if (isset($data['firstName'])) {
             $firstName = $data['firstName'];
         }
         if (isset($data['lastName'])) {
@@ -88,7 +88,7 @@ class Subscriber
             $updatedAt = $data['updatedAt'];
         }
 
-        return new Model($subscriberId, $wpUserId, $email, $emailStatus, $firstName, $lastName, $createdAt, $updatedAt);
+        return new Model($userId, 0, $email, $emailStatus, $firstName, $lastName, $createdAt, $updatedAt);
     }
     
 }

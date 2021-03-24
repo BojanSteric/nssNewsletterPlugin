@@ -6,9 +6,9 @@ namespace Subscriber\Model;
 class Subscriber
 {
     /**
-     * @var int $id
+     * @var int $userId
      */
-    private $id;
+    private $userId;
     /**
      * @var int $wpUserId
      */
@@ -40,7 +40,7 @@ class Subscriber
     
     /**
      * Newsletter constructor.
-     * @param int|null $id
+     * @param int|null $userId
      * @param int|null $wpUserId
      * @param string $email
      * @param string $emailStatus
@@ -50,7 +50,7 @@ class Subscriber
      * @param string|null $updatedAt
      */
     public function __construct(
-        int $id = null,
+        int $userId = null,
         int $wpUserId,
         string $email,
         string $emailStatus,
@@ -59,7 +59,7 @@ class Subscriber
         string $createdAt,
         string $updatedAt
     ) {
-        $this->id = $id;
+        $this->userId = $userId;
         $this->wpUserId = $wpUserId;
         $this->email = $email;
         $this->emailStatus = $emailStatus;
@@ -74,7 +74,7 @@ class Subscriber
      */
     public function getId(): int
     {
-        return $this->id;
+        return $this->userId;
     }
 
     /**

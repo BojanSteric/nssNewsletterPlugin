@@ -1,6 +1,7 @@
 <?php
 
-
+use Subscriber\Mapper\Subscriber as SubMapper;
+use Subscriber\Repository\Subscriber as SubRepository;
 
 
 
@@ -14,14 +15,14 @@ if ( isset( $_GET['action'] ) ) {
 	$action = 'create';
 }*/
 
-/*$mapper     = new Mapper();
-$turnirRepo = new Repository( $mapper );*/
-
+$subscriberMapper = new SubMapper();
+$subscriberRepo = new SubRepository($subscriberMapper);
 $page = $_GET['paginationPage'] ?? 1;
+
 switch ( $action ) {
 
 	case 'subscribers':
-		/*$items = $turnirRepo->getAll( $page, 20 );*/
+		$subscriber = $subscriberRepo->getAll($page, 20);
 		$newsletterPage = 'template/newsletterSubscriber.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;

@@ -19,19 +19,22 @@
         <tbody>
 		<?php
 		/** @var Newsletter\Model\Newsletter $subscriber */
-
+                $i=1;
 		foreach ($subscriber as $sub):?>
             <tr>
-                <td></td>
-                <td><?=$item->getQuantityStep()?></td>
-                <td><?=$item->getDiscountPercentage()?></td>
-                <td><?=$item->getDiscountValue()?></td>
-                <td><?=$item->getMinEndPrice()?></td>
-                <td><?=$item->getQuantitySold()?></td>
-                <td><a href="<?=admin_url() . '?page=tournament-manager&action=createForm&turnirId=' . $item->getTurnirId()?>" class='btn btn-sm btn-info updateUser'  >Update</a>-
-                    <a href="<?=admin_url() . '?page=tournament-manager&action=delete&turnirId=' . $item->getTurnirId()?>" class='btn btn-sm btn-danger deleteUser' >Delete</a> aloo</td>
+                <td><?= $i?></td>
+                <td>
+                    <input type="checkbox" id="<?= 'sub' . $sub->getId()?>" name="<?= 'sub' . $sub->getId()?>" >
+                    <label for="<?= 'sub' . $sub->getId()?>" > <?=$sub->getFirstName()?></label>
+                </td>
+                <td><?=$sub->getEmail()?></td>
+                <td><?=$sub->getEmailStatus()?></td>
+                <td><?=$sub->getFirstName()?><?=$sub->getLastName()?></td>
+                <td><a href="<?=admin_url() . '?page=newsletter&action=update&userId=' . $sub->getId()?>" class='btn btn-sm btn-info updateUser'  >Update</a>-
+                    <a href="<?=admin_url() . '?page=newsletter&action=delete&userId=' . $sub->getId()?>" class='btn btn-sm btn-danger deleteUser' >Delete</a> </td>
             </tr>
 		<?php
+        $i++;
 		endforeach; ?>
         </tbody>
     </table>
