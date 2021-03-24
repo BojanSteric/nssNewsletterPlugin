@@ -26,7 +26,7 @@ switch ($status){
 
     <a  class="sidenavAdminCategorieslist <?php echo $a;?>"href="<?=admin_url() . '?page=newsletter&action=subscribers'?>"  >Subscribers</a>
     <a  class="sidenavAdminCategorieslist <?php echo $b;?>"href="<?=admin_url() . '?page=newsletter&action=newsletters'?>"  >Newsletters</a>
-    <a  class="sidenavAdminCategorieslis <?php echo $c;?>t"href="<?=admin_url() . '?page=newsletter&action=description'?>"  >Description</a>
+    <a  class="sidenavAdminCategorieslist <?php echo $c;?>t"href="<?=admin_url() . '?page=newsletter&action=description'?>"  >Description</a>
 </div>
 
 
