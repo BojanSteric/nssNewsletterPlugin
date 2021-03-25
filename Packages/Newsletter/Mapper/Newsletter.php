@@ -29,9 +29,10 @@ class Newsletter
         $this->db->insert($this->tableName,[
             'newsStatus' => $model->getStatus(),
             'createdAt' => $model->getDateCreated(),
-            'scheduledAt' => $model->getDateUpdated(),
+            'scheduledAt' => $model->getDateScheduled(),
+            'title' => $model->getTitle(),
             'content' => $model->getContent(),
-        ],['%s', '%s', '%s', '%s']);
+        ],['%s', '%s', '%s', '%s', '%s']);
         return $this->db->insert_id;
     }
 
@@ -41,9 +42,10 @@ class Newsletter
             [
                 'newsStatus' => $model->getStatus(),
                 'createdAt' => $model->getDateCreated(),
-                'scheduledAt' => $model->getDateUpdated(),
+                'scheduledAt' => $model->getDateScheduled(),
+                'title' => $model->getTitle(),
                 'content' => $model->getContent(),
-            ],['newsId' => $model->getId()],['%s', '%s', '%s', '%s']);
+            ],['newsId' => $model->getId()],['%s', '%s', '%s', '%s', '%s']);
     }
 
     public function delete(int $newsletterId): void

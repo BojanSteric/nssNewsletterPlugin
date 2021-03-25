@@ -56,6 +56,7 @@ class Activator {
 		  `newsStatus` varchar(30) NOT NULL,
 		  `createdAt` datetime DEFAULT NULL,
 		  `scheduledAt` datetime DEFAULT NULL,
+		  `title` varchar(30) NOT NULL,
 		  `content` TEXT DEFAULT NULL,
 		  PRIMARY KEY  (newsId)
 		) $charset_collate;";

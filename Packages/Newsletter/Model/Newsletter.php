@@ -18,9 +18,13 @@ class Newsletter
      */
     private $createdAt;
     /**
-     * @var string $updatedAt
+     * @var string $scheduledAt
      */
-    private $updatedAt;
+    private $scheduledAt;
+    /**
+     * @var string $title
+     */
+    private $title;
     /**
      * @var string $content
      */
@@ -31,20 +35,23 @@ class Newsletter
      * @param int|null $id
      * @param string $newsStatus
      * @param string|null $createdAt
-     * @param string|null $updatedAt
+     * @param string|null $scheduledAt
+     * @param string $title
      * @param string|null $content
      */
     public function __construct(
         int $id = null,
         string $newsStatus,
         string $createdAt = null,
-        string $updatedAt = null,
+        string $scheduledAt = null,
+        string $title,
         string $content = null
     ) {
         $this->id = $id;
         $this->status = $newsStatus;
         $this->createdAt = $createdAt;
-        $this->updatedAt = $updatedAt;
+        $this->scheduledAt = $scheduledAt;
+        $this->title = $title;
         $this->content = $content;
     }
 
@@ -82,16 +89,24 @@ class Newsletter
     /**
      * @return string
      */
-    public function getDateUpdated($format = null): ?string
+    public function getDateScheduled($format = null): ?string
     {
-        if ($this->updatedAt !== '' && $this->updatedAt !== null) {
+        if ($this->scheduledAt !== '' && $this->scheduledAt !== null) {
             if ($format) {
                 $dt = new \DateTime();
-                $dt->setTimestamp((int)$this->updatedAt);
-                $this->updatedAt = $dt->format($format);
+                $dt->setTimestamp((int)$this->scheduledAt);
+                $this->scheduledAt = $dt->format($format);
             }
         }
-        return $this->updatedAt;
+        return $this->scheduledAt;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
     }
 
     /**
