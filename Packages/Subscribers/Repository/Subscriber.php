@@ -37,9 +37,9 @@ class Subscriber
         return $items;
     }
 
-    public function getNewsletterById(int $subscriberId) : Model
+    public function getNewsletterById(int $userId) : Model
     {
-        return $this->make($this->mapper->getSubscriberById($subscriberId));
+        return $this->make($this->mapper->getSubscriberById($userId));
     }
 
     public function update($data): void
@@ -47,9 +47,9 @@ class Subscriber
         $this->mapper->update($this->make($data));
     }
     
-    public function delete(int $subscriberId): void
+    public function delete(int $userId): void
     {
-        $this->mapper->delete($subscriberId);
+        $this->mapper->delete($userId);
     }
     
     private function make($data): Model
