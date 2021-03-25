@@ -30,8 +30,8 @@
                 <td class="col col-4"><?=$news->getTitle()?></td>
                 <td class="col col-5"><?=$news->getDateCreated()?> </td>
                 <td class="col col-6"><?=$news->getDateScheduled()?></td>
-                <td class="col col-7"><a href="<?=admin_url() . '?page=newsletter&action=update&userId=' . $news->getId()?>" class='btn btn-sm btn-info updateUser subscriberUpdate'  >Update</a>-
-                    <a href="<?=admin_url() . '?page=newsletter&action=delete&userId=' . $news->getId()?>" class='btn btn-sm btn-danger deleteUser subscriberDelete' >Delete</a> </td>
+                <td class="col col-7"><a href="<?=admin_url() . '?page=newsletter&action=editNewsletters&newsId=' . $news->getId()?>" class='btn btn-sm btn-info updateUser subscriberUpdate'  >Update</a>-
+                    <a href="<?=admin_url() . '?page=newsletter&action=deleteNewsletters&newsId=' . $news->getId()?>" class='btn btn-sm btn-danger deleteUser subscriberDelete' >Delete</a> </td>
             </tr>
 		<?php
 			$i++;

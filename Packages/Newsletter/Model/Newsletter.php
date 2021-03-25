@@ -28,7 +28,7 @@ class Newsletter
     /**
      * @var string $content
      */
-    private $content;
+    public $content;
     
     /**
      * Newsletter constructor.

@@ -43,16 +43,29 @@ switch ( $action ) {
 		$newsletterPage = 'template/newsletterDescription.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
-	/*case 'update':
-		$data               = TournamentMenager\Service\PostFormatter::formatDataFromFormUpdate( $_POST );
-		$data['tournament'] = (int) $_GET['turnirId'];
-		$turnirRepo->update( $data );
-		echo '<p>Uspešno ste izmenili popust</p>';
-		break;
-	case 'delete':
-		if ( isset( $_GET['turnirId'] ) ) {
-			$turnirRepo->delete( (int) $_GET['turnirId'] );
+	case 'editNewsletters':
+		if (isset($_GET['newsId'])) {
+			$newsletter = $newsletterRepo->getNewsletterById((int)$_GET['newsId']);
+			$newsId = $newsletter->getId();
+			$title = $newsletter->getTitle();
+			$newsStatus = $newsletter->getStatus();
+			$createdAt = $newsletter->getDateCreated();
+			$scheduledAt = $newsletter->getDateScheduled();
+			$content = $newsletter->getContent();
 		}
-		echo '<p>Uspešno ste obrisali popust</p>';
-		break;*/
+		$newsletterPage = 'template/newsletterForm.php';
+		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
+		break;
+	case 'updateNewsletters':
+		$data = Service\PostFormatter\PostFormatter::formatDataNewsForm( $_POST );
+		$data['newsId'] = (int) $_GET['newsId'];
+		$newsletterRepo->update( $data );
+		echo '<p>Uspešno ste izmenili newsletter</p> <a  class=" "href="'.admin_url() . '?page=newsletter&action=newsletters"  >Vrati se nazad</a>';
+		break;
+	case 'deleteNewsletters':
+		if ( isset( $_GET['newsId'] ) ) {
+			$newsletterRepo->delete( (int) $_GET['newsId'] );
+		}
+		echo '<p>Uspešno ste obrisali newsletter</p> <a  class=" "href="'.admin_url() . '?page=newsletter&action=newsletters"  >Vrati se nazad</a>';
+		break;
 }
