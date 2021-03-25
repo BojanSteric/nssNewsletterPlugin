@@ -37,9 +37,9 @@ class Newsletter
     public function __construct(
         int $id = null,
         string $newsStatus,
-        string $createdAt,
-        string $updatedAt,
-        string $content
+        string $createdAt = null,
+        string $updatedAt = null,
+        string $content = null
     ) {
         $this->id = $id;
         $this->status = $newsStatus;

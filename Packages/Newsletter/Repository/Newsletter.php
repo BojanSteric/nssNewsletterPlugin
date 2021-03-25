@@ -66,11 +66,11 @@ class Newsletter
         if (isset($data['newsId'])) {
             $newsStatus = $data['newsId'];
         }
-        if (isset($data['created_at'])) {
-            $dateCreated = $data['created_at'];
+        if (isset($data['createdAt'])) {
+            $dateCreated = $data['createdAt'];
         }
-        if (isset($data['updatedAt'])) {
-            $dateUpdated = $data['updatedAt'];
+        if (isset($data['scheduledAt'])) {
+            $dateUpdated = $data['scheduledAt'];
         }
         if (isset($data['content'])) {
             $content = $data['content'];

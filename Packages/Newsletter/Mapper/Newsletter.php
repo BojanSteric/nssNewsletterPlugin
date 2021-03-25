@@ -28,8 +28,8 @@ class Newsletter
     {
         $this->db->insert($this->tableName,[
             'newsStatus' => $model->getStatus(),
-            'created_at' => $model->getDateCreated(),
-            'updatedAt' => $model->getDateUpdated(),
+            'createdAt' => $model->getDateCreated(),
+            'scheduledAt' => $model->getDateUpdated(),
             'content' => $model->getContent(),
         ],['%s', '%s', '%s', '%s']);
         return $this->db->insert_id;
@@ -40,8 +40,8 @@ class Newsletter
         $this->db->update($this->tableName,
             [
                 'newsStatus' => $model->getStatus(),
-                'created_at' => $model->getDateCreated(),
-                'updatedAt' => $model->getDateUpdated(),
+                'createdAt' => $model->getDateCreated(),
+                'scheduledAt' => $model->getDateUpdated(),
                 'content' => $model->getContent(),
             ],['newsId' => $model->getId()],['%s', '%s', '%s', '%s']);
     }
