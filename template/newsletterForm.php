@@ -76,7 +76,7 @@
 			<option value="complite">complite</option>
 		</select>
 		<label for="Sceduled">Sceduled at</label>
-		<input type="datetime-local" id="Sceduled" name="scheduledAt" value="<?=$scheduledAt  ?? ''?>">
+		<input type="datetime-local" id="Sceduled" name="scheduledAt" value="<?= date("Y-m-d\TH:i:s", strtotime($scheduledAt))?>">
         <input type=" hidden" id="created" name="createdAt"  value="<?= $createdAt ?? ''?>" hidden >
 
 		<label for="content">Content</label>
