@@ -64,8 +64,8 @@ class Newsletter
         if (isset($data['newsId'])){
             $newsId = $data['newsId'];
         }
-        if (isset($data['newsId'])) {
-            $newsStatus = $data['newsId'];
+        if (isset($data['newsStatus'])) {
+            $newsStatus = $data['newsStatus'];
         }
         if (isset($data['createdAt'])) {
             $createdAt = $data['createdAt'];

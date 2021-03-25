@@ -17,7 +17,7 @@
         </thead>
         <tbody>
 		<?php
-		/** @var Newsletter\Model\Newsletter $subscriber */
+		/** @var Subscriber\Model\Subscriber $subscriber */
 		$i = 1;
 		foreach ($subscriber as $sub):?>
 
