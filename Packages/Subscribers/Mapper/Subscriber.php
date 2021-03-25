@@ -32,7 +32,7 @@ class Subscriber
             'emailStatus' => $model->getEmailStatus(),
             'firstName' => $model->getFirstName(),
             'lastName' => $model->getLastName(),
-            'created_at' => $model->getDateCreated(),
+            'createdAt' => $model->getDateCreated(),
             'updatedAt' => $model->getDateUpdated(),
         ],['%d', '%s', '%s', '%s', '%s', '%s', '%s']);
         return $this->db->insert_id;
@@ -47,7 +47,7 @@ class Subscriber
                 'emailStatus' => $model->getEmailStatus(),
                 'firstName' => $model->getFirstName(),
                 'lastName' => $model->getLastName(),
-                'created_at' => $model->getDateCreated(),
+                'createdAt' => $model->getDateCreated(),
                 'updatedAt' => $model->getDateUpdated(),
             ],['userId' => $model->getId()],['%d', '%s', '%s', '%s', '%s', '%s', '%s']);
     }
