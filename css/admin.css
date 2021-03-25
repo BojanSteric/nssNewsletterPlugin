@@ -1,4 +1,9 @@
 
+table{
+    text-align: center;
+}
+
+
 .sidenavAdminCategorieslist{
     color: red;
 }

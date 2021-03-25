@@ -30,15 +30,15 @@ class Activator {
 		$charset_collate = $wpdb->get_charset_collate();
 		$table_name   = $wpdb->prefix . 'subscriber';
 		$sql = "CREATE TABLE IF NOT EXISTS $table_name (
-		  `userid` int(50) NOT NULL AUTO_INCREMENT,
+		  `userId` int(50) NOT NULL AUTO_INCREMENT,
 		  `wpUserId` int(50) DEFAULT NULL,
 		  `email` varchar(30) NOT NULL,
 		  `emailStatus` varchar(20) NOT NULL,
 		  `firstName` varchar(20) DEFAULT NULL,
 		  `lastName` varchar(20) DEFAULT NULL,
-		  `created_at` datetime DEFAULT NULL,
+		  `createdAt` datetime DEFAULT NULL,
 		  `updatedAt` datetime DEFAULT NULL,
-		  PRIMARY KEY  (userid)
+		  PRIMARY KEY  (userId)
 		) $charset_collate;";
 
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
@@ -54,8 +54,9 @@ class Activator {
 		$sql2 = "CREATE TABLE IF NOT EXISTS $table_name2 (
 		  `newsId` int(50) NOT NULL AUTO_INCREMENT,
 		  `newsStatus` varchar(30) NOT NULL,
-		  `created_at` datetime DEFAULT NULL,
+		  `createdAt` datetime DEFAULT NULL,
 		  `updatedAt` datetime DEFAULT NULL,
+		  `content` TEXT DEFAULT NULL,
 		  PRIMARY KEY  (newsId)
 		) $charset_collate;";
 

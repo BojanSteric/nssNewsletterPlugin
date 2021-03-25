@@ -39,7 +39,7 @@ class Subscriber
     private $updatedAt;
     
     /**
-     * Newsletter constructor.
+     * Subscriber constructor.
      * @param int|null $userId
      * @param int|null $wpUserId
      * @param string $email
@@ -51,13 +51,13 @@ class Subscriber
      */
     public function __construct(
         int $userId = null,
-        int $wpUserId,
+        int $wpUserId = null,
         string $email,
         string $emailStatus,
-        string $firstName,
-        string $lastName,
-        string $createdAt,
-        string $updatedAt
+        string $firstName = null,
+        string $lastName = null,
+        string $createdAt = null,
+        string $updatedAt = null
     ) {
         $this->userId = $userId;
         $this->wpUserId = $wpUserId;

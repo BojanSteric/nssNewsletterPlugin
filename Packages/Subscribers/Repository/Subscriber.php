@@ -87,8 +87,8 @@ class Subscriber
         if (isset($data['updatedAt'])) {
             $updatedAt = $data['updatedAt'];
         }
-
-        return new Model($userId, 0, $email, $emailStatus, $firstName, $lastName, $createdAt, $updatedAt);
+        
+        return new Model($userId, $wpUserId, $email, $emailStatus, $firstName, $lastName, $createdAt, $updatedAt);
     }
     
 }
