@@ -53,6 +53,7 @@ switch ( $action ) {
 			$scheduledAt = $newsletter->getDateScheduled();
 			$content = $newsletter->getContent();
 		}
+		$scheduledAt= date('Y-m-d H:i:s');
 		$newsletterPage = 'template/newsletterForm.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
@@ -60,7 +61,12 @@ switch ( $action ) {
 		$data = Service\PostFormatter\PostFormatter::formatDataNewsForm( $_POST );
 		$data['newsId'] = (int) $_GET['newsId'];
 		$newsletterRepo->update( $data );
-		echo '<p>Uspešno ste izmenili newsletter</p> <a  class=" "href="'.admin_url() . '?page=newsletter&action=newsletters"  >Vrati se nazad</a>';
+		wp_redirect( admin_url() . '?page=newsletter&action=newsletters'  );
+		break;
+	case 'createNewsletters':
+		$data = Service\PostFormatter\PostFormatter::formatDataNewsForm( $_POST );
+		$newsletterRepo->create( $data );
+		wp_redirect( admin_url() . '?page=newsletter&action=newsletters'  );
 		break;
 	case 'deleteNewsletters':
 		if ( isset( $_GET['newsId'] ) ) {
