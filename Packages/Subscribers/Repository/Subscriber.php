@@ -37,7 +37,7 @@ class Subscriber
         return $items;
     }
 
-    public function getNewsletterById(int $userId) : Model
+    public function getSubscriberById(int $userId) : Model
     {
         return $this->make($this->mapper->getSubscriberById($userId));
     }

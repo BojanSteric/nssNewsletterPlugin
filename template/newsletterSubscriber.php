@@ -1,5 +1,4 @@
 <?php
-
 ?>
 
 <div class="wrap subsciberDiv">
@@ -30,8 +29,8 @@
                 <td class="col col-3"><?=$sub->getEmail()?></td>
                 <td class="col col-4"><?=$sub->getEmailStatus()?></td>
                 <td class="col col-5"><?=$sub->getFirstName()?> <?=$sub->getLastName()?></td>
-                <td class="col col-6"><a href="<?=admin_url() . '?page=newsletter&action=update&userId=' . $sub->getId()?>" class='btn btn-sm btn-info updateUser subscriberUpdate'  >Update</a>-
-                    <a href="<?=admin_url() . '?page=newsletter&action=delete&userId=' . $sub->getId()?>" class='btn btn-sm btn-danger deleteUser subscriberDelete' >Delete</a> </td>
+                <td class="col col-6"><a href="<?=admin_url() . '?page=newsletter&action=editSubscribers&userId=' . $sub->getId()?>" class='btn btn-sm btn-info updateUser subscriberUpdate'  >Update</a>-
+                    <a href="<?=admin_url() . '?page=newsletter&action=deleteSubscribers&userId=' . $sub->getId()?>" class='btn btn-sm btn-danger deleteUser subscriberDelete' >Delete</a> </td>
             </tr>
 		<?php
 			$i++;

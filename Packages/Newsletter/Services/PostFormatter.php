@@ -1,6 +1,6 @@
 <?php
 
-namespace Service\PostFormatter;
+namespace Newsletter\Service;
 
 class PostFormatter {
 

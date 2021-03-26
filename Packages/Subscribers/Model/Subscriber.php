@@ -80,7 +80,7 @@ class Subscriber
     /**
      * @return int
      */
-    public function getWpUserId(): int
+    public function getWpUserId(): ?int
     {
         return $this->wpUserId;
     }
