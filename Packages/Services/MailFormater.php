@@ -6,8 +6,8 @@ namespace Service\MailFormater;
 
 class MailFormater {
 
-	public function sendNewsletter($postData)
+	public static function sendNewsletter($postData)
 	{
-		$mejl= wp_mail("icefyre90@gmail.com", $subject, $mesage);
+		$mejl= wp_mail("bojansteric7@gmail.com", $subject, $mesage);
 	}
 }

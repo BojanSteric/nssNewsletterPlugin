@@ -93,13 +93,13 @@ switch ( $action ) {
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
 	case 'updateTemplates':
-		$data = Service\PostFormatter\PostFormatter::formatDataNewsForm( $_POST );
+		$data = NewsletterPostFormatter::formatDataNewsForm( $_POST );
 		$data['newsId'] = (int) $_GET['newsId'];
 		$newsletterRepo->update( $data );
 		wp_redirect( admin_url() . '?page=newsletter&action=templates'  );
 		break;
 	case 'createTemplates':
-		$data = Service\PostFormatter\PostFormatter::formatDataNewsForm( $_POST );
+		$data = NewsletterPostFormatter::formatDataNewsForm( $_POST );
 		$newsletterRepo->create( $data );
 		wp_redirect( admin_url() . '?page=newsletter&action=templates'  );
 		break;
@@ -114,30 +114,13 @@ switch ( $action ) {
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
 	case 'sendNewsToSubsc':
-		$data = Service\MailFormater\MailFormater::sendNewsletter( $_POST );
+		// $data = Service\MailFormater\MailFormater::sendNewsletter( $_POST );
 		$to='icefyre90@gmail.com';
 		$subject='uspesno';
 		$mesage='neki tekst';
-		$mejl= wp_mail("icefyre90@gmail.com", $subject, $mesage);
+		$mejl= wp_mail("bojansteric7@gmail.com", $subject, $mesage);
 		var_dump($mejl);
 		die();
-		/*try {
-			$sent = @wp_mail( $to, $subject, $message );
-			var_dump(@wp_mail( $to, $subject, $message ));
-			die();
-		} catch (Exception $e) {
-			error_log('oops: ' . $e->getMessage()); // this line is for testing only!
-		}
-
-		if ( $sent ) {
-			error_log('hooray! email sent!'); // so is this one
-		} else {
-			error_log('oh. email not sent.'); // and this one, too
-		}*/
-		// $data = Service\PostFormatter\MailFormater::sendNewsletter( $_POST );
-		/*$data['newsId'] = (int) $_GET['newsId'];
-		$newsletterRepo->update( $data );
-		*/
 		break;
 
 }
