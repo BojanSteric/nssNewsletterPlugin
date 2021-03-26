@@ -28,6 +28,21 @@ $adminMenuPage = new MenuPage('Newsletter', 'Newsletter','manage_options',
 $setup = new Setup($adminMenuPage);
 $setup->setup();
 
+
+function nesto(){
+	wp_enqueue_script('newsletterJs', NEWSLETTER_DIR_URI . 'js/front.js', array('jquery'), '1', true);
+	wp_localize_script( 'newsletterJs', 'ajaxObject', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+}
+add_action('wp_enqueue_scripts', 'nesto');
+
+
+require_once(plugin_dir_path(__FILE__) . '/newsletterWidget/NewsletterWidget.php');
+
+function gfRegisterWidgets(){
+    register_widget('NewsletterWidget');
+}
+
+add_action('widgets_init', 'gfRegisterWidgets');
 add_action( 'phpmailer_init', 'send_smtp_email' );
 function send_smtp_email( $phpmailer ) {
 	$phpmailer->isSMTP();

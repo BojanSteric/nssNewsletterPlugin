@@ -3,6 +3,7 @@
 
 namespace Newsletter\Setup;
 
+use Newsletter\Mapper\Newsletter;
 use Newsletter\MenuPage\MenuPage;
 
 class Setup {
@@ -37,7 +38,8 @@ class Setup {
 	}
 	public function enqueueAdminJs(): void
 	{
-		wp_enqueue_script('discountAdminJs', NEWSLETTER_DIR_URI . 'js/admin.js', '', '1', true);
+		wp_enqueue_script('newsletterAdminJs', NEWSLETTER_DIR . 'js/admin.js', ['jquery'], '1', true);
+		wp_localize_script( 'newsletterAdminJs', 'ajaxObject', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 	}
 	public function prijavaForm()
 	{

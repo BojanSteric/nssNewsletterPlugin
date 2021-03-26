@@ -114,13 +114,10 @@ switch ( $action ) {
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
 	case 'sendNewsToSubsc':
-		// $data = Service\MailFormater\MailFormater::sendNewsletter( $_POST );
-		$to='icefyre90@gmail.com';
+		$to='bojansteric7@gmail.com';
 		$subject='uspesno';
-		$mesage='neki tekst';
-		$mejl= wp_mail("bojansteric7@gmail.com", $subject, $mesage);
-		var_dump($mejl);
-		die();
+		$message='neki tekst';
+		Service\MailFormater\MailFormater::sendNewsletter( array('to'=> $to, 'subject'=>$subject, 'message'=>$message ) );
 		break;
 
 }

@@ -26,3 +26,24 @@ function populateDiscountValue() {
         }
     }
 }*/
+jQuery( document ).ready(function(){
+    console.log('ucitali smo se');
+    $('.newsletterForma').on('submit', function(){
+        $.ajax({
+            url: my_ajax_object['ajax_url'],
+            type: 'POST',
+            data:{
+                action:'createSubscriber',
+                email: 'asdasdasd',
+            },
+            success:{
+                console.log('email')
+            },
+            error:{
+                console.log('error occured');
+            },
+            
+        });
+    });
+});
+
