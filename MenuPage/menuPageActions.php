@@ -105,7 +105,7 @@ switch ( $action ) {
 		echo '<p>Uspešno ste obrisali newsletter</p> <a  class=" "href="'.admin_url() . '?page=newsletter&action=newsletters"  >Vrati se nazad</a>';
 		break;
 	case 'sendNewsForm':
-		$data = Service\PostFormatter\MailFormater::sendNewsletter( $_POST );
+		// $data = Service\PostFormatter\MailFormater::sendNewsletter( $_POST );
 		/*$data['newsId'] = (int) $_GET['newsId'];
 		$newsletterRepo->update( $data );
 		wp_redirect( admin_url() . '?page=newsletter&action=newsletters'  );*/
