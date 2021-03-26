@@ -30,7 +30,7 @@ class MenuPage {
 	{
 		add_action('admin_menu', function (){
 			add_menu_page($this->pageTitle,$this->menuTitle,$this->capability,
-				$this->menuSlug, [$this, 'menuPage']);
+				$this->menuSlug, [$this, 'menuPage'],'dashicons-email-alt');
 		});
 	}
 
