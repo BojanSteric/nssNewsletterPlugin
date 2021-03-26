@@ -13,7 +13,7 @@ use Newsletter\Service\PostFormatter as NewsletterPostFormatter;
 if ( isset( $_GET['action'] ) ) {
 	$action = $_GET['action'];
 } else {
-	$action = 'subscribers';
+	$action = 'newsletters';
 }
 
 /*if ( isset( $_POST['Prijava'] ) ) {
@@ -29,7 +29,11 @@ $newsletterRepo = new NewsletterRepository($newsletterMapper);
 $page = $_GET['paginationPage'] ?? 1;
 
 switch ( $action ) {
-
+	case 'newsletters':
+		$newsletter = $newsletterRepo->getAll($page, 20);
+		$newsletterPage = 'template/newsletterNewsletter.php';
+		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
+		break;
 	case 'subscribers':
 		$subscriber = $subscriberRepo->getAll($page, 20);
 		$newsletterPage = 'template/newsletterSubscriber.php';
@@ -68,12 +72,13 @@ switch ( $action ) {
 		echo '<p>Uspešno ste obrisali subscriber</p> <a  class=" "href="'.admin_url() . '?page=newsletter&action=subscribers"  >Vrati se nazad</a>';
 		break;
 
-	case 'newsletters':
+	case 'templates':
 		$newsletter = $newsletterRepo->getAll($page, 20);
-		$newsletterPage = 'template/newsletterNewsletter.php';
+		$newsletterPage = 'template/newsletterTemplates.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
-	case 'editNewsletters':
+
+	case 'editTemplates':
 		if (isset($_GET['newsId'])) {
 			$newsletter = $newsletterRepo->getNewsletterById((int)$_GET['newsId']);
 			$newsId = $newsletter->getId();
@@ -84,30 +89,55 @@ switch ( $action ) {
 			$content = $newsletter->getContent();
 		}
 		$scheduledAt= date('Y-m-d H:i:s');
-		$newsletterPage = 'template/newsletterForm.php';
+		$newsletterPage = 'template/newsletterTemplateForm.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
-	case 'updateNewsletters':
-		$data = NewsletterPostFormatter::formatDataNewsForm( $_POST );
+	case 'updateTemplates':
+		$data = Service\PostFormatter\PostFormatter::formatDataNewsForm( $_POST );
 		$data['newsId'] = (int) $_GET['newsId'];
 		$newsletterRepo->update( $data );
-		wp_redirect( admin_url() . '?page=newsletter&action=newsletters'  );
+		wp_redirect( admin_url() . '?page=newsletter&action=templates'  );
 		break;
-	case 'createNewsletters':
-		$data = NewsletterPostFormatter::formatDataNewsForm( $_POST );
+	case 'createTemplates':
+		$data = Service\PostFormatter\PostFormatter::formatDataNewsForm( $_POST );
 		$newsletterRepo->create( $data );
-		wp_redirect( admin_url() . '?page=newsletter&action=newsletters'  );
+		wp_redirect( admin_url() . '?page=newsletter&action=templates'  );
 		break;
-	case 'deleteNewsletters':
+	case 'deleteTemplates':
 		if ( isset( $_GET['newsId'] ) ) {
 			$newsletterRepo->delete( (int) $_GET['newsId'] );
 		}
-		echo '<p>Uspešno ste obrisali newsletter</p> <a  class=" "href="'.admin_url() . '?page=newsletter&action=newsletters"  >Vrati se nazad</a>';
+		echo '<p>Uspešno ste obrisali newsletter</p> <a  class=" "href="'.admin_url() . '?page=newsletter&action=templates"  >Vrati se nazad</a>';
 		break;
 	case 'sendNewsForm':
-		$data = Service\PostFormatter\MailFormater::sendNewsletter( $_POST );
+
+		$newsletterPage = 'template/newsletterSendForm.php';
+		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
+		break;
+	case 'sendNewsToSubsc':
+		$data = Service\MailFormater\MailFormater::sendNewsletter( $_POST );
+		$to='icefyre90@gmail.com';
+		$subject='uspesno';
+		$mesage='neki tekst';
+		$mejl= wp_mail("icefyre90@gmail.com", $subject, $mesage);
+		var_dump($mejl);
+		die();
+		/*try {
+			$sent = @wp_mail( $to, $subject, $message );
+			var_dump(@wp_mail( $to, $subject, $message ));
+			die();
+		} catch (Exception $e) {
+			error_log('oops: ' . $e->getMessage()); // this line is for testing only!
+		}
+
+		if ( $sent ) {
+			error_log('hooray! email sent!'); // so is this one
+		} else {
+			error_log('oh. email not sent.'); // and this one, too
+		}*/
 		/*$data['newsId'] = (int) $_GET['newsId'];
 		$newsletterRepo->update( $data );
-		wp_redirect( admin_url() . '?page=newsletter&action=newsletters'  );*/
+		*/
 		break;
+
 }
