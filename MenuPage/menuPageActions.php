@@ -110,7 +110,6 @@ switch ( $action ) {
 		echo '<p>Uspešno ste obrisali newsletter</p> <a  class=" "href="'.admin_url() . '?page=newsletter&action=templates"  >Vrati se nazad</a>';
 		break;
 	case 'sendNewsForm':
-
 		$newsletterPage = 'template/newsletterSendForm.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
@@ -135,6 +134,7 @@ switch ( $action ) {
 		} else {
 			error_log('oh. email not sent.'); // and this one, too
 		}*/
+		// $data = Service\PostFormatter\MailFormater::sendNewsletter( $_POST );
 		/*$data['newsId'] = (int) $_GET['newsId'];
 		$newsletterRepo->update( $data );
 		*/
