@@ -1,6 +1,5 @@
 
     jQuery( document ).ready(function(){
-        console.log(ajaxObject['ajax_url']);
         jQuery('.newsletterForma').on('submit', function(event){
             var email=jQuery('#newsletter').val();
             jQuery.ajax({
@@ -14,9 +13,8 @@
                     alert(data);
                 },
                 error: function() {
-                    alert('Dogodila se neočekivana greška')
+                   alert('Dogodila se neočekivana greška');
                 },
-            
             });
             event.preventDefault();
         });

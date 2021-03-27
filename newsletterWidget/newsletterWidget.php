@@ -48,18 +48,16 @@ class NewsletterWidget extends WP_Widget {
           
     
     public function subscribeToNewsletter(){
-	    global $wpdb;
 	    $subscriberMapper = new SubMapper();
 	    $subscriberRepo = new SubRepository($subscriberMapper);
 	    $request = $_POST['request'];
-	    $response = array();
 
 	    $subscriberEmail = $_POST['email'];
 	    $data = SubscriberPostFormatter::formatDataNewSubscribers( $_POST );
 	    $subscriberRepo->create( $data );
         $sendInvite= MailService::sendMailToNewSubscribers($subscriberEmail);
-        
-	    $response ="uspesno ste se prijavili";
+
+	    $response ="you have successfully signed up for newsletter. Please go to email to confirmed";
 	    echo json_encode($response);
 	    wp_die();
     }
@@ -78,6 +76,7 @@ class NewsletterWidget extends WP_Widget {
     <p>
         <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        <p id="newsletterMesage" class="newsletterMesage"></p>
     </p>
     <?php 
     }
