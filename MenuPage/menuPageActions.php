@@ -69,7 +69,7 @@ switch ( $action ) {
 		if ( isset( $_GET['userId'] ) ) {
 			$subscriberRepo->delete( (int) $_GET['userId'] );	
 		}
-		echo '<p>Uspešno ste obrisali subscriber</p> <a  class=" "href="'.admin_url() . '?page=newsletter&action=subscribers"  >Vrati se nazad</a>';
+		echo '<p>Uspešno ste obrisali subscriber</p> <a  class="" href="'.admin_url() . '?page=newsletter&action=subscribers"  >Vrati se nazad</a>';
 		break;
 
 	case 'templates':
@@ -107,7 +107,7 @@ switch ( $action ) {
 		if ( isset( $_GET['newsId'] ) ) {
 			$newsletterRepo->delete( (int) $_GET['newsId'] );
 		}
-		echo '<p>Uspešno ste obrisali newsletter</p> <a  class=" "href="'.admin_url() . '?page=newsletter&action=templates"  >Vrati se nazad</a>';
+		echo '<p>Uspešno ste obrisali newsletter</p> <a  class="" href="'.admin_url() . '?page=newsletter&action=templates"  >Vrati se nazad</a>';
 		break;
 	case 'sendNewsForm':
 		$newsletterPage = 'template/newsletterSendForm.php';

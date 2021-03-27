@@ -26,6 +26,7 @@ function populateDiscountValue() {
         }
     }
 }*/
+/*
 jQuery( document ).ready(function(){
     console.log('ucitali smo se');
     $('.newsletterForma').on('submit', function(){
@@ -46,4 +47,5 @@ jQuery( document ).ready(function(){
         });
     });
 });
+*/
 

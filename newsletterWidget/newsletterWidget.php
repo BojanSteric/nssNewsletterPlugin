@@ -15,6 +15,7 @@ class NewsletterWidget extends WP_Widget {
             array( 'description' => __( 'Custom newsletter widget by Green Friends', '' ), ) 
             );
             add_action('wp_ajax_subscribeToNewsletter', [$this,'subscribeToNewsletter']);
+	    add_action('wp_ajax_nopriv_subscribeToNewsletter', [$this,'subscribeToNewsletter']);
         }
           
     // Creating widget front-end
@@ -30,7 +31,7 @@ class NewsletterWidget extends WP_Widget {
         // This is where you run the code and display the output
     ?>
 
-    <form class="newsletterForma" >
+    <form class="newsletterForma" action="" type="post">
         <input aria-label="email for newsletter" type="email" id="newsletter" name="email" placeholder="unesite svoju email adresu" required>
         <input type="submit" value="sign up">
     </form>
@@ -41,8 +42,33 @@ class NewsletterWidget extends WP_Widget {
           
     
     public function subscribeToNewsletter(){
-        var_dump($_POST['request']);
-        wp_die();
+	    global $wpdb;
+	    $request = $_POST['request'];
+	    $response = array();
+
+	    $subscriberEmail = $_POST['email'];
+
+	    /*$emailStatus= 'NOTCONFIRMED';
+	    var_dump($subscriberEmail);
+	    $createdAt=new date("Y-m-d H:i:s");
+	    var_dump('uspeh2');
+	    $data = array(
+	            'wpUserId'=>'',
+		    'email' => $subscriberEmail,
+		    'emailStatus' => $emailStatus,
+		    'firstName'=>'',
+		    'lastName'=>'',
+		    'createdAt'=> $createdAt,
+            'updatedAt'=>'',
+	    );
+	    var_dump($data);
+	    $table='wp_subscriber';
+	    
+	    $wpdb->insert( $table, $data,$format=null);
+	    var_dump($data);*/
+	    $response ="uspesno ste se prijavili";
+	    echo json_encode($response);
+	    wp_die();
     }
 
 
