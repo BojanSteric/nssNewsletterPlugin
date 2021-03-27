@@ -16,4 +16,16 @@ class PostFormatter {
         $data['lastName'] = (string)$postData['lastName'];
 		return $data;
 	}
+	public static function formatDataNewSubscribers($postData)
+	{
+		$data['email'] = (string)$postData['email'];
+		$user = get_user_by( 'email', $data['email'] );
+		$data['wpUserId'] = $user->ID;
+		$data['emailStatus'] = 'not confirmed';
+		$data['createdAt'] =  date("Y-m-d H:i:s") ;
+		$data['updatedAt'] = (string)$postData['updatedAt'] ?? NULL;
+		$data['firstName'] = (string)$postData['firstName'] ?? NULL;
+		$data['lastName'] = (string)$postData['lastName'] ?? NULL;
+		return $data;
+	}
 }

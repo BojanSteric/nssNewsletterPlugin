@@ -1,4 +1,10 @@
 <?php
+use Subscriber\Mapper\Subscriber as SubMapper;
+use Subscriber\Repository\Subscriber as SubRepository;
+use Subscriber\Service\PostFormatter as SubscriberPostFormatter;
+
+use Service\MailFormater\MailFormater as MailService;
+
 // The widget class
 class NewsletterWidget extends WP_Widget {
     
@@ -43,29 +49,16 @@ class NewsletterWidget extends WP_Widget {
     
     public function subscribeToNewsletter(){
 	    global $wpdb;
+	    $subscriberMapper = new SubMapper();
+	    $subscriberRepo = new SubRepository($subscriberMapper);
 	    $request = $_POST['request'];
 	    $response = array();
 
 	    $subscriberEmail = $_POST['email'];
-
-	    /*$emailStatus= 'NOTCONFIRMED';
-	    var_dump($subscriberEmail);
-	    $createdAt=new date("Y-m-d H:i:s");
-	    var_dump('uspeh2');
-	    $data = array(
-	            'wpUserId'=>'',
-		    'email' => $subscriberEmail,
-		    'emailStatus' => $emailStatus,
-		    'firstName'=>'',
-		    'lastName'=>'',
-		    'createdAt'=> $createdAt,
-            'updatedAt'=>'',
-	    );
-	    var_dump($data);
-	    $table='wp_subscriber';
-	    
-	    $wpdb->insert( $table, $data,$format=null);
-	    var_dump($data);*/
+	    $data = SubscriberPostFormatter::formatDataNewSubscribers( $_POST );
+	    $subscriberRepo->create( $data );
+        $sendInvite= MailService::sendMailToNewSubscribers($subscriberEmail);
+        
 	    $response ="uspesno ste se prijavili";
 	    echo json_encode($response);
 	    wp_die();
