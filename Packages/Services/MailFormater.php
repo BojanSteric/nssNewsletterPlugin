@@ -12,7 +12,7 @@ class MailFormater {
 
 	public  static function setupMail($email,$subject,$text)
 	{
-		
+
 		$message = new Message();
 		$html = $text;
 		$part = new Part($html);
@@ -44,7 +44,6 @@ class MailFormater {
 		$company='NewsletterTeam';
 		$to=$postData;
 		$subject='Newsletter Subscribe submit';
-		/*$message='Welcome '.$to.' Thanks for subscribing to the newsletter. Please follow next link to confirmed your subscription:  ';*/
 
 		$myfile = fopen(NEWSLETTER_DIR . 'template/Mail/newSubscriber.php', "r") or die("Unable to open file!");
 		$message= fread($myfile,filesize(NEWSLETTER_DIR . 'template/Mail/newSubscriber.php'));
