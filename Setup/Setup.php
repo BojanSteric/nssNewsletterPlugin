@@ -28,9 +28,10 @@ class Setup {
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueueAdminCss' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueueAdminJs' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueueWidgetJs' ] );
+		add_action( 'widgets_init', [ $this, 'gfRegisterWidgets' ] );
 		/*	add_action('admin_post_submit-form',  [$this,'prijavaForm']); // If the user is logged in
 			add_action('admin_post_nopriv_submit-form', [$this, 'prijavaForm']);*/
-		add_action( 'widgets_init', [ $this, 'gfRegisterWidgets' ] );
+
 	}
 	public function enqueueAdminCss(): void
 	{
@@ -38,7 +39,7 @@ class Setup {
 	}
 	public function enqueueAdminJs(): void
 	{
-		wp_enqueue_script('newsletterAdminJs', NEWSLETTER_DIR . 'js/admin.js', ['jquery'], '1', true);
+		wp_enqueue_script('newsletterAdminJs', NEWSLETTER_DIR_URI  . 'js/admin.js', ['jquery'], '1', true);
 		wp_localize_script( 'newsletterAdminJs', 'ajaxObject', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 
 	}

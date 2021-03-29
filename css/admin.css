@@ -146,6 +146,25 @@ div.mainAdminCategories {
      text-align: right;
  }
 }
+/*Newsletter Table*/
+.selectStatusNewsletterList {
+    border: 0px;
+    width:100px;
+    padding:0px;
+    margin:0px;
+}
+.selectStatusNewsletterList .active{
+    background-color: yellow;
+}
+.selectStatusNewsletterList .pause{
+    background-color: lightcoral;
+}
+.selectStatusNewsletterList .pending{
+    background-color: cornflowerblue;
+}
+.selectStatusNewsletterList .complete{
+    background-color: lightgreen;
+}
 /*Newsletter Form*/
 
 .newsletterForm {font-family: Arial, Helvetica, sans-serif;}
@@ -218,5 +237,4 @@ div.mainAdminCategories {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
-
 }

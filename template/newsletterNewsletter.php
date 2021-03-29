@@ -21,7 +21,19 @@
 
             <tr class="table-row">
                 <td class="col col-1"><?= $i?></td>
-                <td class="col col-3"><?=$news->getStatus()?></td>
+                <td class="col col-3">
+                    <!--<select class="selectStatusNewsletterList"  >
+                        <option value="active" class="active" <?php /*if ($news->getStatus() == 'active' ) echo 'selected' ; */?>>active</option>
+                        <option value="pause" class="pause" <?php /*if ($news->getStatus() == 'pause' ) echo 'selected' ; */?>>pause</option>
+                        <option value="pending" class="pending"  <?php /*if ($news->getStatus() == 'pending' ) echo 'selected' ; */?>>pending</option>
+                        <option value="complite" class="complete"  <?php /*if ($news->getStatus() == 'complete' ) echo 'selected' ; */?>>complete</option>
+                    </select>-->
+                    <select onchange="onchangeNewsletterStatus()" id="selectStatusNewsletterList" class="selectStatusNewsletterList">
+                        <option value="1" style="background-color:yellow">One</option>
+                        <option value="2" style="background-color:red">Two</option>
+                        <option value="3" style="background-color:green">Three</option>
+                    </select>
+                </td>
                 <td class="col col-4"><?=$news->getTitle()?></td>
                 <td class="col col-5"><?=$news->getDateCreated()?> </td>
                 <td class="col col-6"><?=$news->getDateScheduled()?></td>
