@@ -10,15 +10,9 @@ use Laminas\Mime\Part;
 
 class MailFormater {
 
-	public static function sendNewsletter($postData)
-	{
-		$mmail= wp_mail($postData['to'], $postData['subject'], $postData['message']);
-	}
-
-
 	public  static function setupMail($email,$subject,$text)
 	{
-		/*<h1>Petar pizda</h1><span>Al idalje te volimo </span>*/
+		
 		$message = new Message();
 		$html = $text;
 		$part = new Part($html);
@@ -45,14 +39,20 @@ class MailFormater {
 		$transport->setOptions($options);
 		$transport->send($message);
 	}
-
 	public static function sendMailToNewSubscribers($postData)
 	{
+		$company='NewsletterTeam';
 		$to=$postData;
 		$subject='Newsletter Subscribe submit';
-		$message='Welcome '.$to.' Thanks for subscribing to the newsletter. Please follow next link to confirmed your subscription:  ';
-		self::setupMail($to, $subject,$message );
+		/*$message='Welcome '.$to.' Thanks for subscribing to the newsletter. Please follow next link to confirmed your subscription:  ';*/
 
+		$myfile = fopen(NEWSLETTER_DIR . 'template/Mail/newSubscriber.php', "r") or die("Unable to open file!");
+		$message= fread($myfile,filesize(NEWSLETTER_DIR . 'template/Mail/newSubscriber.php'));
+		$defaulttext = array("CompanyNewsletter", "emailNewsletter");
+		$newText   = array($company, $to);
+		$newmesage=str_replace($defaulttext, $newText,$message);
+		fclose($myfile);
 
+		self::setupMail($to, $subject,$newmesage );
 	}
 }
