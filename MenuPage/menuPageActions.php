@@ -10,6 +10,9 @@ use Newsletter\Model\Newsletter;
 use Newsletter\Repository\Newsletter as NewsletterRepository;
 use Newsletter\Service\PostFormatter as NewsletterPostFormatter;
 
+
+
+
 if ( isset( $_GET['action'] ) ) {
 	$action = $_GET['action'];
 } else {
@@ -73,7 +76,8 @@ switch ( $action ) {
 		break;
 
 	case 'templates':
-		$newsletter = $newsletterRepo->getAll($page, 20);
+
+	$newsletter = $newsletterRepo->getAll($page, 20);
 		$newsletterPage = 'template/newsletterTemplates.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;

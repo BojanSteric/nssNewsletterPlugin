@@ -1,0 +1,6 @@
+{
+    "require": {
+        "laminas/laminas-mail": "^2.14",
+        "laminas/laminas-servicemanager": "^3.6"
+    }
+}

@@ -53,8 +53,8 @@ class NewsletterWidget extends WP_Widget {
 	    $request = $_POST['request'];
 
 	    $subscriberEmail = $_POST['email'];
-	    $data = SubscriberPostFormatter::formatDataNewSubscribers( $_POST );
-	    $subscriberRepo->create( $data );
+	    /*$data = SubscriberPostFormatter::formatDataNewSubscribers( $_POST );
+	    $subscriberRepo->create( $data );*/
         $sendInvite= MailService::sendMailToNewSubscribers($subscriberEmail);
 
 	    $response ="you have successfully signed up for newsletter. Please go to email to confirmed";
