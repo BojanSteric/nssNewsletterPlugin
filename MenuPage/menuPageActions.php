@@ -33,7 +33,7 @@ $page = $_GET['paginationPage'] ?? 1;
 
 switch ( $action ) {
 	case 'newsletters':
-		$newsletter = $newsletterRepo->getAll($page, 20);
+
 		$newsletterPage = 'template/newsletterNewsletter.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;

@@ -70,5 +70,21 @@ class Newsletter
         $sql = "SELECT * FROM $this->tableName WHERE `newsId` = $newsletterId;";
         return $this->db->get_results($sql, ARRAY_A)[0];
     }
+    public function searchForNewsletter($searchText)
+    {
+	    $searchQuery = "";
+	    if($searchText != ''){
+		    $searchQuery = " and (newsStatus like '%".$searchText."%' or title like '%".$searchText."%' )";
+	    }
+	    $sql = "SELECT * FROM $this->tableName WHERE 1 $searchQuery;";
+	    return $this->db->get_results($sql, ARRAY_A);
+    }
+	public function updateStatusNewsletter($status,$newsId)
+	{
+		$sql = "UPDATE $this->tableName SET newsStatus='$status' WHERE newsId='$newsId'" ;
+		$this->db->query($sql);
+		return $sql;
+
+	}
 
 }

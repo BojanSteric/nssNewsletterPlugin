@@ -36,6 +36,12 @@ class Subscriber
         }
         return $items;
     }
+	public function getAllAjax(int $page, int $perPage): array
+	{
+		$data = $this->mapper->getAll($page, $perPage);
+
+		return $data;
+	}
 
     public function getSubscriberById(int $userId) : Model
     {

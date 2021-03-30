@@ -11,6 +11,7 @@ Text Domain: greenfriends
 use Newsletter\Setup\Activator;
 use Newsletter\Setup\Setup;
 use Newsletter\MenuPage\MenuPage;
+use Service\AdminAjax\AdminAjax;
 
 global $wpdb;
 define('NEWSLETTER_DIR_URI', plugin_dir_url(__DIR__ . '/newsletter/'));
@@ -27,6 +28,7 @@ $adminMenuPage = new MenuPage('Newsletter', 'Newsletter','manage_options',
 	'newsletter');
 $setup = new Setup($adminMenuPage);
 $setup->setup();
+$ajax= new AdminAjax();
 
 
 /*Widget i njegov js nece da radi u setup ????*/

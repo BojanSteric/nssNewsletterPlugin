@@ -31,6 +31,7 @@ class Newsletter
     {
         $items = [];
         $data = $this->mapper->getAll($page, $perPage);
+
         foreach ($data as $item) {
                 $items[] = $this->make($item);
         }

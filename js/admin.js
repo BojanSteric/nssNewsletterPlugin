@@ -49,12 +49,3 @@ jQuery( document ).ready(function(){
 });
 */
 
-    function onchangeNewsletterStatus(){
-        function onSelectChange() {
-            alert(status);
-        }
-
-          let status=jQuery(' .selectStatusNewsletterList ').closest('select').val();
-/*        let status= jQuery(".selectStatusNewsletterList").find("select").change(onSelectChange)*/
-        alert(status);
-    };
