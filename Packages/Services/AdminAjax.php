@@ -16,9 +16,7 @@ use Newsletter\Service\PostFormatter as NewsletterPostFormatter;
 class AdminAjax {
 
 	function __construct() {
-		add_action('wp_ajax_newsletterAll', [$this,'newsletterAll']);
-		add_action('wp_ajax_nopriv_newsletterAll', [$this,'newsletterAll']);
-		add_action('wp_ajax_newsletterUpdate', [$this,'newsletterUpdate']);
+		add_action('wp_ajax_allNewsletter', [$this,'allNewsletter']);;
 		add_action( 'wp_ajax_searchNewsletter', [$this,'searchNewsletter']);
 		add_action( 'wp_ajax_updateNewsletter', [$this,'updateNewsletter']);
 		add_action( 'wp_ajax_deleteNewsletter', [$this,'deleteNewsletter']);
@@ -28,7 +26,7 @@ class AdminAjax {
 
 
 
-public function newsletterAll(){
+public function allNewsletter(){
 
 	$page = $_GET['paginationPage'] ?? 1;
 	$newsletterMapper = new NewsletterMapper();

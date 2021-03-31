@@ -22,7 +22,7 @@
                                                 <tbody>
                                                 <tr>
                                                     <td valign="top"
-                                                        style="padding-top:0px;font-family:Helvetica neue,Helvetica,Arial,Verdana,sans-serif;color:#205081;font-size:20px;line-height:32px;text-align:left;font-weight:bold"
+                                                        style="padding-top:0px;font-family:Helvetica neue,Helvetica,Arial,Verdana,sans-serif;color:#2C5F2D;font-size:20px;line-height:32px;text-align:left;font-weight:bold"
                                                         align="left">
                                                         <span>Newsletter subscription</span>
                                                     </td>
@@ -70,7 +70,7 @@
                                     <td valign="top"
                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:20px;text-align:left;font-weight:none"
                                         align="left"><span>If you have recently subscribed to the CompanyNewsletter newsletter by e-mail:</span><br>
-                                        <span><a href="mailto:emailNewsletter"
+                                        <span><a href="mailto:emailNewsletter" style="color: #2C5F2D;"
                                                  target="_blank">emailNewsletter</a></span>
                                     </td>
                                 </tr>
@@ -95,7 +95,7 @@
                                             <tbody>
                                             <tr>
                                                 <td align="center" style="padding-bottom:20px;padding-top:20px"><a
-                                                            style="font-size:16px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;font-weight:none;color:#ffffff;text-decoration:none;background-color:#3572b0;border-top:11px solid #3572b0;border-bottom:11px solid #3572b0;border-left:20px solid #3572b0;border-right:20px solid #3572b0;border-radius:5px;display:inline-block"
+                                                            style="font-size:16px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;font-weight:none;color:#ffffff;text-decoration:none;background-color:#2C5F2D;border-top:11px solid #2C5F2D;border-bottom:11px solid #2C5F2D;border-left:20px solid #2C5F2D;border-right:20px solid #2C5F2D;border-radius:5px;display:inline-block"
                                                             href="link za prijavu"
                                                             target="_blank"
                                                             data-saferedirecturl="link za prijavu">Subscribe</a></td>

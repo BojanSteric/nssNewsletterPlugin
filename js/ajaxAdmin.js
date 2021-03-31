@@ -8,7 +8,7 @@ jQuery(document).ready(function($){
     all_record();
     function all_record(){
         var data = {
-            'action': 'newsletterAll',
+            'action': 'allNewsletter',
         };
 
         $.ajax({
