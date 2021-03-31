@@ -32,8 +32,11 @@ class Newsletter
     /**
      * @var string $templateName
      */
-    public $templateName
-    ;
+    public $templateName;
+    /**
+     * @var string $products
+     */
+    public $products;
 
     /**
      * Newsletter constructor.
@@ -44,6 +47,7 @@ class Newsletter
      * @param string $title
      * @param string|null $content
      * @param string|null $templateName
+     * @param string|null $products
      */
     public function __construct(
         int $id = null,
@@ -52,7 +56,8 @@ class Newsletter
         string $scheduledAt = null,
         string $title,
         string $content = null,
-        string $templateName = null
+	    string $templateName = null,
+        string $products = null
     ) {
         $this->id = $id;
         $this->status = $newsStatus;
@@ -60,7 +65,9 @@ class Newsletter
         $this->scheduledAt = $scheduledAt;
         $this->title = $title;
         $this->content = $content;
-        $this->templateNae = $templateName;
+        $this->templateName = $templateName;
+	    $this->products = $products;
+
     }
 
     /**
@@ -132,5 +139,12 @@ class Newsletter
     {
         return $this->templateName;
     }
+	/**
+	 * @return string
+	 */
+	public function getProducts(): ?string
+	{
+		return $this->products;
+	}
 
 }

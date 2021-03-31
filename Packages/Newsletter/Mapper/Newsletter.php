@@ -33,7 +33,8 @@ class Newsletter
             'title' => $model->getTitle(),
             'content' => $model->getContent(),
             'templateName'=> $model->getTemplateName(),
-        ],['%s', '%s', '%s', '%s', '%s', '%s']);
+            'products'=> $model->getProducts(),
+        ],['%s', '%s', '%s', '%s', '%s', '%s', '%s']);
         return $this->db->insert_id;
     }
 
@@ -47,7 +48,8 @@ class Newsletter
                 'title' => $model->getTitle(),
                 'content' => $model->getContent(),
                 'templateName'=> $model->getTemplateName(),
-            ],['newsId' => $model->getId()],['%s', '%s', '%s', '%s', '%s', '%s']);
+                'products'=> $model->getProducts(),
+            ],['newsId' => $model->getId()],['%s', '%s', '%s', '%s', '%s', '%s', '%s']);
     }
 
     public function delete(int $newsletterId): void
@@ -76,7 +78,7 @@ class Newsletter
     {
 	    $searchQuery = "";
 	    if($searchText != ''){
-		    $searchQuery = " and (newsStatus like '%".$searchText."%' or title like '%".$searchText."%' )";
+		    $searchQuery = " and (newsStatus like '%".$searchText."%' or title like '%".$searchText."%' or templateName like '%".$searchText."%' )";
 	    }
 	    $sql = "SELECT * FROM $this->tableName WHERE 1 $searchQuery;";
 	    return $this->db->get_results($sql, ARRAY_A);

@@ -65,6 +65,7 @@ jQuery(document).ready(function($){
             var newsId = response[i].newsId;
             let newsStatus = response[i].newsStatus;
             var title = response[i].title;
+            var templateName = response[i].templateName;
             var createdAt = response[i].createdAt;
             var scheduledAt = response[i].scheduledAt;
             switch(newsStatus) {
@@ -94,6 +95,7 @@ jQuery(document).ready(function($){
                 "                        <option value=\"complete\" class=\"complete\"  "+ dStat +">complete</option>\n" +
                 "                    </select></td>";
             tr += "<td class=\"col col-4\">"+ title +"</td>";
+            tr += "<td class=\"col col-4\">"+ templateName +"</td>";
             tr += "<td class=\"col col-5\">"+ createdAt +"</td>";
             tr += "<td class=\"col col-6\">"+ scheduledAt +"</td>";
 

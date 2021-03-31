@@ -12,6 +12,7 @@ class PostFormatter {
 		$data['title'] = (string)$postData['title'];
 		$data['content'] = (string)$postData['content'];
 		$data['templateName'] = (string)$postData['templateName'];
+		$data['products'] = (string)$postData['products'];
 		return $data;
 	}
 }

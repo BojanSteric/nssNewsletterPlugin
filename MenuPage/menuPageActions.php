@@ -102,10 +102,10 @@ switch ( $action ) {
 		$newsletterRepo->update( $data );
 		wp_redirect( admin_url() . '?page=newsletter&action=templates'  );
 		break;
-	case 'createTemplates':
+	case 'createNewsletters':
 		$data = NewsletterPostFormatter::formatDataNewsForm( $_POST );
 		$newsletterRepo->create( $data );
-		wp_redirect( admin_url() . '?page=newsletter&action=templates'  );
+		wp_redirect( admin_url() . '?page=newsletter&action=newsletters'  );
 		break;
 	case 'deleteTemplates':
 		if ( isset( $_GET['newsId'] ) ) {
@@ -114,8 +114,15 @@ switch ( $action ) {
 		echo '<p>Uspešno ste obrisali newsletter</p> <a  class="" href="'.admin_url() . '?page=newsletter&action=templates"  >Vrati se nazad</a>';
 		break;
 	case 'sendNewsForm':
+		$path    = NEWSLETTER_DIR . 'template/Mail/NewsTemplate';
+		$files = array_diff(scandir($path,1), array('.', '..'));
+		$fileItem=[];
+		foreach ($files as $file) {
+			$fileItem[] =str_replace(".php", "","$file");
+		}
 		$newsletterPage = 'template/newsletterSendForm.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
+
 		break;
 	case 'sendNewsToSubsc':
 		$to='bojansteric7@gmail.com';
