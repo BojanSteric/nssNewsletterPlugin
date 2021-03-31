@@ -48,21 +48,15 @@ class NewsletterWidget extends WP_Widget {
           
     
     public function subscribeToNewsletter(){
-        try{
-            $subscriberMapper = new SubMapper();
+        $subscriberMapper = new SubMapper();
 	    $subscriberRepo = new SubRepository($subscriberMapper);
 	    $request = $_POST['request'];
 	    $subscriberEmail = $_POST['email'];
 	    $data = SubscriberPostFormatter::formatDataNewSubscribers( $_POST );
-	    $subscriberRepo->create( $data );
-        $sendInvite= MailService::sendMailToNewSubscribers($subscriberEmail);
+        $subscriberRepo->create( $data );
+        $sendInvite = MailService::sendMailToNewSubscribers($subscriberEmail);
 	    $response ="You have successfully signed up for newsletter. Please go to email to confirmed";
 	    echo json_encode($response);
-	    
-        }catch(Exception $e){
-            $response = "some error ". $e->getMessage();
-            echo json_encode($response);
-        }
 	    wp_die();
     }
 

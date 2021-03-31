@@ -77,7 +77,7 @@ switch ( $action ) {
 
 	case 'templates':
 
-	$newsletter = $newsletterRepo->getAll($page, 20);
+		$newsletter = $newsletterRepo->getAll($page, 20);
 		$newsletterPage = 'template/newsletterTemplates.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;

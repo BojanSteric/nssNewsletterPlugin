@@ -27,6 +27,7 @@ class PostFormatter {
 		$data['updatedAt'] = (string)$postData['updatedAt'] ?? NULL;
 		$data['firstName'] = (string)$postData['firstName'] ?? NULL;
 		$data['lastName'] = (string)$postData['lastName'] ?? NULL;
+		$data['actionLink'] = md5('green-friends') . md5((string)$data['email'] . (string)strtotime($data['createdAt']));
 		return $data;
 	}
 }
