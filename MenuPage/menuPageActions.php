@@ -123,5 +123,4 @@ switch ( $action ) {
 		$message='neki tekst';
 		Service\MailFormater\MailFormater::sendNewsletter( array('to'=> $to, 'subject'=>$subject, 'message'=>$message ) );
 		break;
-
 }
