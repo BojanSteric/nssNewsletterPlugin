@@ -32,7 +32,8 @@ class Newsletter
             'scheduledAt' => $model->getDateScheduled(),
             'title' => $model->getTitle(),
             'content' => $model->getContent(),
-        ],['%s', '%s', '%s', '%s', '%s']);
+            'templateName'=> $model->getTemplateName(),
+        ],['%s', '%s', '%s', '%s', '%s', '%s']);
         return $this->db->insert_id;
     }
 
@@ -45,7 +46,8 @@ class Newsletter
                 'scheduledAt' => $model->getDateScheduled(),
                 'title' => $model->getTitle(),
                 'content' => $model->getContent(),
-            ],['newsId' => $model->getId()],['%s', '%s', '%s', '%s', '%s']);
+                'templateName'=> $model->getTemplateName(),
+            ],['newsId' => $model->getId()],['%s', '%s', '%s', '%s', '%s', '%s']);
     }
 
     public function delete(int $newsletterId): void

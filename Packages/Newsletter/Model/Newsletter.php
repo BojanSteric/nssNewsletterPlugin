@@ -29,7 +29,12 @@ class Newsletter
      * @var string $content
      */
     public $content;
-    
+    /**
+     * @var string $templateName
+     */
+    public $templateName
+    ;
+
     /**
      * Newsletter constructor.
      * @param int|null $id
@@ -38,6 +43,7 @@ class Newsletter
      * @param string|null $scheduledAt
      * @param string $title
      * @param string|null $content
+     * @param string|null $templateName
      */
     public function __construct(
         int $id = null,
@@ -45,7 +51,8 @@ class Newsletter
         string $createdAt = null,
         string $scheduledAt = null,
         string $title,
-        string $content = null
+        string $content = null,
+        string $templateName = null
     ) {
         $this->id = $id;
         $this->status = $newsStatus;
@@ -116,6 +123,13 @@ class Newsletter
     {
         return $this->content;
     }
-
+    
+    /**
+     * @return string
+     */
+    public function getTemplateName(): ?string
+    {
+        return $this->templateName;
+    }
 
 }

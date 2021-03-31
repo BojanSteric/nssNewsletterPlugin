@@ -30,11 +30,12 @@ class Subscriber
             'wpUserId' => $model->getWpUserId(),
             'email' => $model->getEmail(),
             'emailStatus' => $model->getEmailStatus(),
+            'actionLink' => $model->getActionLink(),
             'firstName' => $model->getFirstName(),
             'lastName' => $model->getLastName(),
             'createdAt' => $model->getDateCreated(),
             'updatedAt' => $model->getDateUpdated(),
-        ],['%d', '%s', '%s', '%s', '%s', '%s', '%s']);
+        ],['%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s']);
         return $this->db->insert_id;
     }
 
@@ -45,11 +46,12 @@ class Subscriber
                 'wpUserId' => $model->getWpUserId(),
                 'email' => $model->getEmail(),
                 'emailStatus' => $model->getEmailStatus(),
+                'actionLink' => $model->getActionLink(),
                 'firstName' => $model->getFirstName(),
                 'lastName' => $model->getLastName(),
                 'createdAt' => $model->getDateCreated(),
                 'updatedAt' => $model->getDateUpdated(),
-            ],['userId' => $model->getId()],['%d', '%s', '%s', '%s', '%s', '%s', '%s']);
+            ],['userId' => $model->getId()],['%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s']);
     }
 
     public function delete(int $subscriberId): void

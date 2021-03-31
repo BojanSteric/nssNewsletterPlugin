@@ -14,6 +14,7 @@ class PostFormatter {
 		$data['updatedAt'] = (string)$postData['updatedAt'];
 		$data['firstName'] = (string)$postData['firstName'];
         $data['lastName'] = (string)$postData['lastName'];
+		$data['actionLink'] = md5('green-friends') . md5((string)$data['email'] . (string)strtotime($data['createdAt']));
 		return $data;
 	}
 	public static function formatDataNewSubscribers($postData)

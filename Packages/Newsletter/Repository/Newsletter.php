@@ -61,6 +61,7 @@ class Newsletter
         $scheduledAt = null;
         $title = null;
         $content = null;
+        $templateName = null;
 
         if (isset($data['newsId'])){
             $newsId = $data['newsId'];
@@ -80,8 +81,11 @@ class Newsletter
         if (isset($data['content'])) {
             $content = $data['content'];
         }
+        if (isset($data['templateName'])) {
+            $templateName = $data['templateName'];
+        }
 
-        return new Model($newsId, $newsStatus, $createdAt, $scheduledAt, $title, $content);
+        return new Model($newsId, $newsStatus, $createdAt, $scheduledAt, $title, $content, $templateName);
     }
     
 

@@ -34,6 +34,7 @@ class Activator {
 		  `wpUserId` int(50) DEFAULT NULL,
 		  `email` varchar(30) NOT NULL,
 		  `emailStatus` varchar(20) NOT NULL,
+		  `actionLink` char(64) NOT NULL,
 		  `firstName` varchar(20) DEFAULT NULL,
 		  `lastName` varchar(20) DEFAULT NULL,
 		  `createdAt` datetime DEFAULT NULL,
@@ -58,6 +59,7 @@ class Activator {
 		  `scheduledAt` datetime DEFAULT NULL,
 		  `title` varchar(30) NOT NULL,
 		  `content` TEXT DEFAULT NULL,
+		  `templateName` varchar(25) DEFAULT NULL,
 		  PRIMARY KEY  (newsId)
 		) $charset_collate;";
 

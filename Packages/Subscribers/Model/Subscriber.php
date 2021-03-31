@@ -22,6 +22,10 @@ class Subscriber
      */
     private $emailStatus;
     /**
+     * @var string $actionLink
+     */
+    private $actionLink;
+    /**
      * @var string $firstName
      */
     private $firstName;
@@ -44,6 +48,7 @@ class Subscriber
      * @param int|null $wpUserId
      * @param string $email
      * @param string $emailStatus
+     * @param string $actionLink
      * @param string|null $firstName
      * @param string|null $lastName
      * @param string|null $createdAt
@@ -54,6 +59,7 @@ class Subscriber
         int $wpUserId = null,
         string $email,
         string $emailStatus,
+        string $actionLink,
         string $firstName = null,
         string $lastName = null,
         string $createdAt = null,
@@ -63,6 +69,7 @@ class Subscriber
         $this->wpUserId = $wpUserId;
         $this->email = $email;
         $this->emailStatus = $emailStatus;
+        $this->actionLink = $actionLink;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->createdAt = $createdAt;
@@ -99,6 +106,14 @@ class Subscriber
     public function getEmailStatus(): string
     {
         return $this->emailStatus;
+    }
+
+    /**
+     * @return string
+     */
+    public function getActionLink(): string
+    {
+        return $this->actionLink;
     }
 
     /**

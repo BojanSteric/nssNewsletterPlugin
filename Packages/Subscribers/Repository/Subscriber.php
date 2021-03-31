@@ -64,6 +64,7 @@ class Subscriber
         $wpUserId = null;
         $email = null;
         $emailStatus = null;
+        $actionLink = null;
         $firstName = null;
         $lastName = null;
         $createdAt = null;
@@ -93,8 +94,11 @@ class Subscriber
         if (isset($data['updatedAt'])) {
             $updatedAt = $data['updatedAt'];
         }
+        if (isset($data['actionLink'])) {
+            $actionLink = $data['actionLink'];
+        }
         
-        return new Model($userId, $wpUserId, $email, $emailStatus, $firstName, $lastName, $createdAt, $updatedAt);
+        return new Model($userId, $wpUserId, $email, $emailStatus, $actionLink, $firstName, $lastName, $createdAt, $updatedAt);
     }
     
 }
