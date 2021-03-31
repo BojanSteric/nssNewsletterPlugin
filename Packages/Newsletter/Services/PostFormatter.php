@@ -11,6 +11,7 @@ class PostFormatter {
 		$data['scheduledAt'] = (string)$postData['scheduledAt'];
 		$data['title'] = (string)$postData['title'];
 		$data['content'] = (string)$postData['content'];
+		$data['templateName'] = (string)$postData['templateName'];
 		return $data;
 	}
 }

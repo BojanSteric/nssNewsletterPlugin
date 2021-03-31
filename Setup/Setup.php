@@ -28,6 +28,7 @@ class Setup {
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueueAdminCss' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueueAdminJs' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueueWidgetJs' ] );
+		add_action('wp_enqueue_scripts', [$this, 'enqueueFrontJs']);
 		add_action( 'widgets_init', [ $this, 'gfRegisterWidgets' ] );
 		/*	add_action('admin_post_submit-form',  [$this,'prijavaForm']); // If the user is logged in
 			add_action('admin_post_nopriv_submit-form', [$this, 'prijavaForm']);*/
@@ -50,6 +51,12 @@ class Setup {
 	{
 
 	}
+	public function enqueueFrontJs()
+	{
+		wp_enqueue_script('newsletterJs', NEWSLETTER_DIR_URI . 'js/front.js', array('jquery'), '1', true);
+		wp_localize_script( 'newsletterJs', 'ajaxObject', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+	}
+
 	function gfRegisterWidgets(){
 		register_widget('NewsletterWidget');
 	}

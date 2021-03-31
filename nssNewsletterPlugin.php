@@ -33,6 +33,3 @@ $ajax= new AdminAjax();
 
 /*Widget i njegov js nece da radi u setup ????*/
 require_once(plugin_dir_path(__FILE__) . '/newsletterWidget/NewsletterWidget.php');
-wp_enqueue_script('newsletterJs', NEWSLETTER_DIR_URI . 'js/front.js', array('jquery'), '1', true);
-wp_localize_script( 'newsletterJs', 'ajaxObject', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-

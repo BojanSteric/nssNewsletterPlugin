@@ -60,6 +60,7 @@ class Newsletter
         $this->scheduledAt = $scheduledAt;
         $this->title = $title;
         $this->content = $content;
+        $this->templateNae = $templateName;
     }
 
     /**

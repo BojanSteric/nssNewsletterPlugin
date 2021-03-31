@@ -12,8 +12,10 @@
                 success: function(data) {
                     alert(data);
                 },
-                error: function() {
-                   alert('Dogodila se neočekivana greška');
+                error: function(data) {
+                   console.log(data);
+                    alert('Dogodila se neočekivana greška ');
+
                 },
             });
             event.preventDefault();
