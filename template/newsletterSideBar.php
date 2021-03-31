@@ -21,7 +21,7 @@ switch ($status){
 		$d='active';
 	break;
 	case 'sendNewsForm':
-		$d='active';
+		$c='active';
 		break;
     }
 }else {$a='active';}
@@ -31,10 +31,9 @@ switch ($status){
     <a  class="sidenavAdminCategorieslist <?php echo $b;?>"href="<?=admin_url() . '?page=newsletter&action=newsletters'?>"  >Newsletters</a>
     <a  class="sidenavAdminCategorieslist <?php echo $a;?>"href="<?=admin_url() . '?page=newsletter&action=subscribers'?>"  >Subscribers</a>
     <a  class="sidenavAdminCategorieslist <?php echo $e;?>"href="<?=admin_url() . '?page=newsletter&action=templates'?>"  >Templates</a>
-    <a  class="sidenavAdminCategorieslist <?php echo $d;?>"href="<?=admin_url() . '?page=newsletter&action=sendNewsForm'?>"  >Send</a>
 
 <!--<a  class="sidenavAdminCategorieslist <?php /*echo $d;*/?>"href="<?/*=admin_url() . '?page=newsletter&action=editSubscribers&subaction=create'*/?>"  >Create Subscriber</a>-->
-    <a  class="sidenavAdminCategorieslist <?php echo $c;?>"href="<?=admin_url() . '?page=newsletter&action=editNewsletters&subaction=create'?>"  >Create Newsletter</a>
+    <a  class="sidenavAdminCategorieslist <?php echo $c;?>"href="<?=admin_url() . '?page=newsletter&action=sendNewsForm'?>"  >Create Newsletter</a>
     <a  class="sidenavAdminCategorieslist <?php echo $d;?>"href="<?=admin_url() . '?page=newsletter&action=editSubscribers&subaction=create'?>"  >Create Subscriber</a>
 
 
