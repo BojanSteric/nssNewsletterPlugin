@@ -51,6 +51,11 @@ class Subscriber
     {
         return $this->make($this->mapper->getSubscriberById($userId));
     }
+    
+    public function getSubscriberByEmail(string $email) : Model
+    {
+        return $this->make($this->mapper->getSubscriberByEmail($email));
+    }
 
     public function update($data): void
     {

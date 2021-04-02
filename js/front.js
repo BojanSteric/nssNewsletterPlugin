@@ -13,7 +13,6 @@
                     alert(data);
                 },
                 error: function(data) {
-                   console.log(data);
                     alert('Dogodila se neočekivana greška ');
 
                 },

@@ -5,6 +5,8 @@ use Subscriber\Service\PostFormatter as SubscriberPostFormatter;
 
 use Service\MailFormater\MailFormater as MailService;
 
+use function Subscriber\Service\emailHash;
+
 // The widget class
 class NewsletterWidget extends WP_Widget {
     
@@ -56,7 +58,8 @@ class NewsletterWidget extends WP_Widget {
         $subscriber = $subscriberRepo->create( $data );
         $response ="You already signed in!";       
         if ($subscriber) {
-            $sendInvite = MailService::sendMailToNewSubscribers($subscriberEmail);
+            $subscriberActionLink = admin_url( 'admin-ajax.php' ) . '/action=confirmation&data=' . $subscriberRepo->getSubscriberByEmail($subscriberEmail)->getActionLink();
+            $sendInvite = MailService::sendMailToNewSubscribers($subscriberEmail, $subscriberActionLink);
             $response ="You have successfully signed up for newsletter. Please go to email to confirmed";       
         }
 

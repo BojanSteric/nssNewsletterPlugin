@@ -1,4 +1,5 @@
 <?php
+
 ?>
 <div>
     <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
@@ -96,9 +97,9 @@
                                             <tr>
                                                 <td align="center" style="padding-bottom:20px;padding-top:20px"><a
                                                             style="font-size:16px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;font-weight:none;color:#ffffff;text-decoration:none;background-color:#2C5F2D;border-top:11px solid #2C5F2D;border-bottom:11px solid #2C5F2D;border-left:20px solid #2C5F2D;border-right:20px solid #2C5F2D;border-radius:5px;display:inline-block"
-                                                            href="link za prijavu"
+                                                            href="confirmLink"
                                                             target="_blank"
-                                                            data-saferedirecturl="link za prijavu">Subscribe</a></td>
+                                                            data-saferedirecturl="confirmLink">Subscribe</a></td>
                                             </tr>
                                             </tbody>
                                         </table>

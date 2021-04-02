@@ -39,19 +39,19 @@ class MailFormater {
 		$transport->setOptions($options);
 		$transport->send($message);
 	}
-	public static function sendMailToNewSubscribers($postData)
+	public static function sendMailToNewSubscribers($email, $actionLink)
 	{
 		$company='NewsletterTeam';
-		$to=$postData;
+		$to=$email;
 		$subject='Newsletter Subscribe submit';
-
+		
 		$myfile = fopen(NEWSLETTER_DIR . 'template/Mail/newSubscriber.php', "r") or die("Unable to open file!");
 		$message= fread($myfile,filesize(NEWSLETTER_DIR . 'template/Mail/newSubscriber.php'));
-		$defaulttext = array("CompanyNewsletter", "emailNewsletter");
-		$newText   = array($company, $to);
-		$newmesage=str_replace($defaulttext, $newText,$message);
+		$defaulttext = array("CompanyNewsletter", "emailNewsletter", "confirmLink");
+		$newText   = array($company, $to, $actionLink);
+		$newmesage = str_replace($defaulttext, $newText, $message);
 		fclose($myfile);
 
-		self::setupMail($to, $subject,$newmesage );
+		self::setupMail($to, $subject, $newmesage );
 	}
 }
