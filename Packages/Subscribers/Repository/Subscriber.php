@@ -24,7 +24,11 @@ class Subscriber
 
     public function create($data): ?int
     {
-        return $this->mapper->insert($this->make($data));
+        if($this->mapper->getSubscriberByEmail($data['email']) === null)
+        {
+            return $this->mapper->insert($this->make($data));
+        }
+        return null;
     }
 
     public function getAll(int $page, int $perPage): array

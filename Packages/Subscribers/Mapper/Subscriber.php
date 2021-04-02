@@ -77,4 +77,10 @@ class Subscriber
         return $this->db->get_results($sql, ARRAY_A)[0];
     }
 
+    public function getSubscriberByEmail(string $email)
+    {
+        $sql = "SELECT * FROM $this->tableName WHERE `email` = '$email';";
+        return $this->db->get_results($sql, ARRAY_A)[0];
+    }
+
 }

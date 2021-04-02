@@ -14,7 +14,7 @@ class PostFormatter {
 		$data['updatedAt'] = (string)$postData['updatedAt'];
 		$data['firstName'] = (string)$postData['firstName'];
         $data['lastName'] = (string)$postData['lastName'];
-		$data['actionLink'] = md5('green-friends') . md5((string)$data['email'] . (string)strtotime($data['createdAt']));
+		$data['actionLink'] = emailHash($postData['email']);
 		return $data;
 	}
 	public static function formatDataNewSubscribers($postData)
@@ -27,7 +27,12 @@ class PostFormatter {
 		$data['updatedAt'] = (string)$postData['updatedAt'] ?? NULL;
 		$data['firstName'] = (string)$postData['firstName'] ?? NULL;
 		$data['lastName'] = (string)$postData['lastName'] ?? NULL;
-		$data['actionLink'] = md5('green-friends') . md5((string)$data['email'] . (string)strtotime($data['createdAt']));
+		$data['actionLink'] = emailHash($postData['email']);
 		return $data;
 	}
+}
+
+function emailHash($email)
+{
+	return password_hash($email, PASSWORD_BCRYPT);
 }
