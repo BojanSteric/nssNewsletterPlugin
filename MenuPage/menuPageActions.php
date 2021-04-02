@@ -76,32 +76,59 @@ switch ( $action ) {
 		break;
 
 	case 'templates':
-
-		$newsletter = $newsletterRepo->getAll($page, 20);
+		$path    = NEWSLETTER_DIR . 'template/Mail/NewsTemplate';
+		$files = array_diff(scandir($path,1), array('.', '..'));
+		$fileItem=[];
+		$fileDate=[];
+		foreach($files as $file){
+			$fileItem[] = str_replace(".php", "","$file");
+			$fileDate[] = date ("Y-m-d H:i:s", filemtime(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$file));
+		}
 		$newsletterPage = 'template/newsletterTemplates.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
 
 	case 'editTemplates':
-		if (isset($_GET['newsId'])) {
-			$newsletter = $newsletterRepo->getNewsletterById((int)$_GET['newsId']);
-			$newsId = $newsletter->getId();
-			$title = $newsletter->getTitle();
-			$newsStatus = $newsletter->getStatus();
-			$createdAt = $newsletter->getDateCreated();
-			$scheduledAt = $newsletter->getDateScheduled();
-			$content = $newsletter->getContent();
+		if (isset($_GET['templateName'])) {
+			$templateName=$_GET['templateName'];
 		}
-		$scheduledAt= date('Y-m-d H:i:s');
 		$newsletterPage = 'template/newsletterTemplateForm.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
 	case 'updateTemplates':
-		$data = NewsletterPostFormatter::formatDataNewsForm( $_POST );
-		$data['newsId'] = (int) $_GET['newsId'];
-		$newsletterRepo->update( $data );
+		/*$file=$_POST['file'];
+		$templateName=$_POST['nameTemplate'];
+		$currentTemplate=$_POST['currentTemplate'];
+		$upload=file_get_contents($_FILES['file']['tmp_name']);
+
+		if ( ! function_exists( 'wp_handle_upload' ) )
+			require_once( ABSPATH . 'wp-admin/includes/file.php' );
+		$uploadedfile = $_FILES['file'];
+		$upload_overrides = array( 'test_form' => false );
+		$movefile = wp_handle_upload( $uploadedfile, $upload_overrides );
+		if ( $movefile ) {
+			echo "File is valid, and was successfully uploaded.\n";
+			WP_Filesystem();
+			$unzip = unzip_file(wp_upload_dir()['path'].'/dakadnesto.zip', NEWSLETTER_DIR . 'template/Mail/NewsTemplate/');
+			$zipname=explode('.',$_FILES['file']['name'])[0];
+			rename (NEWSLETTER_DIR . 'template/Mail/NewsTemplate/dakad.php',NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.php');
+		} else {
+			echo "Possible file upload attack!\n";
+		}
+		if(isset($_POST['file'])){
+			if(file_exists(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$currentTemplate.'.php')){
+				unlink(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$currentTemplate.'.php');
+			}
+			$handle=fopen(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.php','w');
+			fwrite($handle,file_get_contents($_FILES['file']['tmp_name']));
+			fclose($handle);
+		}else{
+			if($templateName!=$currentTemplate){
+				rename(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$currentTemplate.'.php',NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.php');
+			}
+		}
 		wp_redirect( admin_url() . '?page=newsletter&action=templates'  );
-		break;
+		break;*/
 	case 'createNewsletters':
 		$data = NewsletterPostFormatter::formatDataNewsForm( $_POST );
 		$newsletterRepo->create( $data );
@@ -113,14 +140,14 @@ switch ( $action ) {
 		}
 		echo '<p>Uspešno ste obrisali newsletter</p> <a  class="" href="'.admin_url() . '?page=newsletter&action=templates"  >Vrati se nazad</a>';
 		break;
-	case 'sendNewsForm':
+	case 'editNewsletters':
 		$path    = NEWSLETTER_DIR . 'template/Mail/NewsTemplate';
 		$files = array_diff(scandir($path,1), array('.', '..'));
 		$fileItem=[];
 		foreach ($files as $file) {
 			$fileItem[] =str_replace(".php", "","$file");
 		}
-		$newsletterPage = 'template/newsletterSendForm.php';
+		$newsletterPage = 'template/newsletterFormNews.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 
 		break;

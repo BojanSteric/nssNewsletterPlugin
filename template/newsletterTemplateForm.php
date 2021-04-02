@@ -18,32 +18,21 @@
 			echo "Edit Template";
 			break;
 	}};
+	/** @var MenuPage\menuPageAction.php $subscriber */
     ?></h3>
 
 <div class="newsletterForm">
 
-	<form method="POST" action="<?php if(isset($_GET['subaction'])){ echo '?page=newsletter&action=createTemplates&noheader=true'; }
-	else{echo '?page=newsletter&action=updateTemplates&newsId=' . $newsId.'&noheader=true';}; ?>">
-		<label for="title">Title</label>
-		<input type="text" id="title" name="title" placeholder="Title.." value="<?= $title ?? ''?>">
+	<form method="POST" enctype="multipart/form-data" action="<?php if(isset($_GET['subaction'])){ echo '?page=newsletter&action=createTemplates&noheader=true'; }
+	else{echo '?page=newsletter&action=updateTemplates&templateName=' .$templateName.'&noheader=true';}; ?>">
+		<label for="nameTemplate">Name For Temaplate</label>
+		<input type="text" id="nameTemplate" name="nameTemplate" placeholder="Name Temaplate.." value="<?= $templateName ?? ''?>">
+        <input type="text" id="currentTemplate" name="currentTemplate"  value="<?= $templateName ?>" hidden>
+        <label for="file">Select file:</label>
+        <input type="file" id="file" name="file" >
 
-		<label for="newStatus">Status</label>
-		<select type=select id="newStatus" name="newsStatus" value="<?=$newsStatus ?? ''?>">
-			<option value="active">active</option>
-			<option value="pending">pending</option>
-			<option value="paused">paused</option>
-			<option value="complite">complite</option>
-		</select>
-		<label for="Sceduled">Sceduled at</label>
-		<input type="datetime-local" id="Sceduled" name="scheduledAt" value="<?= date("Y-m-d\TH:i:s", strtotime($scheduledAt)) ?? date("Y-m-d\TH:i:s",$scheduledAt )?>">
-        <input type=" hidden" id="created" name="createdAt"  value="<?= $createdAt ?? date("Y-m-d H:i:s") ?>" hidden >
-
-		<label for="content">Content</label>
-		<textarea id="content" name="content" placeholder="Write something.." style="height:200px"><?= $content ?? ''?></textarea>
-
-		<input type="submit" value="Submit">
+		<input type="submit" value="Submit" style="display: block; margin-top: 20px; ">
 	</form>
-
 
 </div>
 
