@@ -59,7 +59,6 @@ class MailFormater {
 		$email="icefyre90@gmail.com";
 		$subject="Nesto Pokusavamo da napravimo";
 		$text=$text;
-		var_dump($text);s
 		self::setupMail($email, $subject, $text );
 
 	}
