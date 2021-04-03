@@ -8,67 +8,181 @@
             <tr>
                 <td style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:14px;color:#666666;width:100%;border-style:none" valign="top" bgcolor="#ffffff" width="100%">
                     <div style="text-align:left;background-color:#fff">
-                        <div style="text-align:center">
-                            <img style="width:680px;height:28px" src="https://ci4.googleusercontent.com/proxy/BKSAiQXsFmPcmvMfisDZHMc-34WTC6pfYttQxfFx7_MLiXfiyLldbVLx5mQyR4jQ9KXmfJVX-CKtFeBES7mcVU28oSu4gqA8Ij3vkwyidvg=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/02/26/31/1.jpg" class="CToWUd"></div>
-                        <div style="text-align:center">
-                            <a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL3Bvc3RlbGppbmUtaS1qYXN0dWNpL2Fyby1qYXN0dWNpLTYweDgwLXNldC1vZC0yLWtvbWFkYS87OzQ0N2FjZDMyZTJhYzIzZDg0YmRlYjkxNWE2YWE1ZTMz" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL3Bvc3RlbGppbmUtaS1qYXN0dWNpL2Fyby1qYXN0dWNpLTYweDgwLXNldC1vZC0yLWtvbWFkYS87OzQ0N2FjZDMyZTJhYzIzZDg0YmRlYjkxNWE2YWE1ZTMz&amp;source=gmail&amp;ust=1617472194263000&amp;usg=AFQjCNFkP4DuAf0_Vss6Tpd2Y_ZpGS_pSg">
-                                <img style="width:680px;height:300px" src="https://ci5.googleusercontent.com/proxy/fShYo-nJ1zomDV4ToSkaSHTA0ke0bqoeqwQyyf6Zi_Yclm1KRt0v_xeTy3BJIoTAFq4LIKwNf-allmvJ56n3rkdE5xb1kaGiRzb2Xn-KFLcYafQb98LSjxRkKcSnuQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/04/velika_levo_007.jpg" class="CToWUd"></a></div>
-                        <div style="text-align:center">
-                            <img style="width:680px;height:28px" src="https://ci4.googleusercontent.com/proxy/BKSAiQXsFmPcmvMfisDZHMc-34WTC6pfYttQxfFx7_MLiXfiyLldbVLx5mQyR4jQ9KXmfJVX-CKtFeBES7mcVU28oSu4gqA8Ij3vkwyidvg=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/02/26/31/1.jpg" class="CToWUd"></div>
-                        <div style="text-align:center">
-                            <a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjslMjBodHRwczovL25vbnN0b3BzaG9wLnJzL3Bvc3RlbGppbmUtaS1qYXN0dWNpL3RhcnJpbmd0b24taG91c2UtbWlrcm9mLWR1Ymwtam9yZ2FuLTIwMHgyMDAtY20vOzs2M2ZkZDM2NzA5MmJhMjgyODkzMzQyMmFmMWYyN2UyMQ%3D%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjslMjBodHRwczovL25vbnN0b3BzaG9wLnJzL3Bvc3RlbGppbmUtaS1qYXN0dWNpL3RhcnJpbmd0b24taG91c2UtbWlrcm9mLWR1Ymwtam9yZ2FuLTIwMHgyMDAtY20vOzs2M2ZkZDM2NzA5MmJhMjgyODkzMzQyMmFmMWYyN2UyMQ%253D%253D&amp;source=gmail&amp;ust=1617472194263000&amp;usg=AFQjCNExfk0pLcQTmwA0n0f4DBnPNB8umw">
-                                <img style="width:681px;height:299px" src="https://ci6.googleusercontent.com/proxy/6B4dyFsc73Fk_a8xLGTMlp7fwBH6Id9CdOqiHgggrLQIgmGfZkwBmEA5u5kI-DwfkB7JGbl8sohcsZ-FMyePz16JA2oZkwV6CY24w0hRn1fgISvCuoIdFf_TIb6KY_o=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/17/velika_levo_006b.jpg" class="CToWUd"></a></div>
-                        <div style="text-align:center">
-                            <img style="width:680px;height:28px" src="https://ci4.googleusercontent.com/proxy/BKSAiQXsFmPcmvMfisDZHMc-34WTC6pfYttQxfFx7_MLiXfiyLldbVLx5mQyR4jQ9KXmfJVX-CKtFeBES7mcVU28oSu4gqA8Ij3vkwyidvg=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/02/26/31/1.jpg" class="CToWUd"></div>
-                        <div style="text-align:center">
-                            <a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2Fwc29yYmVyaS12bGFnZS1pLWRvcHVuc2tlLXRhYmxldGUvZ29yZW5qZS1vdmxheml2YWMtdmF6ZHVoYS1oLTQ1LXcvOztiYmNkMzlmZWEyM2FkZmRlZjFjZWJlMmNlYWIzMDBiMw%3D%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2Fwc29yYmVyaS12bGFnZS1pLWRvcHVuc2tlLXRhYmxldGUvZ29yZW5qZS1vdmxheml2YWMtdmF6ZHVoYS1oLTQ1LXcvOztiYmNkMzlmZWEyM2FkZmRlZjFjZWJlMmNlYWIzMDBiMw%253D%253D&amp;source=gmail&amp;ust=1617472194263000&amp;usg=AFQjCNF_1pt_JHGNpP17MKaU9Q8F9Mk1ag">
-                                <img style="width:680px;height:300px" src="https://ci5.googleusercontent.com/proxy/q5AvLGthFSE5w_glugVmgQ5n-ZIQKyzW3du8WtpMgAAMbQwEyvU9rpUuVjyJKiTrNxGjOKOG9Hbn6EL84Z2QNX0dBnVDlVIN8Gyv_PFJvYt1LSS-bfQmSo5Krh8fLw=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/11/velika_levo_001.jpg" class="CToWUd"></a></div>
-                        <div style="text-align:center">
-                            <img style="width:680px;height:28px" src="https://ci4.googleusercontent.com/proxy/BKSAiQXsFmPcmvMfisDZHMc-34WTC6pfYttQxfFx7_MLiXfiyLldbVLx5mQyR4jQ9KXmfJVX-CKtFeBES7mcVU28oSu4gqA8Ij3vkwyidvg=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/02/26/31/1.jpg" class="CToWUd"></div>
+                        <div style="padding: 0 20px 0 20px;"><p><hr style=" margin-top: 10px; margin-bottom: 10px;">
+                            <a href="" style="text-decoration: none;">
+                                <div style="width:680px;height:300px; display: flex;  ">
+                                    <div style="width:350px; height:290px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
+                                        <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                    </div>
+                                    <div style="width:310px; height:290px; display: block-flex;   margin-top: 5px; margin-left: 5px;">
+                                        <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
+                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali </p>
+                                            <div style="display: flex; margin-left: 30px;">
+                                                <div style="display: inline-flex; min-width: 180px; min-height: 50px;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
+                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                </div>
+                                                <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
+                                                </div>
+                                            </div>
+                                        <p style="font-size: 13px; text-align: right; padding-right: 5px; align-items:flex-end; color: black; font-weight: bold; ">Saznaj više ></p>
+                                    </div>
+                                </div>
+                            </a><span style="font-size:medium"><hr style=" margin-top: 10px; margin-bottom: 10px;"></span></p>
+                        </div>
+
+                        <div style="padding: 0 20px 0 20px;">
+                            <a href="" style="text-decoration: none;">
+                                <div style="width:680px;height:300px; display: flex;  ">
+                                    
+                                    <div style="width:310px; height:290px; display: block-flex;    margin-top: 5px; margin-left: 5px;">
+                                        <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
+                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali </p>
+                                            <div style="display: flex; margin-left: 30px;">
+                                                <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
+                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                </div>
+                                                <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
+                                                </div>
+                                            </div>
+                                        <p style="font-size: 13px; text-align: right; padding-right: 5px; align-items:flex-end; font-weight: bold; color: black;">Saznaj više ></p>
+                                    </div>
+                                    <div style="width:350px; height:290px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
+                                        <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                    </div>
+                                </div>
+                            </a><span style="font-size:medium"></span>
+                        </div>
+                        <div style="padding: 0 20px 0 20px;"><p><hr style=" margin-top: 10px; margin-bottom: 10px;">
+                            <a href="" style="text-decoration: none;">
+                                <div style="width:680px;height:300px; display: flex;  ">
+                                    <div style="width:350px; height:290px; display: inline-flex; margin-top: 5px; margin-left: 5px;">
+                                        <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                    </div>
+                                    <div style="width:310px; height:290px; display: block-flex;   margin-top: 5px; margin-left: 5px;">
+                                        <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
+                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali </p>
+                                            <div style="display: flex; margin-left: 30px;">
+                                                <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
+                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                </div>
+                                                <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
+                                                </div>
+                                            </div>
+                                        <p style="font-size: 13px; text-align: right; padding-right: 5px; align-items:flex-end; color: black; font-weight: bold; ">Saznaj više ></p>
+                                    </div>
+                                </div>
+                            </a>
+                            </p>
+                        </div>
                         <div style="padding:10px 20px 20px 20px;background-color:#fff;line-height:18px">
                             <table style="border-collapse:collapse;width:100%" border="1">
                                 <tbody>
                                 <tr>
-                                    <td style="width:50%;border-color:#000000;border-style:solid" scope="col"><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL3Rvc3RlcmktaS1hcGFyYXRpLXphLXNlbmR2aWNlL2dvcmVuamUtdDExMDBjbGktdG9zdGVyLzs7ZjBjYzdhYTRjMzhiNGI0MzRjY2UwMDhlMzIyNzVlZmE%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL3Rvc3RlcmktaS1hcGFyYXRpLXphLXNlbmR2aWNlL2dvcmVuamUtdDExMDBjbGktdG9zdGVyLzs7ZjBjYzdhYTRjMzhiNGI0MzRjY2UwMDhlMzIyNzVlZmE%253D&amp;source=gmail&amp;ust=1617472194263000&amp;usg=AFQjCNFuYythjIMd4FREggc5waRwVXnZGA">
-                                            <img style="width:324px;height:500px" src="https://ci6.googleusercontent.com/proxy/vfkSx87H_T3kk59y3M49HmzyUkx711KKT9qwwLhmpAeqzimTyEbKBQFDxF-77YTPSAFBnL85LETJrk40mNVCarLx10IGYF6O2e2z4bLUT79fFw=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/07/001.jpg" class="CToWUd"></a></td>
-                                    <td style="width:50%;border-style:solid;border-color:#000000"><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2t1dmFsYS16YS12b2R1L2dvcmVuamUtY2xhc3NpY28tY29sbGVjdGlvbi1rZXRsZXItay0xNy1jbGkvOztiNzRlZWU1MjJkMzc1Nzk4NTRkMDE3ZTlkMWI5ZjMxMA%3D%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2t1dmFsYS16YS12b2R1L2dvcmVuamUtY2xhc3NpY28tY29sbGVjdGlvbi1rZXRsZXItay0xNy1jbGkvOztiNzRlZWU1MjJkMzc1Nzk4NTRkMDE3ZTlkMWI5ZjMxMA%253D%253D&amp;source=gmail&amp;ust=1617472194263000&amp;usg=AFQjCNHrYXlu89gVWXMsMRY9PBmvM0ApkA">
-                                            <img style="width:324px;height:500px" src="https://ci4.googleusercontent.com/proxy/cFs4wTc1dKpfrPxWYpBsruGHk-O3bn1hDKqXGEydiZ5ozKeR3qa4odqZfSiNTiDYXrQzJp2q5W2OqbDSQ8xwIOWJM_cBI2kHQsEFuNXR9LVKDw=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/07/002.jpg" class="CToWUd"></a></td>
+                                    <td style="width:50%;border-color:#000000;border-style:solid" scope="col">
+                                        <a href=""  style="text-decoration: none;">
+                                            <div style="width:330px; height:300px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
+                                                <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                            </div>
+                                            <div>
+                                                <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
+                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px;  font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali  dwd wdwdwdwdw wd wd wd</p>
+                                            </div>
+                                            <div style="display: flex; margin-left: 30px;">
+                                                <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
+                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                </div>
+                                                <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
+                                                </div>
+                                            </div>
+                                            <p style="font-size: 13px; text-align: right; padding-right: 5px; margin-top: 0px; align-items:flex-end; color: black; font-weight: bold; ">Saznaj više ></p>
+                                        </a>
+                                    </td>
+                                    <td style="width:50%;border-color:#000000;border-style:solid" scope="col">
+                                        <a href=""  style="text-decoration: none;">
+                                            <div style="width:330px; height:300px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
+                                                <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                            </div>
+                                            <div>
+                                                <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
+                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px; font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali  dwd wdwdwdwdw wd wd wd</p>
+                                            </div>
+                                            <div style="display: flex; margin-left: 30px;">
+                                                <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
+                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                </div>
+                                                <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
+                                                </div>
+                                            </div>
+                                            <p style="font-size: 13px; text-align: right; padding-right: 5px; margin-top: 0px; align-items:flex-end; color: black; font-weight: bold; ">Saznaj više ></p>
+                                        </a>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td style="width:50%;border-color:#000000;border-style:solid"><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2JsZW5kZXJpLXNva292bmljaS1pLXNlY2thbGljZS9hcmlldGUtYXBhcmF0LXphLWNpdHJ1c2UtYXI0MTNiZy1iZXovOztjNmY4NTgzNzFjYTZkMzZkODcxNzhkODBkMWYxOGU0Yg%3D%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2JsZW5kZXJpLXNva292bmljaS1pLXNlY2thbGljZS9hcmlldGUtYXBhcmF0LXphLWNpdHJ1c2UtYXI0MTNiZy1iZXovOztjNmY4NTgzNzFjYTZkMzZkODcxNzhkODBkMWYxOGU0Yg%253D%253D&amp;source=gmail&amp;ust=1617472194263000&amp;usg=AFQjCNHeRxrSfvhH6KgyM2PAfV0LHMajXQ">
-                                            <img style="width:324px;height:500px" src="https://ci6.googleusercontent.com/proxy/QF8sjf4NTpKz7w-ZSptxc2CDuq4YNTEFmWxg27-pItLgMG7kveL-wyKxj8Fa_HsPnsca1XjESDG9oH7bHjXAr8T68nFivo5o0OwvghZoAZXVtQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/08/014.jpg" class="CToWUd"></a></td>
-                                    <td style="width:50%;border-style:solid;border-color:#000000"><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL21pa3NlcmkvY29sb3NzdXMtbWlrc2VyLXphLW5lcy1rYWZ1LXNhLXBvc3RvbGplbS1jc3MtNTQxN2IvOztlYmMzMzc4OTBiYTg5YWFlNTRlNDY3Yjk1Y2M1NDJiOQ%3D%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL21pa3NlcmkvY29sb3NzdXMtbWlrc2VyLXphLW5lcy1rYWZ1LXNhLXBvc3RvbGplbS1jc3MtNTQxN2IvOztlYmMzMzc4OTBiYTg5YWFlNTRlNDY3Yjk1Y2M1NDJiOQ%253D%253D&amp;source=gmail&amp;ust=1617472194264000&amp;usg=AFQjCNEAPwc8Jo2pHTKClBPUUqKLK6MOHw">
-                                            <img style="width:324px;height:500px" src="https://ci4.googleusercontent.com/proxy/XL1Foix1SSVf-YymMFfqvU1RCo8SrR9Dxl4kO4QecffilCn5tus4cSBur4tRVIuWNdJzmbj5MrbKovTHuG-aPMLVBkXsN7YntVxbe0yvgcLM6w=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/08/010.jpg" class="CToWUd"></a></td>
+                                    <td style="width:50%;border-color:#000000;border-style:solid" scope="col">
+                                        <a href=""  style="text-decoration: none;">
+                                            <div style="width:330px; height:300px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
+                                                <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                            </div>
+                                            <div>
+                                                <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
+                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px; font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali  dwd wdwdwdwdw wd wd wd</p>
+                                            </div>
+                                            <div style="display: flex; margin-left: 30px;">
+                                                <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
+                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                </div>
+                                                <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
+                                                </div>
+                                            </div>
+                                            <p style="font-size: 13px; text-align: right; padding-right: 5px; margin-top: 0px; align-items:flex-end; color: black; font-weight: bold; ">Saznaj više ></p>
+                                        </a>
+                                    </td>
+                                   <td style="width:50%;border-color:#000000;border-style:solid" scope="col">
+                                        <a href=""  style="text-decoration: none;">
+                                            <div style="width:330px; height:300px; display: inline-flex; margin-top: 5px; margin-left: 5px;">
+                                                <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                            </div>
+                                            <div>
+                                                <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
+                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px; font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali  dwd wdwdwdwdw wd wd wd</p>
+                                            </div>
+                                            <div style="display: flex; margin-left: 30px;">
+                                                <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
+                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                </div>
+                                                <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
+                                                </div>
+                                            </div>
+                                            <p style="font-size: 13px; text-align: right; padding-right: 5px; margin-top: 0px; align-items:flex-end; color: black; font-weight: bold; ">Saznaj više ></p>
+                                        </a>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
-                            <p><img style="width:680px;height:28px" src="https://ci4.googleusercontent.com/proxy/BKSAiQXsFmPcmvMfisDZHMc-34WTC6pfYttQxfFx7_MLiXfiyLldbVLx5mQyR4jQ9KXmfJVX-CKtFeBES7mcVU28oSu4gqA8Ij3vkwyidvg=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/02/26/31/1.jpg" class="CToWUd"></p>
-                            <p><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2JsZW5kZXJpLXNva292bmljaS1pLXNlY2thbGljZS9ob21lLXNlY2thbGljYS1zYS1zdGFrbGVub20tcG9zdWRvbS1oZy1hcDEzLzs7YzEwYmRkNDIxMjg3Y2E2ZTI5YTk5NTU0OTc3YTZmZTc%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2JsZW5kZXJpLXNva292bmljaS1pLXNlY2thbGljZS9ob21lLXNlY2thbGljYS1zYS1zdGFrbGVub20tcG9zdWRvbS1oZy1hcDEzLzs7YzEwYmRkNDIxMjg3Y2E2ZTI5YTk5NTU0OTc3YTZmZTc%253D&amp;source=gmail&amp;ust=1617472194264000&amp;usg=AFQjCNED6RMhgNnPLDwsyxoMKlyLMZxUrQ">
-                                    <img style="width:680px;height:300px" src="https://ci5.googleusercontent.com/proxy/2kg5M-aapipqr9pOl7Ox51E2tyLiS6GwRNjzOTzY7lf3fjcd5ox7-gV2NWP0AwPBJWYfJAJE8VlTzk64CWrdtTC9WMHxlxosF6yAlyUntR_JLkI6oIqq85CjomBRTlI=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/11/velika_desno_005.jpg" class="CToWUd"></a><img style="width:680px;height:28px" src="https://ci4.googleusercontent.com/proxy/BKSAiQXsFmPcmvMfisDZHMc-34WTC6pfYttQxfFx7_MLiXfiyLldbVLx5mQyR4jQ9KXmfJVX-CKtFeBES7mcVU28oSu4gqA8Ij3vkwyidvg=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/02/26/31/1.jpg" class="CToWUd"></p>
-                            <p><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2JsZW5kZXJpLXNva292bmljaS1pLXNlY2thbGljZS9kZWxpbWFuby1icmF2YS1ydWNuaS1tbGluLTN1MS87OzVlZTcwOTIzNTI2YmNkNTFjMDk2OWE3MjY4ZjVjMWI2" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2JsZW5kZXJpLXNva292bmljaS1pLXNlY2thbGljZS9kZWxpbWFuby1icmF2YS1ydWNuaS1tbGluLTN1MS87OzVlZTcwOTIzNTI2YmNkNTFjMDk2OWE3MjY4ZjVjMWI2&amp;source=gmail&amp;ust=1617472194264000&amp;usg=AFQjCNHXAg0Mzs6rV5FRHGs2bOw5RYtMOQ">
-                                    <img style="width:680px;height:300px" src="https://ci5.googleusercontent.com/proxy/UGWJJ4TEL0ka7BtCKYN6dwUiSxRLpZFDrfYVFcpAJG6GuOGU33Zc9-VWHqG61D2ay1mvzocaJv2hDdwg9A2gvq8qb8jZdDPs-XMOYLwYuTRXhz4wjhCGfVvrwSJulQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/41/velika_levo_004.jpg" class="CToWUd"></a></p>
-                            <p><img style="width:680px;height:28px" src="https://ci4.googleusercontent.com/proxy/BKSAiQXsFmPcmvMfisDZHMc-34WTC6pfYttQxfFx7_MLiXfiyLldbVLx5mQyR4jQ9KXmfJVX-CKtFeBES7mcVU28oSu4gqA8Ij3vkwyidvg=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/02/26/31/1.jpg" class="CToWUd"><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2FwYXJhdGktemEtZ2FsZXRlLWktcGFsYWNpbmtlL2FyaWV0ZS1hcGFyYXQtemEtcGFsYWNpbmtlLWFyMjAycmQtY3J2ZW5pLzs7YTBhZmYwYmY5NTgyZTQyMmQ5NGNkYjBlMTExNjZlNWE%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2FwYXJhdGktemEtZ2FsZXRlLWktcGFsYWNpbmtlL2FyaWV0ZS1hcGFyYXQtemEtcGFsYWNpbmtlLWFyMjAycmQtY3J2ZW5pLzs7YTBhZmYwYmY5NTgyZTQyMmQ5NGNkYjBlMTExNjZlNWE%253D&amp;source=gmail&amp;ust=1617472194264000&amp;usg=AFQjCNFLr9ByG-jGiOTyZZ7nt8nlQwUO0g">
-                                    <img style="width:680px;height:300px" src="https://ci5.googleusercontent.com/proxy/oeA2C8ueoDaKJnDX5ot5N5m4SAzTZcSZHtXOQN3dV0FmwtpIm0CNb1QcwmgJu6v5r7PSTVSjsXUHyl1zBsHictQxpnfUxsuSQDVQIumahB6ElSgWNNGx4cT1jAl4Hdc=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/24/velika_desno_004.jpg" class="CToWUd"></a></p>
-                            <p><img style="width:680px;height:28px" src="https://ci4.googleusercontent.com/proxy/BKSAiQXsFmPcmvMfisDZHMc-34WTC6pfYttQxfFx7_MLiXfiyLldbVLx5mQyR4jQ9KXmfJVX-CKtFeBES7mcVU28oSu4gqA8Ij3vkwyidvg=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/02/26/31/1.jpg" class="CToWUd"></p>
-                            <table style="border-collapse:collapse;width:100%" border="1">
-                                <tbody>
-                                <tr>
-                                    <td style="width:50%;border-style:solid;border-color:#000000">
-                                        <a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2FwYXJhdGktemEtZ2FsZXRlLWktcGFsYWNpbmtlL2NvbG9zc3VzLWNzcy01MzA1LWFwYXJhdC16YS1nYWxldGUvOztmZmEzZDM1YmU0MDg0NzRkZGQzNDBiMWNiOTMxNzA1Yg%3D%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL2FwYXJhdGktemEtZ2FsZXRlLWktcGFsYWNpbmtlL2NvbG9zc3VzLWNzcy01MzA1LWFwYXJhdC16YS1nYWxldGUvOztmZmEzZDM1YmU0MDg0NzRkZGQzNDBiMWNiOTMxNzA1Yg%253D%253D&amp;source=gmail&amp;ust=1617472194264000&amp;usg=AFQjCNHeEpgipLgZ4dfm0EsqPvAy6nCKYg">
-                                            <img style="width:324px;height:500px" src="https://ci5.googleusercontent.com/proxy/tGFLTC1rtI1KKF9Rd3IfvT0OxBiuWcLHZ-jCEE52iV207Anq-Ugtjf39o5vmpXeUg2Q77PY7VWZLOfUSC9RJNItaPJfg6kOhQCRq6EvgXP4sUA=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/006.jpg" class="CToWUd"></a></td>
-                                    <td style="width:50%;border-style:solid;border-color:#000000">
-                                        <a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL29zdGFsaS1rdWhpbmpza2ktYXBhcmF0aS9hcmlldGUtYXBhcmF0LXphLWtva2ljZS1hcjI5NTZibC1wbGF2aS87O2U0NTZiZjBjYWE2Y2Y4NWRiNTk2ZTNjODNjMTAxYTYw" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL29zdGFsaS1rdWhpbmpza2ktYXBhcmF0aS9hcmlldGUtYXBhcmF0LXphLWtva2ljZS1hcjI5NTZibC1wbGF2aS87O2U0NTZiZjBjYWE2Y2Y4NWRiNTk2ZTNjODNjMTAxYTYw&amp;source=gmail&amp;ust=1617472194264000&amp;usg=AFQjCNHhp2VnSKrak4hPjCANPE3_15hhVA">
-                                            <img style="width:324px;height:500px" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd"></a></td>
-                                </tr>
-                                <tr>
-                                    <td style="width:50%;border-style:solid;border-color:#000000"><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL3Jvc3RpbGppLWktZ3JpbG92aS9hcmlldGUtcm9zdGlsai1hcjczMy87OzA4MDVkYzY0ODA1ZTQ5ZTZmMTE1OTYzMGJlYzkyN2Zl" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL3Jvc3RpbGppLWktZ3JpbG92aS9hcmlldGUtcm9zdGlsai1hcjczMy87OzA4MDVkYzY0ODA1ZTQ5ZTZmMTE1OTYzMGJlYzkyN2Zl&amp;source=gmail&amp;ust=1617472194264000&amp;usg=AFQjCNE7IGwIJYXXgoN26xaJbdgaP1DzSQ">
-                                            <img style="width:324px;height:500px" src="https://ci3.googleusercontent.com/proxy/DnsJXNMVo91AVb3JVqlgb4fFSc34BOmDTyjXGQWsVrOo5KeXGqiDiLUdUMixlN3P1sm5i5lrwP3Gl-jECqfZkxl81ylmkf6YvN9gjiz5lsQtOA=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/013.jpg" class="CToWUd"></a></td>
-                                    <td style="width:50%;border-style:solid;border-color:#000000"><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL21pa3JvdGFsYXNuZS1wZWNuaWNlLWktZnJpdGV6ZS9jb2xvc3N1cy1mcml0ZXphLWNzcy01MDA2YS87O2EyMGMwMGY4ZDkwM2I5M2U3ZDE3ZTg5MjAzY2VkMDNl" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL21pa3JvdGFsYXNuZS1wZWNuaWNlLWktZnJpdGV6ZS9jb2xvc3N1cy1mcml0ZXphLWNzcy01MDA2YS87O2EyMGMwMGY4ZDkwM2I5M2U3ZDE3ZTg5MjAzY2VkMDNl&amp;source=gmail&amp;ust=1617472194264000&amp;usg=AFQjCNF3DoUUYKm9go4LZamkGRsordQW3A">
-                                            <img style="width:324px;height:500px" src="https://ci4.googleusercontent.com/proxy/AAZWWdjLua68i-yvA7MbtA7ENkg7Qr8_FBZqi9CsKVFX2NFCbrX6hlaC0B4qtz9IyXHOkunyNaDGXfUMnW8uIlkDAXzfJduBmk-8EmRs8Ei3dw=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/007.jpg" class="CToWUd"></a></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <p><img style="width:680px;height:28px" src="https://ci4.googleusercontent.com/proxy/BKSAiQXsFmPcmvMfisDZHMc-34WTC6pfYttQxfFx7_MLiXfiyLldbVLx5mQyR4jQ9KXmfJVX-CKtFeBES7mcVU28oSu4gqA8Ij3vkwyidvg=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/02/26/31/1.jpg" class="CToWUd"><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL29zdGFsaS1rdWhpbmpza2ktYXBhcmF0aS9jb2xvc3N1cy1ndXJtYW5za2kta3Jja28tOHUxLWNzcy01MjM1Yi87OzM5MTcwMDUwNDM0MTgxYmM5ZWMyZDJlOGIwNTkyMmM1" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzL29zdGFsaS1rdWhpbmpza2ktYXBhcmF0aS9jb2xvc3N1cy1ndXJtYW5za2kta3Jja28tOHUxLWNzcy01MjM1Yi87OzM5MTcwMDUwNDM0MTgxYmM5ZWMyZDJlOGIwNTkyMmM1&amp;source=gmail&amp;ust=1617472194265000&amp;usg=AFQjCNGYwEIUHS2I4OGK6gfSHqCG6wYH9A"><img style="width:680px;height:300px" src="https://ci5.googleusercontent.com/proxy/crtbj6Z0_AL_LwFr9I5HzD4AI9G8RA89WfKtH67TaITnZkctZ4UTQjHEZgxI1nYk7p4D5BMr_W-0Ql0mKuq4jv5XGPuDq9N4IbmJemFTPC5Hmc2hrhbPLANPO0_ACcYF=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/22/velika_levo_002-b.jpg" class="CToWUd"></a><span style="font-size:medium"><img style="width:680px;height:28px" src="https://ci4.googleusercontent.com/proxy/BKSAiQXsFmPcmvMfisDZHMc-34WTC6pfYttQxfFx7_MLiXfiyLldbVLx5mQyR4jQ9KXmfJVX-CKtFeBES7mcVU28oSu4gqA8Ij3vkwyidvg=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/02/26/31/1.jpg" class="CToWUd"></span></p>
+                            
+                            <p><hr style=" margin-top: 10px; margin-bottom: 10px;">
+                                <a href="" style="text-decoration: none;">
+
+                                    <div style="width:680px;height:300px; display: flex;  ">
+                                         <div style="width:350px; height:290px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
+                                            <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;
+ " src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                        </div>
+                                        <div style="width:310px; height:290px; display: block-flex;    margin-top: 5px; margin-left: 5px;">
+                                            <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
+                                            <p style="width:280px; height:120px; max-height:120px; margin: 0px;font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali </p>
+                                                <div style="display: flex; margin-left: 30px;">
+                                                    <div style="display: inline-flex; min-width: 180px; min-height: 50;  background-color: #F62459;  ">
+                                                        <p style="color: white; padding: 22px 0 0 20px; font-size: 35;  font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                    </div>
+                                                    <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
+                                                    </div>
+                                                    
+                                                </div>
+                                            <p style="font-size: 13px; text-align: right; padding-right: 5px; align-items:flex-end; color: black; font-weight: bold;">Saznaj više ></p>
+                                        </div>
+                                    </div>
+                                </a><span style="font-size:medium"><hr style=" margin-top: 10px; margin-bottom: 10px;"></span></p>
                             <div style="text-align:center;font-weight:bold;margin:40px 0 10px"><span style="font-size:medium">🤝10 godina poverenja</span><span style="font-size:medium">🤝</span></div>
                             <div style="text-align:center;font-weight:bold;margin:40px 0 10px"><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLzs7MmExMWQ0OGZlN2M5NzM0ZTE4ZmExODBhN2Y3ZTkxYmI%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLzs7MmExMWQ0OGZlN2M5NzM0ZTE4ZmExODBhN2Y3ZTkxYmI%253D&amp;source=gmail&amp;ust=1617472194265000&amp;usg=AFQjCNGlbDebVMLironKW_uejrkVQMnOpg">Nonstopshop.rs</a></div>
                             <div style="text-align:center;font-weight:bold;margin:40px 0 10px">
@@ -82,7 +196,8 @@
                                     <p><font size="2">Prikazane cene su sa uračunatim PDV-om, troškovi dostave se dodatno naplaćuju.</font></p>
                                     <p><font size="2">Akcijska ponuda traje do rasprodaja zaliha. Količina proizvoda je ograničena.</font></p>
                                     <font size="2">Ova poruka Vam je poslata sa Internet prodavnice NonStopShop.rs na kojoj ste prilikom registracije dali svoju saglasnost za primanje email obaveštenja o aktuelnim ponudama.</font></div>
-                                <div style="text-align:center;margin:10px 0 20px"><font size="2">Ukoliko želite da se odjavite sa mejling liste posetite stranicu "Vaš nalog"&nbsp;</font><font size="2">ili,</font>&nbsp;<a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLz9uYT1wcm9maWxlJm5rPTIwNzUzMi0xMWU5NDI4YjRlOzs2ZmEwNmZhMDQ5ZmY1OWE4ZDc4ZTgwZmY0NzU3MTAxOA%3D%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLz9uYT1wcm9maWxlJm5rPTIwNzUzMi0xMWU5NDI4YjRlOzs2ZmEwNmZhMDQ5ZmY1OWE4ZDc4ZTgwZmY0NzU3MTAxOA%253D%253D&amp;source=gmail&amp;ust=1617472194265000&amp;usg=AFQjCNFpYtgzkkIH144de6qrQ0j04nCR6A">kliknite ovde</a>.</div>
+                                <div style="text-align:center;margin:10px 0 20px">
+                                    <font size="2">Ukoliko želite da se odjavite sa mejling liste posetite stranicu "Vaš nalog"&nbsp;</font><font size="2">ili,</font>&nbsp;<a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLz9uYT1wcm9maWxlJm5rPTIwNzUzMi0xMWU5NDI4YjRlOzs2ZmEwNmZhMDQ5ZmY1OWE4ZDc4ZTgwZmY0NzU3MTAxOA%3D%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLz9uYT1wcm9maWxlJm5rPTIwNzUzMi0xMWU5NDI4YjRlOzs2ZmEwNmZhMDQ5ZmY1OWE4ZDc4ZTgwZmY0NzU3MTAxOA%253D%253D&amp;source=gmail&amp;ust=1617472194265000&amp;usg=AFQjCNFpYtgzkkIH144de6qrQ0j04nCR6A">kliknite ovde</a>.</div>
                             </div>
                         </div>
                     </div>
