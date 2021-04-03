@@ -164,6 +164,7 @@ switch ( $action ) {
 		foreach ($idProducts as $sku) {
 
 			$product = wc_get_product_id_by_sku( $sku );
+			/*$product = wc_get_product( $productID );*/
                 $link = $product->get_permalink();
                 $imageUrl = wp_get_attachment_url( $product->get_image_id());
                 $title = (string)$product->get_title();

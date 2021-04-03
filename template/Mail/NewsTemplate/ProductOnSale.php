@@ -18,7 +18,7 @@
                                     <div style="width:310px; height:290px; display: block-flex;   margin-top: 5px; margin-left: 5px;">
                                         <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">
                                             $title[1]</h2>
-                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16px;  color: black; margin-left: 30px"> $desc[1]</p>
+                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16px;  color: black; margin-left: 30px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;"> $desc[1]</p>
                                         <div style="display: flex; margin-left: 30px;">
                                             <div style="display: inline-flex; min-width: 180px; min-height: 50px;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
                                                 <p style="color: white; padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; ">$price[1]</p><p style="color: white; font-size: 15px; vertical-align: middle; ">RSD</p>
@@ -39,10 +39,10 @@
                                     <div style="width:310px; height:290px; display: block-flex;    margin-top: 5px; margin-left: 5px;">
                                         <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">
                                             $title[2] </h2>
-                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16px;  color: black; margin-left: 30px"><?=  $desc[2] ?></p>
+                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16px;  color: black; margin-left: 30px;  overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">  $desc[2] </p>
                                         <div style="display: flex; margin-left: 30px;">
                                             <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
-                                                <p style="color: white;padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; "><?= $price[2]?></p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                <p style="color: white;padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; "> $price[2]</p><p style="color: white; font-size: 15px; ">RSD</p>
                                             </div>
                                             <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
                                             </div>
@@ -64,7 +64,8 @@
                                     <div style="width:310px; height:290px; display: block-flex;   margin-top: 5px; margin-left: 5px;">
                                         <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">
                                             $title[3] </h2>
-                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16px;  color: black; margin-left: 30px">  $desc[3] </p>
+                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16px;  color: black; margin-left: 30px;
+                                        overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; ">  $desc[3]</p>
                                         <div style="display: flex; margin-left: 30px;">
                                             <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
                                                 <p style="color: white; padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; "> $price[3]</p><p style="color: white; font-size: 15px; ">RSD</p>
@@ -78,7 +79,7 @@
                             </a>
                             </p>
                         </div>
-                        <div style="padding:10px 20px 20px 20px;background-color:#fff;line-height:18px">
+                        <div style="padding:10px 20px 20px 20px;background-color:#fff; ">
                             <table style="border-collapse:collapse;width:100%" border="1">
                                 <tbody>
                                 <tr>
@@ -87,9 +88,9 @@
                                             <div style="width:330px; height:300px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
                                                 <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src=" $url[4] " class="CToWUd">
                                             </div>
-                                            <div>
+                                            <div style="text-align: left;">
                                                 <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; "> $title[4]</h2>
-                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px;  font-size: 16px;  color: black; margin-left: 30px">  $desc[4] </p>
+                                                <p style="width:280px; max-width: 280px; padding-bottom: 0px; height:50px; max-height:50px; margin: 0;  overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font-size: 16px;  color: black; margin-left: 30px">  $desc[4] </p>
                                             </div>
                                             <div style="display: flex; margin-left: 30px;">
                                                 <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
@@ -106,9 +107,9 @@
                                             <div style="width:330px; height:300px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
                                                 <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src=" $url[5] " class="CToWUd">
                                             </div>
-                                            <div>
+                                            <div style="text-align: left;">
                                                 <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; "> $title[5] </h2>
-                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px; font-size: 16px;  color: black; margin-left: 30px">  $desc[5]</p>
+                                                <p style="width:280px; max-width: 280px; padding-bottom: 0px; height:50px; max-height:50px; margin: 0;  overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font-size: 16px;  color: black; margin-left: 30px">  $desc[5]</p>
                                             </div>
                                             <div style="display: flex; margin-left: 30px;">
                                                 <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
@@ -127,9 +128,9 @@
                                             <div style="width:330px; height:300px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
                                                 <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="$url[6]" class="CToWUd">
                                             </div>
-                                            <div>
+                                            <div style="text-align: left;">
                                                 <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">  $title[6] </h2>
-                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px; font-size: 16px;  color: black; margin-left: 30px">  $desc[6] </p>
+                                                <p style="width:280px; max-width: 280px; padding-bottom: 0px; height:50px; max-height:50px; margin: 0;  overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font-size: 16px;  color: black; margin-left: 30px">  $desc[6] </p>
                                             </div>
                                             <div style="display: flex; margin-left: 30px;">
                                                 <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
@@ -146,9 +147,9 @@
                                             <div style="width:330px; height:300px; display: inline-flex; margin-top: 5px; margin-left: 5px;">
                                                 <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src=" $url[7] " class="CToWUd">
                                             </div>
-                                            <div>
+                                            <div style="text-align: left;">
                                                 <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; "> $title[7]</h2>
-                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px; font-size: 16px;  color: black; margin-left: 30px">  $desc[7] </p>
+                                                <p style="width:280px; max-width: 280px; padding-bottom: 0px; height:50px; max-height:50px; margin: 0;  overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font-size: 16px;  color: black; margin-left: 30px" >$desc[7]  </p>
                                             </div>
                                             <div style="display: flex; margin-left: 30px;">
                                                 <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
@@ -173,7 +174,7 @@
                                     </div>
                                     <div style="width:310px; height:290px; display: block-flex;    margin-top: 5px; margin-left: 5px;">
                                         <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">  $title[8] </h2>
-                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;font-size: 16px;  color: black; margin-left: 30px">   $desc[8] </p>
+                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;font-size: 16px;  color: black; margin-left: 30px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">   $desc[8] </p>
                                         <div style="display: flex; margin-left: 30px;">
                                             <div style="display: inline-flex; min-width: 180px; min-height: 50;  background-color: #F62459;  ">
                                                 <p style="color: white; padding: 8px 0 0 20px; font-size: 35px;  font-weight: bold; margin: 0px; "> $price[8]</p><p style="color: white; font-size: 15px; ">RSD</p>
