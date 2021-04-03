@@ -8,22 +8,24 @@
             <tr>
                 <td style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:14px;color:#666666;width:100%;border-style:none" valign="top" bgcolor="#ffffff" width="100%">
                     <div style="text-align:left;background-color:#fff">
+
                         <div style="padding: 0 20px 0 20px;"><p><hr style=" margin-top: 10px; margin-bottom: 10px;">
-                            <a href="" style="text-decoration: none;">
+                            <a href="$link[1]" style="text-decoration: none;">
                                 <div style="width:680px;height:300px; display: flex;  ">
                                     <div style="width:350px; height:290px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
-                                        <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                        <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="$url[1]" class="CToWUd">
                                     </div>
                                     <div style="width:310px; height:290px; display: block-flex;   margin-top: 5px; margin-left: 5px;">
-                                        <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
-                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali </p>
-                                            <div style="display: flex; margin-left: 30px;">
-                                                <div style="display: inline-flex; min-width: 180px; min-height: 50px;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
-                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
-                                                </div>
-                                                <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
-                                                </div>
+                                        <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">
+                                            $title[1]</h2>
+                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16px;  color: black; margin-left: 30px"> $desc[1]</p>
+                                        <div style="display: flex; margin-left: 30px;">
+                                            <div style="display: inline-flex; min-width: 180px; min-height: 50px;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
+                                                <p style="color: white; padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; ">$price[1]</p><p style="color: white; font-size: 15px; vertical-align: middle; ">RSD</p>
                                             </div>
+                                            <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
+                                            </div>
+                                        </div>
                                         <p style="font-size: 13px; text-align: right; padding-right: 5px; align-items:flex-end; color: black; font-weight: bold; ">Saznaj više ></p>
                                     </div>
                                 </div>
@@ -31,43 +33,45 @@
                         </div>
 
                         <div style="padding: 0 20px 0 20px;">
-                            <a href="" style="text-decoration: none;">
+                            <a href="<?= $link[2] ?>" style="text-decoration: none;">
                                 <div style="width:680px;height:300px; display: flex;  ">
-                                    
+
                                     <div style="width:310px; height:290px; display: block-flex;    margin-top: 5px; margin-left: 5px;">
-                                        <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
-                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali </p>
-                                            <div style="display: flex; margin-left: 30px;">
-                                                <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
-                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
-                                                </div>
-                                                <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
-                                                </div>
+                                        <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">
+                                            $title[2] </h2>
+                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16px;  color: black; margin-left: 30px"><?=  $desc[2] ?></p>
+                                        <div style="display: flex; margin-left: 30px;">
+                                            <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
+                                                <p style="color: white;padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; "><?= $price[2]?></p><p style="color: white; font-size: 15px; ">RSD</p>
                                             </div>
+                                            <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
+                                            </div>
+                                        </div>
                                         <p style="font-size: 13px; text-align: right; padding-right: 5px; align-items:flex-end; font-weight: bold; color: black;">Saznaj više ></p>
                                     </div>
                                     <div style="width:350px; height:290px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
-                                        <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                        <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src=" $url[2]" class="CToWUd">
                                     </div>
                                 </div>
                             </a><span style="font-size:medium"></span>
                         </div>
                         <div style="padding: 0 20px 0 20px;"><p><hr style=" margin-top: 10px; margin-bottom: 10px;">
-                            <a href="" style="text-decoration: none;">
+                            <a href=" $link[3] " style="text-decoration: none;">
                                 <div style="width:680px;height:300px; display: flex;  ">
                                     <div style="width:350px; height:290px; display: inline-flex; margin-top: 5px; margin-left: 5px;">
-                                        <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                        <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="$url[3]" class="CToWUd">
                                     </div>
                                     <div style="width:310px; height:290px; display: block-flex;   margin-top: 5px; margin-left: 5px;">
-                                        <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
-                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali </p>
-                                            <div style="display: flex; margin-left: 30px;">
-                                                <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
-                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
-                                                </div>
-                                                <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
-                                                </div>
+                                        <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">
+                                            $title[3] </h2>
+                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16px;  color: black; margin-left: 30px">  $desc[3] </p>
+                                        <div style="display: flex; margin-left: 30px;">
+                                            <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
+                                                <p style="color: white; padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; "> $price[3]</p><p style="color: white; font-size: 15px; ">RSD</p>
                                             </div>
+                                            <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
+                                            </div>
+                                        </div>
                                         <p style="font-size: 13px; text-align: right; padding-right: 5px; align-items:flex-end; color: black; font-weight: bold; ">Saznaj više ></p>
                                     </div>
                                 </div>
@@ -79,17 +83,17 @@
                                 <tbody>
                                 <tr>
                                     <td style="width:50%;border-color:#000000;border-style:solid" scope="col">
-                                        <a href=""  style="text-decoration: none;">
+                                        <a href=" $link[4]"  style="text-decoration: none;">
                                             <div style="width:330px; height:300px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
-                                                <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                                <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src=" $url[4] " class="CToWUd">
                                             </div>
                                             <div>
-                                                <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
-                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px;  font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali  dwd wdwdwdwdw wd wd wd</p>
+                                                <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; "> $title[4]</h2>
+                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px;  font-size: 16px;  color: black; margin-left: 30px">  $desc[4] </p>
                                             </div>
                                             <div style="display: flex; margin-left: 30px;">
                                                 <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
-                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                    <p style="color: white; padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; ">$price[4]</p><p style="color: white; font-size: 15px; ">RSD</p>
                                                 </div>
                                                 <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
                                                 </div>
@@ -98,17 +102,17 @@
                                         </a>
                                     </td>
                                     <td style="width:50%;border-color:#000000;border-style:solid" scope="col">
-                                        <a href=""  style="text-decoration: none;">
+                                        <a href=" $link[5] "  style="text-decoration: none;">
                                             <div style="width:330px; height:300px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
-                                                <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                                <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src=" $url[5] " class="CToWUd">
                                             </div>
                                             <div>
-                                                <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
-                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px; font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali  dwd wdwdwdwdw wd wd wd</p>
+                                                <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; "> $title[5] </h2>
+                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px; font-size: 16px;  color: black; margin-left: 30px">  $desc[5]</p>
                                             </div>
                                             <div style="display: flex; margin-left: 30px;">
                                                 <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
-                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                    <p style="color: white; padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; "> $price[5]</p><p style="color: white; font-size: 15px; ">RSD</p>
                                                 </div>
                                                 <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
                                                 </div>
@@ -119,17 +123,17 @@
                                 </tr>
                                 <tr>
                                     <td style="width:50%;border-color:#000000;border-style:solid" scope="col">
-                                        <a href=""  style="text-decoration: none;">
+                                        <a href=" $link[6]"  style="text-decoration: none;">
                                             <div style="width:330px; height:300px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
-                                                <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                                <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="$url[6]" class="CToWUd">
                                             </div>
                                             <div>
-                                                <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
-                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px; font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali  dwd wdwdwdwdw wd wd wd</p>
+                                                <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">  $title[6] </h2>
+                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px; font-size: 16px;  color: black; margin-left: 30px">  $desc[6] </p>
                                             </div>
                                             <div style="display: flex; margin-left: 30px;">
                                                 <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
-                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                    <p style="color: white; padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; "> $price[6]</p><p style="color: white; font-size: 15px; ">RSD</p>
                                                 </div>
                                                 <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
                                                 </div>
@@ -137,18 +141,18 @@
                                             <p style="font-size: 13px; text-align: right; padding-right: 5px; margin-top: 0px; align-items:flex-end; color: black; font-weight: bold; ">Saznaj više ></p>
                                         </a>
                                     </td>
-                                   <td style="width:50%;border-color:#000000;border-style:solid" scope="col">
-                                        <a href=""  style="text-decoration: none;">
+                                    <td style="width:50%;border-color:#000000;border-style:solid" scope="col">
+                                        <a href=" $link[7] "  style="text-decoration: none;">
                                             <div style="width:330px; height:300px; display: inline-flex; margin-top: 5px; margin-left: 5px;">
-                                                <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
+                                                <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src=" $url[7] " class="CToWUd">
                                             </div>
                                             <div>
-                                                <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
-                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px; font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali  dwd wdwdwdwdw wd wd wd</p>
+                                                <h2 style="margin: 10px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; "> $title[7]</h2>
+                                                <p style="width:280px; height:40px; max-height:40px; margin: 0px; font-size: 16px;  color: black; margin-left: 30px">  $desc[7] </p>
                                             </div>
                                             <div style="display: flex; margin-left: 30px;">
                                                 <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
-                                                    <p style="color: white; padding: 18px 0 0 20px; font-size: 35; font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                    <p style="color: white; padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; "> $price[7]</p><p style="color: white; font-size: 15px; ">RSD</p>
                                                 </div>
                                                 <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
                                                 </div>
@@ -159,30 +163,29 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            
-                            <p><hr style=" margin-top: 10px; margin-bottom: 10px;">
-                                <a href="" style="text-decoration: none;">
 
-                                    <div style="width:680px;height:300px; display: flex;  ">
-                                         <div style="width:350px; height:290px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
-                                            <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;
- " src="https://ci5.googleusercontent.com/proxy/Pz3PwP-Mru2hU2xvU3bMSEIxYpK0KF81nrBXeOE-ijxjjLHvxKahula741FYDCWEtRZT-ht-Cs_q8NQxXyKWTX0uxZEhbLOFD_W4p5WLVMbqEQ=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2021/03/12/34/015.jpg" class="CToWUd">
-                                        </div>
-                                        <div style="width:310px; height:290px; display: block-flex;    margin-top: 5px; margin-left: 5px;">
-                                            <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">Naslov dwd wd wd wd w dwdwdwdwdwdw</h2>
-                                            <p style="width:280px; height:120px; max-height:120px; margin: 0px;font-size: 16;  color: black; margin-left: 30px"> nesto se ispisali </p>
-                                                <div style="display: flex; margin-left: 30px;">
-                                                    <div style="display: inline-flex; min-width: 180px; min-height: 50;  background-color: #F62459;  ">
-                                                        <p style="color: white; padding: 22px 0 0 20px; font-size: 35;  font-weight: bold; margin: 0px; ">19000 </p><p style="color: white; font-size: 15px; ">RSD</p>
-                                                    </div>
-                                                    <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
-                                                    </div>
-                                                    
-                                                </div>
-                                            <p style="font-size: 13px; text-align: right; padding-right: 5px; align-items:flex-end; color: black; font-weight: bold;">Saznaj više ></p>
-                                        </div>
+                            <p><hr style=" margin-top: 10px; margin-bottom: 10px;">
+                            <a href=" $link[8] " style="text-decoration: none;">
+
+                                <div style="width:680px;height:300px; display: flex;  ">
+                                    <div style="width:350px; height:290px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
+                                        <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="$url[8] " class="CToWUd">
                                     </div>
-                                </a><span style="font-size:medium"><hr style=" margin-top: 10px; margin-bottom: 10px;"></span></p>
+                                    <div style="width:310px; height:290px; display: block-flex;    margin-top: 5px; margin-left: 5px;">
+                                        <h2 style="margin: 20px 10px 5px 30px; font-size: 18;  color: black; text-transform: uppercase; font-weight: bold; ">  $title[8] </h2>
+                                        <p style="width:280px; height:120px; max-height:120px; margin: 0px;font-size: 16px;  color: black; margin-left: 30px">   $desc[8] </p>
+                                        <div style="display: flex; margin-left: 30px;">
+                                            <div style="display: inline-flex; min-width: 180px; min-height: 50;  background-color: #F62459;  ">
+                                                <p style="color: white; padding: 8px 0 0 20px; font-size: 35px;  font-weight: bold; margin: 0px; "> $price[8]</p><p style="color: white; font-size: 15px; ">RSD</p>
+                                            </div>
+                                            <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
+                                            </div>
+
+                                        </div>
+                                        <p style="font-size: 13px; text-align: right; padding-right: 5px; align-items:flex-end; color: black; font-weight: bold;">Saznaj više ></p>
+                                    </div>
+                                </div>
+                            </a><span style="font-size:medium"><hr style=" margin-top: 10px; margin-bottom: 10px;"></span></p>
                             <div style="text-align:center;font-weight:bold;margin:40px 0 10px"><span style="font-size:medium">🤝10 godina poverenja</span><span style="font-size:medium">🤝</span></div>
                             <div style="text-align:center;font-weight:bold;margin:40px 0 10px"><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLzs7MmExMWQ0OGZlN2M5NzM0ZTE4ZmExODBhN2Y3ZTkxYmI%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLzs7MmExMWQ0OGZlN2M5NzM0ZTE4ZmExODBhN2Y3ZTkxYmI%253D&amp;source=gmail&amp;ust=1617472194265000&amp;usg=AFQjCNGlbDebVMLironKW_uejrkVQMnOpg">Nonstopshop.rs</a></div>
                             <div style="text-align:center;font-weight:bold;margin:40px 0 10px">

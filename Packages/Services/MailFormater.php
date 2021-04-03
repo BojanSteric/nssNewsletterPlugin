@@ -54,4 +54,13 @@ class MailFormater {
 
 		self::setupMail($to, $subject, $newmesage );
 	}
+	public static function sendMailToSubscribers($text)
+	{
+		$email="icefyre90@gmail.com";
+		$subject="Nesto Pokusavamo da napravimo";
+		$text=$text;
+		var_dump($text);s
+		self::setupMail($email, $subject, $text );
+
+	}
 }
