@@ -181,4 +181,22 @@ switch ( $action ) {
 		$send = MailService::sendMailToSubscribers($message);
 		wp_redirect( admin_url() . '?page=newsletter&action=newsletters'  );
 		break;
+	case 'uploadDatabase':
+		$newsletterPage = 'template/newsletterImport.php';
+		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
+		break;
+	case 'import':
+		// var_dump(file_get_contents($_FILES['parsingFile']['tmp_name']));
+		$handle = fopen($_FILES['parsingFile']['tmp_name'], "r");
+	
+		$header = \Newsletter\Import\Parser::getHeader($handle);
+		$data = \Newsletter\Import\Parser::getData($header, $handle);
+		var_dump($data);
+		/** parser isparsira podatke, napravi niz nizova u kojima su kljucevi zaglavlje csv fajla
+		*   mapper treba da izmeni podatke tako da nam odgovaraju za bazu
+		*	importer treba da odradi insert u bazu
+		*	treba malo isfleksovati sa solid principima ovde da bismo mogli da se sirimo za druge fajlove (excel, pdf, sta vec)
+		*/
+		fclose($handle);
+		break;
 }

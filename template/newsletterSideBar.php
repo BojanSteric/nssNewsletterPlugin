@@ -34,6 +34,6 @@ switch ($status){
     <a  class="sidenavAdminCategorieslist <?php echo $c;?>"href="<?=admin_url() . '?page=newsletter&action=editNewsletters'?>"  >Create Newsletter</a>
     <a  class="sidenavAdminCategorieslist <?php echo $d;?>"href="<?=admin_url() . '?page=newsletter&action=editSubscribers&subaction=create'?>"  >Create Subscriber</a>
     <a  class="sidenavAdminCategorieslist <?php echo $d;?>"href="<?=admin_url() . '?page=newsletter&action=sendNewsToSubsc'?>"  >SEND</a>
-
+    <a  class="sidenavAdminCategorieslist <?php echo $d;?>"href="<?=admin_url() . '?page=newsletter&action=uploadDatabase'?>"  >Parsing/Importing</a>
 
 </div>
