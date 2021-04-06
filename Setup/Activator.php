@@ -6,8 +6,6 @@ namespace Newsletter\Setup;
 class Activator {
 
 	private $db;
-	private $tableName;
-	private $tableName2;
 
 	public function __construct(\wpdb $db)
 	{
@@ -16,11 +14,9 @@ class Activator {
 
 	public function init(): void
 	{
-		$this->tableName = SUBSCRIBER_TABLE_NAME;
-		$this->tableName2 = SUBSCRIBER_TABLE_NAME;
-
 		$this->createSubscriberTable();
 		$this->createNewsletterTable();
+		$this->createNewsletterLogTable();
 	}
 
 	private function createSubscriberTable()
@@ -28,7 +24,7 @@ class Activator {
 		global $wpdb;
 
 		$charset_collate = $wpdb->get_charset_collate();
-		$table_name   = $wpdb->prefix . 'subscriber';
+		$table_name = SUBSCRIBER_TABLE_NAME;
 		$sql = "CREATE TABLE IF NOT EXISTS $table_name (
 		  `userId` int(50) NOT NULL AUTO_INCREMENT,
 		  `wpUserId` int(50) DEFAULT NULL,
@@ -52,8 +48,8 @@ class Activator {
 		global $wpdb;
 
 		$charset_collate = $wpdb->get_charset_collate();
-		$table_name2   = $wpdb->prefix . 'newsletter';
-		$sql2 = "CREATE TABLE IF NOT EXISTS $table_name2 (
+		$table_name = NEWSLETTER_TABLE_NAME;
+		$sql2 = "CREATE TABLE IF NOT EXISTS $table_name (
 		  `newsId` int(50) NOT NULL AUTO_INCREMENT,
 		  `newsStatus` varchar(30) NOT NULL,
 		  `createdAt` datetime DEFAULT NULL,
@@ -67,6 +63,23 @@ class Activator {
 
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql2 );
-
 	}
+
+    private function createNewsletterLogTable()
+    {
+        global $wpdb;
+
+        $charset_collate = $wpdb->get_charset_collate();
+        $table_name = NEWSLETTER_LOG_TABLE_NAME;
+        $sql2 = "CREATE TABLE IF NOT EXISTS $table_name (
+		  `logId` int(50) NOT NULL AUTO_INCREMENT,
+		  `userId` varchar(30) NOT NULL,
+		  `createdAt` datetime DEFAULT NULL,
+		  `newsletterId` varchar(30) NOT NULL,
+		  PRIMARY KEY  (logId)
+		) $charset_collate;";
+
+        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+        dbDelta( $sql2 );
+    }
 }

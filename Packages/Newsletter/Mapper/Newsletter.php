@@ -91,4 +91,9 @@ class Newsletter
 
 	}
 
+    public function getNewsletterByStatus($status)
+    {
+        $sql = "SELECT * FROM $this->tableName WHERE newsStatus = '$status';";
+        return $this->db->get_results($sql, ARRAY_A)[0];
+    }
 }

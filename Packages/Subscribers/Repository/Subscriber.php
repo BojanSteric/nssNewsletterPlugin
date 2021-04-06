@@ -66,6 +66,15 @@ class Subscriber
     {
         $this->mapper->delete($userId);
     }
+
+    public function getForSending(int $newsletterId, int $page, int $perPage)
+    {
+        $users = [];
+        foreach ($this->mapper->getForSending($newsletterId, $page, $perPage) as $userData) {
+            $users[] = $this->make($userData);
+        }
+        return $users;
+    }
     
     private function make($data): Model
     {

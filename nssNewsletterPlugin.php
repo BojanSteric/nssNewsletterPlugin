@@ -12,24 +12,61 @@ use Newsletter\Setup\Activator;
 use Newsletter\Setup\Setup;
 use Newsletter\MenuPage\MenuPage;
 use Service\AdminAjax\AdminAjax;
+use Laminas\Mail\Transport\Smtp;
+use Laminas\Mail\Transport\SmtpOptions;
+use Laminas\Mail\Transport\File;
+use Laminas\Mail\Transport\FileOptions;
 
 global $wpdb;
 define('NEWSLETTER_DIR_URI', plugin_dir_url(__DIR__ . '/newsletter/'));
 define('NEWSLETTER_DIR', __DIR__ . '/');
-DEFINE('NEWSLETTER_TABLE_NAME', $wpdb->prefix.'newsletter');
-DEFINE('SUBSCRIBER_TABLE_NAME', $wpdb->prefix.'subscriber');
+DEFINE('NEWSLETTER_TABLE_NAME', $wpdb->prefix . 'gf_newsletter');
+DEFINE('NEWSLETTER_LOG_TABLE_NAME', $wpdb->prefix . 'gf_newsletter_log');
+DEFINE('SUBSCRIBER_TABLE_NAME', $wpdb->prefix . 'gf_newsletter_subscriber');
 
-include NEWSLETTER_DIR.'autoloader.php';
+include NEWSLETTER_DIR . 'autoloader.php';
 
 $activator = new Activator($wpdb);
 register_activation_hook(__FILE__, [$activator,'init']);
 
-$adminMenuPage = new MenuPage('Newsletter', 'Newsletter','manage_options',
-	'newsletter');
+$adminMenuPage = new MenuPage(
+    'Newsletter', 'Newsletter','manage_options', 'newsletter'
+);
 $setup = new Setup($adminMenuPage);
 $setup->setup();
-$ajax= new AdminAjax();
+$ajax = new AdminAjax();
 
+$fileTransport = new File();
+$fileTransport->setOptions(new FileOptions([
+    'path'     => WP_CONTENT_DIR . '/uploads/',
+    'callback' => function (File $transport) {
+        return sprintf(
+            'Message_%f_%s.txt',
+            microtime(true),
+            random_int(10000000, 99999999)
+        );
+    },
+]));
+
+$smtpTransport = new Smtp();
+$smtpTransport->setOptions(new SmtpOptions([
+    'name' => 'ha.rs',
+    'host' => 'smtp-tkc.ha.rs',
+    'port' => 587,
+    'connection_class'  => 'plain',
+    'connection_config' => [
+        'username' => 'podrska@nonstopshop.rs',
+        'password' => 'E7Xfq.ucwKh0rtz',
+        'ssl'      => 'tls',
+    ],
+]));
+
+$mailer = new \Newsletter\Service\Mailer(
+    new \Newsletter\Repository\Newsletter(new \Newsletter\Mapper\Newsletter()),
+    new \Subscriber\Repository\Subscriber(new \Subscriber\Mapper\Subscriber()),
+//    $fileTransport
+    $smtpTransport
+);
 
 /*Widget i njegov js nece da radi u setup ????*/
-require_once(plugin_dir_path(__FILE__) . '/newsletterWidget/NewsletterWidget.php');
+require_once(plugin_dir_path(__FILE__) . 'newsletterWidget/NewsletterWidget.php');

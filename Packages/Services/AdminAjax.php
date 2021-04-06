@@ -20,10 +20,14 @@ class AdminAjax {
 		add_action( 'wp_ajax_searchNewsletter', [$this,'searchNewsletter']);
 		add_action( 'wp_ajax_updateNewsletter', [$this,'updateNewsletter']);
 		add_action( 'wp_ajax_deleteNewsletter', [$this,'deleteNewsletter']);
+		add_action( 'wp_ajax_sendNewsletter', [$this,'sendNewsletter']);
 }
 
 
-
+public function sendNewsletter()
+{
+    wp_schedule_single_event(time()+10, 'gfNewsletterSend', [$_POST['newsletterId']]);
+}
 
 
 public function allNewsletter(){

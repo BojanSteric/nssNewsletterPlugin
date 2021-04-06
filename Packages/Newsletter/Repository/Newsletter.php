@@ -91,6 +91,6 @@ class Newsletter
 
         return new Model($newsId, $newsStatus, $createdAt, $scheduledAt, $title, $content, $templateName,$products);
     }
-    
+
 
 }

@@ -12,7 +12,6 @@ class MailFormater {
 
 	public  static function setupMail($email,$subject,$text)
 	{
-
 		$message = new Message();
 		$html = $text;
 		$part = new Part($html);

@@ -33,7 +33,6 @@ $page = $_GET['paginationPage'] ?? 1;
 
 switch ( $action ) {
 	case 'newsletters':
-
 		$newsletterPage = 'template/newsletterNewsletter.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
@@ -43,7 +42,7 @@ switch ( $action ) {
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
 	case 'editSubscribers':
-	if (isset($_GET['userId'])) {
+	    if (isset($_GET['userId'])) {
 			$subscriber = $subscriberRepo->getSubscriberById((int)$_GET['userId']);
 			$userId = $subscriber->getId();
 			$email = $subscriber->getEmail();
@@ -152,33 +151,34 @@ switch ( $action ) {
 
 		break;
 	case 'sendNewsToSubsc':
-		$status='pending';
-		$SendingNesletter=$newsletterMapper->getNewsletterByStatus($status);
-		$templateName=$SendingNesletter['templateName'];
-		$idProducts=$SendingNesletter['products'];
-		$idProducts=explode(',',$idProducts);
-
-		$myfile = fopen( NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.php', "r") or die("Unable to open file!");
-		$message = fread($myfile,filesize( NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.php'));
-		$i=1;
-		foreach ($idProducts as $sku) {
-
-			$product = wc_get_product_id_by_sku( $sku );
-			/*$product = wc_get_product( $productID );*/
-                $link = $product->get_permalink();
-                $imageUrl = wp_get_attachment_url( $product->get_image_id());
-                $title = (string)$product->get_title();
-                $desc = (string)$product->get_short_description();
-                $price = (string)$product->get_price();
-                $defaulttext = ['$link['.$i.']','$url['.$i.']', '$title['.$i.']', '$desc['.$i.']', '$price['.$i.']'];
-                $newText   = [$link, $imageUrl , $title, $desc, $price];
-                $message = str_replace($defaulttext, $newText, $message);
-                $i++;
-            }
-
-		fclose($myfile);
-
-		$send = MailService::sendMailToSubscribers($message);
+//        wp_schedule_single_event(time() + 60, 'gfNewsletterSend');
+//		$status='pending';
+//		$SendingNesletter=$newsletterMapper->getNewsletterByStatus($status);
+//		$templateName=$SendingNesletter['templateName'];
+//		$idProducts=$SendingNesletter['products'];
+//		$idProducts=explode(',',$idProducts);
+//
+//		$myfile = fopen( NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.php', "r") or die("Unable to open file!");
+//		$message = fread($myfile,filesize( NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.php'));
+//		$i=1;
+//		foreach ($idProducts as $sku) {
+//
+//			$product = wc_get_product_id_by_sku( $sku );
+//			/*$product = wc_get_product( $productID );*/
+//                $link = $product->get_permalink();
+//                $imageUrl = wp_get_attachment_url( $product->get_image_id());
+//                $title = (string)$product->get_title();
+//                $desc = (string)$product->get_short_description();
+//                $price = (string)$product->get_price();
+//                $defaulttext = ['$link['.$i.']','$url['.$i.']', '$title['.$i.']', '$desc['.$i.']', '$price['.$i.']'];
+//                $newText   = [$link, $imageUrl , $title, $desc, $price];
+//                $message = str_replace($defaulttext, $newText, $message);
+//                $i++;
+//            }
+//
+//		fclose($myfile);
+//
+//		$send = MailService::sendMailToSubscribers($message);
 		wp_redirect( admin_url() . '?page=newsletter&action=newsletters'  );
 		break;
 	case 'uploadDatabase':

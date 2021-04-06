@@ -83,4 +83,18 @@ class Subscriber
         return $this->db->get_results($sql, ARRAY_A)[0];
     }
 
+    public function getForSending(int $newsletterId, int $page, int $perPage)
+    {
+        $limit = $perPage;
+        $offset = 0;
+        if ($page !== 1) {
+            $offset = $page * $limit;
+        }
+        $logTable = NEWSLETTER_LOG_TABLE_NAME;
+        $sql = "SELECT * FROM $this->tableName WHERE emailStatus = 'confirmed' AND userId NOT IN (
+            SELECT userId FROM {$logTable} WHERE newsletterId = {$newsletterId}
+        ) LIMIT $limit OFFSET $offset;";
+
+        return $this->db->get_results($sql, ARRAY_A);
+    }
 }

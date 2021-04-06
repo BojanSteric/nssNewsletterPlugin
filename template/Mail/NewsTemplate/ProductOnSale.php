@@ -33,7 +33,7 @@
                         </div>
 
                         <div style="padding: 0 20px 0 20px;">
-                            <a href="<?= $link[2] ?>" style="text-decoration: none;">
+                            <a href="$link[2]" style="text-decoration: none;">
                                 <div style="width:680px;height:300px; display: flex;  ">
 
                                     <div style="width:310px; height:290px; display: block-flex;    margin-top: 5px; margin-left: 5px;">
@@ -42,15 +42,15 @@
                                         <p style="width:280px; height:120px; max-height:120px; margin: 0px;  font-size: 16px;  color: black; margin-left: 30px;  overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">  $desc[2] </p>
                                         <div style="display: flex; margin-left: 30px;">
                                             <div style="display: inline-flex; min-width: 180px; min-height: 50;  border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background-color: #F62459;  ">
-                                                <p style="color: white;padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; "> $price[2]</p><p style="color: white; font-size: 15px; ">RSD</p>
+                                                <p style="color: white;padding: 8px 0 0 20px; font-size: 35px; font-weight: bold; margin: 0px; ">$price[2]</p><p style="color: white; font-size: 15px; ">RSD</p>
                                             </div>
                                             <div style="display: inline-flex; width: 0px; height: 0; border-top: 33px solid transparent;border-bottom: 33px solid transparent; border-left: 33px solid #F62459;">
                                             </div>
                                         </div>
-                                        <p style="font-size: 13px; text-align: right; padding-right: 5px; align-items:flex-end; font-weight: bold; color: black;">Saznaj više ></p>
+                                        <p style="font-size: 13px; text-align: right; padding-right: 5px; align-items:flex-end; font-weight: bold; color: black;">Saznaj više</p>
                                     </div>
                                     <div style="width:350px; height:290px; display: inline-flex;  margin-top: 5px; margin-left: 5px;">
-                                        <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src=" $url[2]" class="CToWUd">
+                                        <img style=" max-height: 290px; max-width: 320px;  margin-left: auto;  margin-right: auto;" src="$url[2]" class="CToWUd">
                                     </div>
                                 </div>
                             </a><span style="font-size:medium"></span>
@@ -187,22 +187,7 @@
                                     </div>
                                 </div>
                             </a><span style="font-size:medium"><hr style=" margin-top: 10px; margin-bottom: 10px;"></span></p>
-                            <div style="text-align:center;font-weight:bold;margin:40px 0 10px"><span style="font-size:medium">🤝10 godina poverenja</span><span style="font-size:medium">🤝</span></div>
-                            <div style="text-align:center;font-weight:bold;margin:40px 0 10px"><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLzs7MmExMWQ0OGZlN2M5NzM0ZTE4ZmExODBhN2Y3ZTkxYmI%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLzs7MmExMWQ0OGZlN2M5NzM0ZTE4ZmExODBhN2Y3ZTkxYmI%253D&amp;source=gmail&amp;ust=1617472194265000&amp;usg=AFQjCNGlbDebVMLironKW_uejrkVQMnOpg">Nonstopshop.rs</a></div>
-                            <div style="text-align:center;font-weight:bold;margin:40px 0 10px">
-                                <div style="margin:40px 0px 10px"><font size="3">Telefon za naručivanje: 011/7450-380</font></div>
-                                <div style="margin:40px 0px 10px">Kontakt mail: <a href="mailto:prodaja@nonstopshop.rs" rel="noreferrer" target="_blank">prodaja@nonstopshop.rs</a></div>
-                            </div>
-                            <div style="text-align:center;margin:10px 0 20px"><img style="max-width:100%" src="https://ci4.googleusercontent.com/proxy/vv_bavheRNTfIdlM_4FcqjZPtv1UPk41J9G0PtA5F-mbh_LE47hrXVOQpivV72ugptOfNB5wK8ulEM0rR9iBU01Z96zUh1_G3LjAR_Uvdxyh8yZwcw=s0-d-e1-ft#https://nonstopshop.rs/wp-content/uploads/2018/11/16/47/Potpis.jpg" class="CToWUd a6T" tabindex="0"><div class="a6S" dir="ltr" style="opacity: 0.01; left: 780px; top: 5416px;"><div id=":p4" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q" title="Download" role="button" tabindex="0" aria-label="Download attachment " data-tooltip-class="a1V"><div class="akn"><div class="aSK J-J5-Ji aYr"></div></div></div></div></div>
 
-                            <div style="text-align:center;color:#888;margin-top:20px">
-                                <div style="text-align:center;margin:10px 0 20px">
-                                    <p><font size="2">Prikazane cene su sa uračunatim PDV-om, troškovi dostave se dodatno naplaćuju.</font></p>
-                                    <p><font size="2">Akcijska ponuda traje do rasprodaja zaliha. Količina proizvoda je ograničena.</font></p>
-                                    <font size="2">Ova poruka Vam je poslata sa Internet prodavnice NonStopShop.rs na kojoj ste prilikom registracije dali svoju saglasnost za primanje email obaveštenja o aktuelnim ponudama.</font></div>
-                                <div style="text-align:center;margin:10px 0 20px">
-                                    <font size="2">Ukoliko želite da se odjavite sa mejling liste posetite stranicu "Vaš nalog"&nbsp;</font><font size="2">ili,</font>&nbsp;<a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLz9uYT1wcm9maWxlJm5rPTIwNzUzMi0xMWU5NDI4YjRlOzs2ZmEwNmZhMDQ5ZmY1OWE4ZDc4ZTgwZmY0NzU3MTAxOA%3D%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLz9uYT1wcm9maWxlJm5rPTIwNzUzMi0xMWU5NDI4YjRlOzs2ZmEwNmZhMDQ5ZmY1OWE4ZDc4ZTgwZmY0NzU3MTAxOA%253D%253D&amp;source=gmail&amp;ust=1617472194265000&amp;usg=AFQjCNFpYtgzkkIH144de6qrQ0j04nCR6A">kliknite ovde</a>.</div>
-                            </div>
                         </div>
                     </div>
                 </td>

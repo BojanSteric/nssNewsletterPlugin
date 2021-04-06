@@ -99,7 +99,11 @@ jQuery(document).ready(function($){
             tr += "<td class=\"col col-5\">"+ createdAt +"</td>";
             tr += "<td class=\"col col-6\">"+ scheduledAt +"</td>";
 
-            tr += "<td class=\"col col-7\"><button class='btn btn-sm btn-info updateNewsletter' data-id="+ newsId +"  >Update</button>-<button class='btn btn-sm btn-danger deleteNewsletter' data-id="+ newsId +">Delete</button></td>";
+            tr += "<td class=\"col col-7\"><button class='btn btn-sm btn-info updateNewsletter' data-id="+ newsId
+                + ">Update</button>-<button class='btn btn-sm btn-danger deleteNewsletter' data-id="+ newsId
+                + ">Delete</button>-<button class='btn btn-sm btn-info sendNewsletter' data-id="+ newsId
+                + ">Send</button>-<button class='btn btn-sm btn-info pauseNewsletter' data-id="+ newsId
+                + ">Pause</button></td>";
             tr += "<tr>";
 
             $("#empTable tbody").append(tr);
@@ -107,7 +111,45 @@ jQuery(document).ready(function($){
     }
 
 
-    //Update Newsletter Status
+    $('#empTable').on('click','.pauseNewsletter',function(){
+        var data = {
+            'action': 'pauseNewsletter',
+            'newsletterId': $(this).data('id')
+        };
+        $.ajax({
+            url: ajax_url,
+            type: 'post',
+            data: data,
+            dataType: 'json',
+            error: function (request, error) {
+                alert(" Can't do because: " + error);
+            },
+            success: function(response){
+                alert('Slanje newslettera je sada pokrenuto.');
+            }
+        });
+    });
+
+    $('#empTable').on('click','.sendNewsletter',function(){
+        var data = {
+            'action': 'sendNewsletter',
+            'newsletterId': $(this).data('id')
+        };
+        $.ajax({
+            url: ajax_url,
+            type: 'post',
+            data: data,
+            dataType: 'json',
+            error: function (request, error) {
+                alert(" Can't do because: " + error);
+            },
+            success: function(response){
+                alert('Slanje newslettera je sada pokrenuto.');
+            }
+        });
+    });
+
+
     $('#empTable').on('click','.updateNewsletter',function(){
         var id = $(this).data('id');
         var newsSelectStatus = $('#newsSelectStatus'+id+'').val();
