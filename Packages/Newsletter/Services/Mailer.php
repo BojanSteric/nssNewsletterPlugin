@@ -66,7 +66,6 @@ class Mailer
         $failover = 1;
         $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
 
-        $transport = new Smtp();
 
         $protocol = new SMTPProtocol([
             'username' => 'podrska@nonstopshop.rs',
@@ -94,16 +93,23 @@ class Mailer
                     ->setSubject($newsletter->getTitle())
                     ->setBody($mimeMessage);
                 try {
-                    $this->transport->send($message);
+                    $transport = new Smtp();
+                    $protocol->connect();
+                    $transport->setConnection($protocol);
+                    $transport->send($message);
+                    $protocol->disconnect();
                     $logMapper->insert($user->getId(), date('Y-m-d H:i:s'), $newsletterId);
+                    $sent++;
                 } catch (\Exception $e) {
                     $this->log('failed sending' . $e->getMessage());
+                    die();
                 }
             }
             $failover++;
-            $this->log(sprintf('sent %s items', count($users)));
+            $this->log(sprintf('sent %s items', $sent));
             $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
         }
+        $protocol->quit();
 
         $this->log('nl sent');
     }
