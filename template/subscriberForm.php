@@ -71,7 +71,7 @@ if (!isset($_GET['subaction'])) {
 
 	<form method="POST" action="<?= $subaction?>">
 		<label for="email"><?=__('Email', '')?></label>
-		<input type="email" id="email" name="email" placeholder="Email" value="<?= $email ?? ''?>">
+		<input type="email" id="email" name="email" placeholder="Email" value="<?= $email ?? ''?>" required>
 
 		<label for="emailStatus"><?= __('Status', '')?></label>
 		<select type=select id="newStatus" name="emailStatus" value="<?=$emailStatus ?? ''?>">
