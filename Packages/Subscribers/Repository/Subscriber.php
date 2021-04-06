@@ -130,7 +130,11 @@ class Subscriber
 
     public function getUserBy($field, $value)
     {
-        return $this->make($this->mapper->getUserBy($field, $value));
+        $result = $this->mapper->getUserBy($field, $value);
+        if ($result){
+            return $this->make($result);
+        }
+        return null;
     }
 
     public function unsubscribeUser(Model $user)

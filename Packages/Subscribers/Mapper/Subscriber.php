@@ -109,7 +109,11 @@ class Subscriber
     public function getUserBy($field, $value)
     {
         $sql = "SELECT * FROM $this->tableName WHERE `{$field}` = '{$value}'";
-        return $this->db->get_results($sql, ARRAY_A)[0];
+        $result = $this->db->get_results($sql, ARRAY_A);
+        if (count($result) > 0) {
+            return $result[0];
+        }
+        return $result;
     }
 
     public function confirm($user)

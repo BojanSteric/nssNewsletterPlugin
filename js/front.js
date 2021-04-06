@@ -10,7 +10,7 @@
                     email: email,
                 },
                 success: function(data) {
-                    alert(data);
+                    alert('Uspešno ste se prijavili na newsletter, molimo Vas da potvrdite prijavu klikom na link u emailu koji smo vam poslali.');
                 },
                 error: function(data) {
                     alert('Dogodila se neočekivana greška ');

@@ -51,10 +51,12 @@ class NewsletterPageShortcode
                         $subscribersMapper = new Subscriber();
                         $subscribersRepo = new \Subscriber\Repository\Subscriber($subscribersMapper);
                         $user = $subscribersRepo->getUserBy('actionLink', $userCode);
-                        $user->setActiveSince(date("Y-m-d H:i:s"));
-                        $user->setEmailStatus('confirmed');
-                        $subscribersRepo->confirmUser($user);
-                        echo '<p>Uspesno ste se prijavili na newsletter</p>';
+                        if ($user){
+                            $user->setActiveSince(date("Y-m-d H:i:s"));
+                            $user->setEmailStatus('confirmed');
+                            $subscribersRepo->confirmUser($user);
+                            echo '<p>Uspesno ste se prijavili na newsletter</p>';
+                        }
                         echo sprintf('<a title="back to home" href="%s">Nazad na početnu</a>', get_home_url());
                     }
 //                    include NEWSLETTER_DIR . '/template/subscribersPage.php';
@@ -67,10 +69,12 @@ class NewsletterPageShortcode
                         $subscribersMapper = new Subscriber();
                         $subscribersRepo = new \Subscriber\Repository\Subscriber($subscribersMapper);
                         $user = $subscribersRepo->getUserBy('actionLink', $userCode);
-                        $user->setActiveSince(null);
-                        $user->setEmailStatus('unsubscribed');
-                        $subscribersRepo->unsubscribeUser($user);
-                        echo '<p>Uspesno ste se odjavili sa newsletter-a</p>';
+                        if ($user){
+                            $user->setActiveSince(null);
+                            $user->setEmailStatus('unsubscribed');
+                            $subscribersRepo->unsubscribeUser($user);
+                            echo '<p>Uspesno ste se odjavili sa newsletter-a</p>';
+                        }
                         echo sprintf('<a title="back to home" href="%s">Nazad na početnu</a>', get_home_url());
                     }
 //                    include NEWSLETTER_DIR . '/template/subscribersPage.php';

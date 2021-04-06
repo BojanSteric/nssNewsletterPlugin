@@ -43,7 +43,7 @@ class NewsletterWidget extends WP_Widget {
 
     <form class="newsletterForma" action="" type="post">
         <input aria-label="email for newsletter" type="email" id="newsletter" name="email" placeholder="unesite svoju email adresu" required>
-        <input type="submit" value="sign up">
+        <input type="submit" value="Prijavi se">
     </form>
 
     <?php
@@ -63,11 +63,8 @@ class NewsletterWidget extends WP_Widget {
         if ($subscriber) {
             $subscriberActionLink = $newsletterPage->getPageUrl() . '/?action=confirmation&data=' . $subscriberRepo->getSubscriberByEmail($subscriberEmail)->getActionLink();
             MailService::sendMailToNewSubscribers($subscriberEmail, $subscriberActionLink);
-            $response ="You have successfully signed up for newsletter. Please go to email to confirmed";       
         }
-
-        echo json_encode($response);
-	    wp_die();
+        wp_send_json_success([]);
     }
 
 
