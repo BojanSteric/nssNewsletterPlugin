@@ -3,10 +3,13 @@
 namespace Newsletter\Service;
 
 
+use Newsletter\FrontPage\NewsletterFrontPage;
 use Newsletter\Model\Newsletter;
 use Newsletter\Repository\Newsletter as NewsletterRepo;
 use Subscriber\Repository\Subscriber;
 use Laminas\Mail\Transport\TransportInterface;
+use Laminas\Mail\Transport\SMTP;
+use Laminas\Mail\Protocol\Smtp\Auth\Plain as SMTPProtocol;
 use Laminas\Mime\Message as MimeMessage;
 use Laminas\Mime\Part;
 use Laminas\Mime\Mime;
@@ -25,7 +28,7 @@ class Mailer
     private $subscribers;
 
     /**
-     * @var TransportInterface
+     * @var SMTP
      */
     private $transport;
 
@@ -62,41 +65,61 @@ class Mailer
         $page = 0;
         $failover = 1;
         $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
+
+
+        $protocol = new SMTPProtocol([
+            'username' => 'podrska@nonstopshop.rs',
+            'password' => 'E7Xfq.ucwKh0rtz',
+            'ssl'      => 'tls',
+            'host' => 'smtp-tkc.ha.rs',
+            'port' => 587,
+        ]);
+
+
+        $sent = 0;
         while (count($users) > 0 && $failover < 10) {
-            $mimeMessage = new MimeMessage();
             $html = new Part();
             $html->type = Mime::TYPE_HTML;
             $html->charset = 'utf-8';
-            $html->setContent($this->parseNewsletterBody($newsletter));
-            $mimeMessage->addPart($html);
             /* @var \Subscriber\Model\Subscriber $user */
             foreach ($users as $user) {
+                $mimeMessage = new MimeMessage();
                 $message = new Message();
+                $html->setContent($this->parseNewsletterBody($newsletter, $user->getActionLink()));
+                $mimeMessage->addPart($html);
                 $message
                     ->addTo($user->getEmail())
                     ->setFrom('podrska@nonstopshop.rs')
                     ->setSubject($newsletter->getTitle())
                     ->setBody($mimeMessage);
                 try {
-                    $this->transport->send($message);
+                    $transport = new Smtp();
+                    $protocol->connect();
+                    $transport->setConnection($protocol);
+                    $transport->send($message);
+                    $protocol->disconnect();
                     $logMapper->insert($user->getId(), date('Y-m-d H:i:s'), $newsletterId);
+                    $sent++;
                 } catch (\Exception $e) {
                     $this->log('failed sending' . $e->getMessage());
+                    die();
                 }
             }
             $failover++;
-            $this->log(sprintf('sent %s items', count($users)));
+            $this->log(sprintf('sent %s items', $sent));
             $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
         }
+        $protocol->quit();
 
         $this->log('nl sent');
     }
 
-    private function parseNewsletterBody(Newsletter $newsletter)
+    private function parseNewsletterBody(Newsletter $newsletter, $userActionLink)
     {
         $templateName = $newsletter->getTemplateName();
 //        $productIds = explode(',', $newsletter->getProducts());
-
+        $newsletterPage = new NewsletterFrontPage();
+        $unsubscribeUrl = $newsletterPage->getPageUrl().'/?action=unsubscribe&data='.$userActionLink;
         $tpl = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/standard.php');
         $body = '';
         foreach (explode(',', $newsletter->getProducts()) as $id) {
@@ -110,7 +133,7 @@ class Mailer
             $body .= $this->parseTemplateItem($link, $imageUrl, $title, $desc, $price);
         }
 
-        return str_replace('#body', $body, $tpl);
+        return str_replace(['#unsubscribeUrl','#body'], [$unsubscribeUrl, $body], $tpl);
     }
 
     private function parseTemplateItem($link, $url, $title, $desc, $price)

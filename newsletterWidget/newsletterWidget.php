@@ -42,8 +42,8 @@ class NewsletterWidget extends WP_Widget {
     ?>
 
     <form class="newsletterForma" action="" type="post">
-        <input aria-label="email for newsletter" type="email" id="newsletter" name="email" placeholder="unesite svoju email adresu" required>
-        <input type="submit" value="Prijavi se">
+        <input class="newsletterInput" aria-label="email for newsletter" type="email" id="newsletter" name="email" placeholder="Unesite Vaš email" required>
+        <input class="newsletterSubmit" type="submit" value="Prijavi se">
     </form>
 
     <?php

@@ -33,7 +33,7 @@
             <p><font size="2">Akcijska ponuda traje do rasprodaja zaliha. Količina proizvoda je ograničena.</font></p>
             <font size="2">Ova poruka Vam je poslata sa Internet prodavnice NonStopShop.rs na kojoj ste prilikom registracije dali svoju saglasnost za primanje email obaveštenja o aktuelnim ponudama.</font></div>
         <div style="text-align:center;margin:10px 0 20px">
-            <font size="2">Ukoliko želite da se odjavite sa mejling liste posetite stranicu "Vaš nalog"&nbsp;</font><font size="2">ili,</font>&nbsp;<a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLz9uYT1wcm9maWxlJm5rPTIwNzUzMi0xMWU5NDI4YjRlOzs2ZmEwNmZhMDQ5ZmY1OWE4ZDc4ZTgwZmY0NzU3MTAxOA%3D%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLz9uYT1wcm9maWxlJm5rPTIwNzUzMi0xMWU5NDI4YjRlOzs2ZmEwNmZhMDQ5ZmY1OWE4ZDc4ZTgwZmY0NzU3MTAxOA%253D%253D&amp;source=gmail&amp;ust=1617472194265000&amp;usg=AFQjCNFpYtgzkkIH144de6qrQ0j04nCR6A">kliknite ovde</a>.</div>
+            <font size="2">Ukoliko želite da se odjavite sa mejling liste &nbsp;</font><font size="2">ili,</font>&nbsp;<a href="#unsubscribeUrl" rel="noopener noreferrer" target="_blank">kliknite ovde</a>.</div>
     </div>
     <img width="1" height="1" alt="" src="https://nonstopshop.rs/">
 </div>

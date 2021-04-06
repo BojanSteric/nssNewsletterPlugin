@@ -1,39 +1,36 @@
 <?php
-
-$a='';
-$b='';
-$c='';
-$d='';
 if(isset($_GET['action'])){
 $status=$_GET['action'];
 switch ($status){
     case 'subscribers':
-        $a='active';
+	    $subscriberSideBar='active';
         break;
     case 'newsletters':
-        $b='active';
+	    $newsletterSideBar='active';
         break;
 	case 'templates':
 	case 'editTemplate':
-        $e='active';
+	    $templateSideBar='active';
         break;
 	case 'editSubscribers':
-		$d='active';
+		$createSubscriberSideBar='active';
 	break;
 	case 'editNewsletters':
-		$c='active';
+		$createNewslleterSideBar='active';
+		break;
+	case 'ParsingImporting':
+		$importingSideBar='active';
 		break;
     }
-}else {$b='active';}
+}else {$newsletterSideBar='active';}
 ?>
 
 <div class="sidenavAdminCategories">
-    <a  class="sidenavAdminCategorieslist <?php echo $b;?>"href="<?=admin_url() . '?page=newsletter&action=newsletters'?>"  >Newsletters</a>
-    <a  class="sidenavAdminCategorieslist <?php echo $a;?>"href="<?=admin_url() . '?page=newsletter&action=subscribers'?>"  >Subscribers</a>
-    <a  class="sidenavAdminCategorieslist <?php echo $e;?>"href="<?=admin_url() . '?page=newsletter&action=templates'?>"  >Templates</a>
-    <a  class="sidenavAdminCategorieslist <?php echo $c;?>"href="<?=admin_url() . '?page=newsletter&action=editNewsletters'?>"  >Create Newsletter</a>
-    <a  class="sidenavAdminCategorieslist <?php echo $d;?>"href="<?=admin_url() . '?page=newsletter&action=editSubscribers&subaction=create'?>"  >Create Subscriber</a>
-    <a  class="sidenavAdminCategorieslist <?php echo $d;?>"href="<?=admin_url() . '?page=newsletter&action=sendNewsToSubsc'?>"  >SEND</a>
-    <a  class="sidenavAdminCategorieslist <?php echo $d;?>"href="<?=admin_url() . '?page=newsletter&action=uploadDatabase'?>"  >Parsing/Importing</a>
+    <a  class="sidenavAdminCategorieslist <?php echo $newsletterSideBar;?>"href="<?=admin_url() . '?page=newsletter&action=newsletters'?>"  >Newsletters</a>
+    <a  class="sidenavAdminCategorieslist <?php echo $subscriberSideBar;?>"href="<?=admin_url() . '?page=newsletter&action=subscribers'?>"  >Subscribers</a>
+    <a  class="sidenavAdminCategorieslist <?php echo $templateSideBar;?>"href="<?=admin_url() . '?page=newsletter&action=templates'?>"  >Templates</a>
+    <a  class="sidenavAdminCategorieslist <?php echo $createNewslleterSideBar;?>"href="<?=admin_url() . '?page=newsletter&action=editNewsletters'?>"  >Create Newsletter</a>
+    <a  class="sidenavAdminCategorieslist <?php echo $createSubscriberSideBar;?>"href="<?=admin_url() . '?page=newsletter&action=editSubscribers&subaction=create'?>"  >Create Subscriber</a>
+    <a  class="sidenavAdminCategorieslist <?php echo $importingSideBar;?>"href="<?=admin_url() . '?page=newsletter&action=uploadDatabase'?>"  >Parsing/Importing</a>
 
 </div>

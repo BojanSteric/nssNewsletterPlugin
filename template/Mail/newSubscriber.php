@@ -53,7 +53,7 @@
                                                     <td valign="top"
                                                         style="padding-top:20px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:24px;text-align:left;font-weight:none"
                                                         align="left">
-                                                        <span>Greetings dear visitor,</span>
+                                                        <span> Poštovani,</span>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -70,7 +70,7 @@
                                 <tr>
                                     <td valign="top"
                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:20px;text-align:left;font-weight:none"
-                                        align="left"><span>If you have recently subscribed to the CompanyNewsletter newsletter by e-mail:</span><br>
+                                        align="left"><span>Ukoliko ste se prijavili za CompanyNewsletter newsletter putem e-maila:</span><br>
                                         <span><a href="mailto:emailNewsletter" style="color: #2C5F2D;"
                                                  target="_blank">emailNewsletter</a></span>
                                     </td>
@@ -86,7 +86,7 @@
                                 <tr>
                                     <td valign="top"
                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:20px;text-align:left;font-weight:none"
-                                        align="left">Comfirm your subscription, by click the button below:
+                                        align="left">Potvrdite vaše prijavljivanje, klikom na dugme ispod, usuprotno ignorišite ovaj mail.
                                     </td>
                                 </tr>
 
@@ -99,7 +99,7 @@
                                                             style="font-size:16px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;font-weight:none;color:#ffffff;text-decoration:none;background-color:#2C5F2D;border-top:11px solid #2C5F2D;border-bottom:11px solid #2C5F2D;border-left:20px solid #2C5F2D;border-right:20px solid #2C5F2D;border-radius:5px;display:inline-block"
                                                             href="confirmLink"
                                                             target="_blank"
-                                                            data-saferedirecturl="confirmLink">Subscribe</a></td>
+                                                            data-saferedirecturl="confirmLink">Prijavi se</a></td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -118,7 +118,7 @@
                                                     <td valign="top"
                                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:24px;text-align:left;font-weight:none"
                                                         align="left">
-                                                        <span>Cheers,</span><br>
+                                                        <span>Srdačno Vaš,</span><br>
                                                         <span>CompanyNewsletter</span>
                                                     </td>
                                                 </tr>
@@ -177,7 +177,7 @@
                                                     <td valign="top"
                                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#707070;font-size:12px;line-height:18px;text-align:center;font-weight:none"
                                                         align="center">
-                                                        <br><span>This message was sent to you by CompanyNewsletter</span><br>
+                                                        <br><span>Ova poruka vam je poslata od strane CompanyNewsletter</span><br>
                                                     </td>
                                                 </tr>
                                                 <tr valign="top">
