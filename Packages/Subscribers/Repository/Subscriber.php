@@ -133,4 +133,9 @@ class Subscriber
         return $this->make($this->mapper->getUserBy($field, $value));
     }
 
+    public function unsubscribeUser(Model $user)
+    {
+       $this->mapper->unsubscribe($user);
+    }
+
 }

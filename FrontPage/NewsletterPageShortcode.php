@@ -54,18 +54,26 @@ class NewsletterPageShortcode
                         $user->setActiveSince(date("Y-m-d H:i:s"));
                         $user->setEmailStatus('confirmed');
                         $subscribersRepo->confirmUser($user);
-                        echo 'Uspesno ste se prijavili';
+                        echo '<p>Uspesno ste se prijavili na newsletter</p>';
+                        echo sprintf('<a title="back to home" href="%s">Nazad na početnu</a>', get_home_url());
                     }
-                    include NEWSLETTER_DIR . '/template/subscribersPage.php';
+//                    include NEWSLETTER_DIR . '/template/subscribersPage.php';
                     break;
                 case 'unsubscribe':
                     $userCode = $_GET['data'] ?? '';
                     if ($userCode === '') {
                         echo 'Dogodila se neocekivana greska, kontaktirajte admina stranice';
                     } else {
-                        echo 'Uspesno ste se odjavili';
+                        $subscribersMapper = new Subscriber();
+                        $subscribersRepo = new \Subscriber\Repository\Subscriber($subscribersMapper);
+                        $user = $subscribersRepo->getUserBy('actionLink', $userCode);
+                        $user->setActiveSince(null);
+                        $user->setEmailStatus('unsubscribed');
+                        $subscribersRepo->unsubscribeUser($user);
+                        echo '<p>Uspesno ste se odjavili sa newsletter-a</p>';
+                        echo sprintf('<a title="back to home" href="%s">Nazad na početnu</a>', get_home_url());
                     }
-                    include NEWSLETTER_DIR . '/template/subscribersPage.php';
+//                    include NEWSLETTER_DIR . '/template/subscribersPage.php';
                     break;
                 default :
                     //@todo napraviti stranicu za menjanje maila i odjavljivanje a kasnije i menjanje liste na koju si prijavljen

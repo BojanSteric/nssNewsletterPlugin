@@ -117,4 +117,9 @@ class Subscriber
         $this->update($user);
     }
 
+    public function unsubscribe(\Subscriber\Model\Subscriber $user)
+    {
+        $this->update($user);
+    }
+
 }
