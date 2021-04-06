@@ -11,3 +11,10 @@ foreach (new RecursiveIteratorIterator($dir) as $file) {
 		}
 	}
 }
+foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator(NEWSLETTER_DIR . '/FrontPage')) as $file) {
+    if (!is_dir($file)) {
+        if (fnmatch('*.php', $file)) {
+            require $file;
+        }
+    }
+}

@@ -35,7 +35,8 @@ class Subscriber
             'lastName' => $model->getLastName(),
             'createdAt' => $model->getDateCreated(),
             'updatedAt' => $model->getDateUpdated(),
-        ],['%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s']);
+            'activeSince' => $model->getActiveSince(),
+        ],['%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s']);
         return $this->db->insert_id;
     }
 
@@ -51,7 +52,8 @@ class Subscriber
                 'lastName' => $model->getLastName(),
                 'createdAt' => $model->getDateCreated(),
                 'updatedAt' => $model->getDateUpdated(),
-            ],['userId' => $model->getId()],['%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s']);
+                'activeSince' => $model->getActiveSince(),
+            ],['userId' => $model->getId()],['%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s']);
     }
 
     public function delete(int $subscriberId): void
@@ -97,4 +99,22 @@ class Subscriber
 
         return $this->db->get_results($sql, ARRAY_A);
     }
+
+    public function getAllActive()
+    {
+        $sql = "SELECT * FROM $this->tableName WHERE 'activeSince' IS NOT NULL;";
+        return $this->db->get_results($sql, ARRAY_A);
+    }
+
+    public function getUserBy($field, $value)
+    {
+        $sql = "SELECT * FROM $this->tableName WHERE `{$field}` = '{$value}'";
+        return $this->db->get_results($sql, ARRAY_A)[0];
+    }
+
+    public function confirm($user)
+    {
+        $this->update($user);
+    }
+
 }

@@ -22,7 +22,7 @@ class Subscriber
         $this->mapper = $mapper;
     }
 
-    public function create($data): ?int
+    public function create($data)
     {
         if($this->mapper->getSubscriberByEmail($data['email']) === null)
         {
@@ -57,12 +57,12 @@ class Subscriber
         return $this->make($this->mapper->getSubscriberByEmail($email));
     }
 
-    public function update($data): void
+    public function update($data)
     {
         $this->mapper->update($this->make($data));
     }
     
-    public function delete(int $userId): void
+    public function delete(int $userId)
     {
         $this->mapper->delete($userId);
     }
@@ -87,6 +87,7 @@ class Subscriber
         $lastName = null;
         $createdAt = null;
         $updatedAt = null;
+        $activeSince = null;
 
         if (isset($data['userId'])){
             $userId = $data['userId'];
@@ -115,8 +116,21 @@ class Subscriber
         if (isset($data['actionLink'])) {
             $actionLink = $data['actionLink'];
         }
+        if (isset($data['activeSince'])) {
+            $activeSince = $data['activeSince'];
+        }
         
-        return new Model($userId, $wpUserId, $email, $emailStatus, $actionLink, $firstName, $lastName, $createdAt, $updatedAt);
+        return new Model($userId, $wpUserId, $email, $emailStatus, $actionLink, $firstName, $lastName, $createdAt, $updatedAt, $activeSince);
     }
-    
+
+    public function confirmUser($user)
+    {
+        $this->mapper->confirm($user);
+    }
+
+    public function getUserBy($field, $value)
+    {
+        return $this->make($this->mapper->getUserBy($field, $value));
+    }
+
 }

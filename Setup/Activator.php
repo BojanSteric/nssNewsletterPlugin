@@ -3,6 +3,8 @@
 namespace Newsletter\Setup;
 
 
+use Newsletter\FrontPage\NewsletterFrontPage;
+
 class Activator {
 
 	private $db;
@@ -17,6 +19,8 @@ class Activator {
 		$this->createSubscriberTable();
 		$this->createNewsletterTable();
 		$this->createNewsletterLogTable();
+		$newsletterPage = new NewsletterFrontPage();
+		$newsletterPage->activate();
 	}
 
 	private function createSubscriberTable()
@@ -35,6 +39,7 @@ class Activator {
 		  `lastName` varchar(20) DEFAULT NULL,
 		  `createdAt` datetime DEFAULT NULL,
 		  `updatedAt` datetime DEFAULT NULL,
+		  `activeSince` datetime DEFAULT NULL,
 		  PRIMARY KEY  (userId),
 		  CONSTRAINT emailAdress UNIQUE (email)
 		) $charset_collate;";
@@ -64,7 +69,6 @@ class Activator {
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql2 );
 	}
-
     private function createNewsletterLogTable()
     {
         global $wpdb;

@@ -1,4 +1,6 @@
 <?php
+
+use Newsletter\FrontPage\NewsletterFrontPage;
 use Subscriber\Mapper\Subscriber as SubMapper;
 use Subscriber\Repository\Subscriber as SubRepository;
 use Subscriber\Service\PostFormatter as SubscriberPostFormatter;
@@ -56,10 +58,11 @@ class NewsletterWidget extends WP_Widget {
 	    $subscriberEmail = $_POST['email'];
 	    $data = SubscriberPostFormatter::formatDataNewSubscribers( $_POST );
         $subscriber = $subscriberRepo->create( $data );
-        $response ="You already signed in!";       
+        $response ="You already signed in!";
+        $newsletterPage = new NewsletterFrontPage();
         if ($subscriber) {
-            $subscriberActionLink = admin_url( 'admin-ajax.php' ) . '/action=confirmation&data=' . $subscriberRepo->getSubscriberByEmail($subscriberEmail)->getActionLink();
-            $sendInvite = MailService::sendMailToNewSubscribers($subscriberEmail, $subscriberActionLink);
+            $subscriberActionLink = $newsletterPage->getPageUrl() . '/?action=confirmation&data=' . $subscriberRepo->getSubscriberByEmail($subscriberEmail)->getActionLink();
+            MailService::sendMailToNewSubscribers($subscriberEmail, $subscriberActionLink);
             $response ="You have successfully signed up for newsletter. Please go to email to confirmed";       
         }
 

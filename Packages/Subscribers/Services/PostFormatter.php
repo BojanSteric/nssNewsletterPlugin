@@ -10,8 +10,8 @@ class PostFormatter {
         $user = get_user_by( 'email', $data['email'] );
         $data['wpUserId'] = $user->ID;
 		$data['emailStatus'] = (string)$postData['emailStatus'];
-		$data['createdAt'] = $postData['createdAt'] ?? date("Y-m-d H:i:s", new \DateTime() );
-		$data['updatedAt'] = (string)$postData['updatedAt'];
+		$data['createdAt'] = $postData['createdAt'] ?? date("Y-m-d H:i:s");
+		$data['updatedAt'] = $postData['updatedAt'] ?? date("Y-m-d H:i:s");
 		$data['firstName'] = (string)$postData['firstName'];
         $data['lastName'] = (string)$postData['lastName'];
 		$data['actionLink'] = emailHash($postData['email']);

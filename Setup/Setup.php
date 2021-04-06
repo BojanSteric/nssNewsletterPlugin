@@ -3,6 +3,7 @@
 
 namespace Newsletter\Setup;
 
+use Newsletter\FrontPage\NewsletterPageShortcode;
 use Newsletter\Mapper\Newsletter;
 use Newsletter\MenuPage\MenuPage;
 
@@ -16,7 +17,6 @@ class Setup {
 	public function __construct(MenuPage $menuPage)
 	{
 		$this->adminPage = $menuPage;
-
 	}
 
 	public function setup(): void
@@ -32,7 +32,8 @@ class Setup {
 		add_action( 'widgets_init', [ $this, 'gfRegisterWidgets' ] );
 		/*	add_action('admin_post_submit-form',  [$this,'prijavaForm']); // If the user is logged in
 			add_action('admin_post_nopriv_submit-form', [$this, 'prijavaForm']);*/
-
+        $pageShortcode = new NewsletterPageShortcode();
+        $pageShortcode->registerShortcode();
 	}
 	public function enqueueAdminCss(): void
 	{
