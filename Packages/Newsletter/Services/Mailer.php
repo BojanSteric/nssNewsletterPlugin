@@ -3,6 +3,7 @@
 namespace Newsletter\Service;
 
 
+use Newsletter\FrontPage\NewsletterFrontPage;
 use Newsletter\Model\Newsletter;
 use Newsletter\Repository\Newsletter as NewsletterRepo;
 use Subscriber\Repository\Subscriber;
@@ -63,15 +64,15 @@ class Mailer
         $failover = 1;
         $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
         while (count($users) > 0 && $failover < 10) {
-            $mimeMessage = new MimeMessage();
             $html = new Part();
             $html->type = Mime::TYPE_HTML;
             $html->charset = 'utf-8';
-            $html->setContent($this->parseNewsletterBody($newsletter));
-            $mimeMessage->addPart($html);
             /* @var \Subscriber\Model\Subscriber $user */
             foreach ($users as $user) {
+                $mimeMessage = new MimeMessage();
                 $message = new Message();
+                $html->setContent($this->parseNewsletterBody($newsletter, $user->getActionLink()));
+                $mimeMessage->addPart($html);
                 $message
                     ->addTo($user->getEmail())
                     ->setFrom('podrska@nonstopshop.rs')
@@ -92,11 +93,12 @@ class Mailer
         $this->log('nl sent');
     }
 
-    private function parseNewsletterBody(Newsletter $newsletter)
+    private function parseNewsletterBody(Newsletter $newsletter, $userActionLink)
     {
         $templateName = $newsletter->getTemplateName();
 //        $productIds = explode(',', $newsletter->getProducts());
-
+        $newsletterPage = new NewsletterFrontPage();
+        $unsubscribeUrl = $newsletterPage->getPageUrl().'/?action=unsubscribe&data='.$userActionLink;
         $tpl = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/standard.php');
         $body = '';
         foreach (explode(',', $newsletter->getProducts()) as $id) {
@@ -110,7 +112,7 @@ class Mailer
             $body .= $this->parseTemplateItem($link, $imageUrl, $title, $desc, $price);
         }
 
-        return str_replace('#body', $body, $tpl);
+        return str_replace(['#unsubscribeUrl','#body'], [$unsubscribeUrl, $body], $tpl);
     }
 
     private function parseTemplateItem($link, $url, $title, $desc, $price)
