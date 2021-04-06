@@ -7,6 +7,8 @@ use Newsletter\Model\Newsletter;
 use Newsletter\Repository\Newsletter as NewsletterRepo;
 use Subscriber\Repository\Subscriber;
 use Laminas\Mail\Transport\TransportInterface;
+use Laminas\Mail\Transport\SMTP;
+use Laminas\Mail\Protocol\Smtp\Auth\Plain as SMTPProtocol;
 use Laminas\Mime\Message as MimeMessage;
 use Laminas\Mime\Part;
 use Laminas\Mime\Mime;
@@ -25,7 +27,7 @@ class Mailer
     private $subscribers;
 
     /**
-     * @var TransportInterface
+     * @var SMTP
      */
     private $transport;
 
@@ -62,6 +64,19 @@ class Mailer
         $page = 0;
         $failover = 1;
         $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
+
+        $transport = new Smtp();
+
+        $protocol = new SMTPProtocol([
+            'username' => 'podrska@nonstopshop.rs',
+            'password' => 'E7Xfq.ucwKh0rtz',
+            'ssl'      => 'tls',
+            'host' => 'smtp-tkc.ha.rs',
+            'port' => 587,
+        ]);
+
+
+        $sent = 0;
         while (count($users) > 0 && $failover < 10) {
             $mimeMessage = new MimeMessage();
             $html = new Part();
