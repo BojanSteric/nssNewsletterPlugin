@@ -82,7 +82,11 @@ class Subscriber
     public function getSubscriberByEmail(string $email)
     {
         $sql = "SELECT * FROM $this->tableName WHERE `email` = '$email';";
-        return $this->db->get_results($sql, ARRAY_A)[0];
+        $result = $this->db->get_results($sql, ARRAY_A);
+        if( count($result) > 0 )
+            return $result[0];
+            
+        return null;
     }
 
     public function getForSending(int $newsletterId, int $page, int $perPage)

@@ -193,5 +193,4 @@ class Subscriber
     {
         $this->emailStatus = $status;
     }
-
 }
