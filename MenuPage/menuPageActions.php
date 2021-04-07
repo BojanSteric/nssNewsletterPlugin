@@ -1,5 +1,6 @@
 <?php
 
+use Newsletter\Import\Importer;
 use Subscriber\Mapper\Subscriber as SubMapper;
 use Subscriber\Repository\Subscriber as SubRepository;
 use Subscriber\Service\PostFormatter as SubscriberPostFormatter;
@@ -188,15 +189,12 @@ switch ( $action ) {
 	case 'import':
 		// var_dump(file_get_contents($_FILES['parsingFile']['tmp_name']));
 		$handle = fopen($_FILES['parsingFile']['tmp_name'], "r");
-	
 		$header = \Newsletter\Import\Parser::getHeader($handle);
 		$data = \Newsletter\Import\Parser::getData($header, $handle);
-		var_dump($data);
-		/** parser isparsira podatke, napravi niz nizova u kojima su kljucevi zaglavlje csv fajla
-		*   mapper treba da izmeni podatke tako da nam odgovaraju za bazu
-		*	importer treba da odradi insert u bazu
-		*	treba malo isfleksovati sa solid principima ovde da bismo mogli da se sirimo za druge fajlove (excel, pdf, sta vec)
-		*/
+		$mapper = new \Newsletter\Import\Mapper();
+		$mappedData = $mapper->mapParsedData($data, 'nss');
+		$importer = new Importer($subscriberRepo);
+		$importer->importData($mappedData);
 		fclose($handle);
 		break;
 }

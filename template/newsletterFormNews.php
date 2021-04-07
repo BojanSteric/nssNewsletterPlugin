@@ -6,7 +6,7 @@
 
 	<form method="POST" action="<?php echo '?page=newsletter&action=createNewsletters&noheader=true'; ?>">
 		<label for="title">Title</label>
-		<input type="text" id="title" name="title" placeholder="Title.." ">
+		<input type="text" id="title" name="title" placeholder="Title.." required">
 
 		<label for="newStatus">Status</label>
 		<select type=select id="newStatus" name="newsStatus" ">
@@ -24,10 +24,10 @@
         </select>
 
 		<label for="Sceduled">Sceduled at</label>
-		<input type="datetime-local" id="Sceduled" name="scheduledAt" ">
+		<input type="datetime-local" id="Sceduled" name="scheduledAt" required">
 
         <label for="productId">Comma-separated  product id for newsletter </label>
-        <input type="text" id="productId" name="products" placeholder="id,id,id" ">
+        <input type="text" id="productId" name="products" placeholder="id,id,id" required">
 
 		<label for="content">Content</label>
 		<textarea id="content" name="content" placeholder="Write something.." style="height:200px"></textarea>
