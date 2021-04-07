@@ -42,7 +42,7 @@ class MailFormater {
 	{
 		$company='NonStopShop.rs';
 		$to=$email;
-		$subject='Newsletter Subscribe submit';
+		$subject='Newssleter potvrda or smth';
 		
 		$myfile = fopen(NEWSLETTER_DIR . 'template/Mail/newSubscriber.php', "r") or die("Unable to open file!");
 		$message= fread($myfile,filesize(NEWSLETTER_DIR . 'template/Mail/newSubscriber.php'));

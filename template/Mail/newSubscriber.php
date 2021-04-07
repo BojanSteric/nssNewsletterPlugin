@@ -25,7 +25,7 @@
                                                     <td valign="top"
                                                         style="padding-top:0px;font-family:Helvetica neue,Helvetica,Arial,Verdana,sans-serif;color:#2C5F2D;font-size:20px;line-height:32px;text-align:left;font-weight:bold"
                                                         align="left">
-                                                        <span>Newsletter subscription</span>
+                                                        <span>Newssleter potvrda</span>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -70,7 +70,7 @@
                                 <tr>
                                     <td valign="top"
                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:20px;text-align:left;font-weight:none"
-                                        align="left"><span>Ukoliko ste se prijavili za  newsletter CompanyNewsletter putem e-maila:</span><br>
+                                        align="left"><span>Ukoliko ste se prijavili za newsletter CompanyNewsletter putem e-maila:</span><br>
                                         <span><a href="mailto:emailNewsletter" style="color: #2C5F2D;"
                                                  target="_blank">emailNewsletter</a></span>
                                     </td>
@@ -118,7 +118,7 @@
                                                     <td valign="top"
                                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:24px;text-align:left;font-weight:none"
                                                         align="left">
-                                                        <span>Pozdrav od nonstopshop.rs</span>
+                                                        <span>Pozdrav od <a href="https://nonstopshop.rs">nonstopshop.rs</a></span>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -176,7 +176,7 @@
                                                     <td valign="top"
                                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#707070;font-size:12px;line-height:18px;text-align:center;font-weight:none"
                                                         align="center">
-                                                        <br><span>Ova poruka Vam je poslata sa Internet prodavnice NonStopShop.rs</span><br>
+                                                        <br><span>Ova poruka Vam je poslata sa Internet prodavnice <a href="https://nonstopshop.rs">NonStopShop.rs</a></span><br>
                                                     </td>
                                                 </tr>
                                                 </tbody>
