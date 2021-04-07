@@ -75,6 +75,9 @@ class Mailer
             'port' => 587,
         ]);
 
+        $transport = new Smtp();
+        $protocol->connect();
+        $transport->setConnection($protocol);
 
         $sent = 0;
         while (count($users) > 0 && $failover < 10) {
@@ -93,14 +96,21 @@ class Mailer
                     ->setSubject($newsletter->getTitle())
                     ->setBody($mimeMessage);
                 try {
-                    $transport = new Smtp();
-                    $protocol->connect();
-                    $transport->setConnection($protocol);
+
                     $transport->send($message);
-                    $protocol->disconnect();
+//                    $protocol->disconnect();
                     $logMapper->insert($user->getId(), date('Y-m-d H:i:s'), $newsletterId);
                     $sent++;
                 } catch (\Exception $e) {
+                    if (false !== strpos($e->getMessage(), 'bounce')) {
+                        $this->subscribers->update([
+                            'userId' => $user->getId(),
+                            'wpUserId' => $user->getWpUserId(),
+                            'email' => $user->getEmail(),
+                            'emailStatus' => 'bounce',
+                        ]);
+                        continue;
+                    }
                     $this->log('failed sending' . $e->getMessage());
                     die();
                 }

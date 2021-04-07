@@ -82,9 +82,9 @@ class Subscriber
         $wpUserId = null;
         $email = null;
         $emailStatus = null;
-        $actionLink = null;
-        $firstName = null;
-        $lastName = null;
+        $actionLink = password_hash($data['email'], PASSWORD_BCRYPT, ["cost" => 8]);
+        $firstName = '';
+        $lastName = '';
         $createdAt = null;
         $updatedAt = null;
         $activeSince = null;

@@ -34,5 +34,5 @@ class PostFormatter {
 
 function emailHash($email)
 {
-	return password_hash($email, PASSWORD_BCRYPT);
+	return password_hash($email, PASSWORD_BCRYPT, ["cost" => 8]);
 }
