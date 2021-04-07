@@ -99,14 +99,11 @@ class Mailer
                             'email' => $user->getEmail(),
                             'emailStatus' => 'bounce',
                         ]);
-                        die('here');
                         continue;
                     }
                     $this->log('failed sending' . $e->getMessage());
                     die();
                 }
-
-                die('pass');
             }
             $failover++;
             $this->log(sprintf('sent %s items', $sent));
