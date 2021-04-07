@@ -28,20 +28,20 @@ class Mailer
     private $subscribers;
 
     /**
-     * @var SMTP
+     * @var SMTPProtocol
      */
-    private $transport;
+    private $protocol;
 
     /**
      * Mailer constructor.
      * @param Newsletter $newsletter
      * @param Subscriber $subscribers
      */
-    public function __construct(NewsletterRepo $newsletter, Subscriber $subscribers, TransportInterface $transport)
+    public function __construct(NewsletterRepo $newsletter, Subscriber $subscribers, SMTPProtocol $protocol)
     {
         $this->newsletter = $newsletter;
         $this->subscribers = $subscribers;
-        $this->transport = $transport;
+        $this->protocol = $protocol;
         add_action('init', function() {
             add_action( 'gfNewsletterSend', [$this, 'send']);
         });
@@ -62,25 +62,16 @@ class Mailer
         $this->log('started nl sending');
         $newsletter = $this->newsletter->getNewsletterById($newsletterId);
         $bulkAmount = 4;
-        $page = 0;
-        $failover = 1;
-        $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
-
-
-        $protocol = new SMTPProtocol([
-            'username' => 'podrska@nonstopshop.rs',
-            'password' => 'E7Xfq.ucwKh0rtz',
-            'ssl'      => 'tls',
-            'host' => 'smtp-tkc.ha.rs',
-            'port' => 587,
-        ]);
-
+        $failoverLimit = 5;
+        $this->protocol->connect();
         $transport = new Smtp();
-        $protocol->connect();
-        $transport->setConnection($protocol);
+        $transport->setConnection($this->protocol);
 
+        $failover = 1;
+        $page = 0;
         $sent = 0;
-        while (count($users) > 0 && $failover < 10) {
+        $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
+        while (count($users) > 0 && $failover < $failoverLimit) {
             $html = new Part();
             $html->type = Mime::TYPE_HTML;
             $html->charset = 'utf-8';
@@ -92,35 +83,36 @@ class Mailer
                 $mimeMessage->addPart($html);
                 $message
                     ->addTo($user->getEmail())
-                    ->setFrom('podrska@nonstopshop.rs')
+                    ->setFrom('podrska@nonstopshop.rs', 'Nonstopshop.rs')
                     ->setSubject($newsletter->getTitle())
                     ->setBody($mimeMessage);
                 try {
-
                     $transport->send($message);
-//                    $protocol->disconnect();
                     $logMapper->insert($user->getId(), date('Y-m-d H:i:s'), $newsletterId);
                     $sent++;
                 } catch (\Exception $e) {
-                    if (false !== strpos($e->getMessage(), 'bounce')) {
+                    echo $e->getMessage();
+                    if (false !== strpos($e->getMessage(), 'bouncing address')) {
                         $this->subscribers->update([
                             'userId' => $user->getId(),
                             'wpUserId' => $user->getWpUserId(),
                             'email' => $user->getEmail(),
                             'emailStatus' => 'bounce',
                         ]);
+                        die('here');
                         continue;
                     }
                     $this->log('failed sending' . $e->getMessage());
                     die();
                 }
+
+                die('pass');
             }
             $failover++;
             $this->log(sprintf('sent %s items', $sent));
             $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
         }
-        $protocol->quit();
-
+        $this->protocol->quit();
         $this->log('nl sent');
     }
 
