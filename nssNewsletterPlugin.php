@@ -12,7 +12,7 @@ use Newsletter\Setup\Activator;
 use Newsletter\Setup\Setup;
 use Newsletter\MenuPage\MenuPage;
 use Service\AdminAjax\AdminAjax;
-use Laminas\Mail\Protocol\Smtp\Auth\Plain as SMTPProtocol;
+use Laminas\Mail\Protocol\Smtp\Auth\S as SMTPProtocol;
 use Laminas\Mail\Transport\Smtp;
 use Laminas\Mail\Transport\SmtpOptions;
 use Laminas\Mail\Transport\File;
