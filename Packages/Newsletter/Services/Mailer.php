@@ -66,7 +66,6 @@ class Mailer
         $failover = 1;
         $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
 
-
         $protocol = new SMTPProtocol([
             'username' => 'podrska@nonstopshop.rs',
             'password' => 'E7Xfq.ucwKh0rtz',
@@ -120,7 +119,7 @@ class Mailer
 //        $productIds = explode(',', $newsletter->getProducts());
         $newsletterPage = new NewsletterFrontPage();
         $unsubscribeUrl = $newsletterPage->getPageUrl().'/?action=unsubscribe&data='.$userActionLink;
-        $tpl = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/standard.php');
+        $tpl = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'html');
         $body = '';
         foreach (explode(',', $newsletter->getProducts()) as $id) {
             /* @var \WC_Product $product */
