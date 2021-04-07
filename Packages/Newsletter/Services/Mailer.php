@@ -91,7 +91,6 @@ class Mailer
                     $logMapper->insert($user->getId(), date('Y-m-d H:i:s'), $newsletterId);
                     $sent++;
                 } catch (\Exception $e) {
-                    echo $e->getMessage();
                     if (false !== strpos($e->getMessage(), 'bouncing address')) {
                         $this->subscribers->update([
                             'userId' => $user->getId(),
@@ -101,6 +100,7 @@ class Mailer
                         ]);
                         continue;
                     }
+                    echo $e->getMessage();
                     $this->log('failed sending' . $e->getMessage());
                     die();
                 }
