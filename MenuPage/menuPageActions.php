@@ -145,7 +145,7 @@ switch ( $action ) {
 		$files = array_diff(scandir($path,1), array('.', '..'));
 		$fileItem=[];
 		foreach ($files as $file) {
-			$fileItem[] =str_replace(".php", "","$file");
+			$fileItem[] =str_replace(['.php','.html'], "","$file");
 		}
 		$newsletterPage = 'template/newsletterFormNews.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
