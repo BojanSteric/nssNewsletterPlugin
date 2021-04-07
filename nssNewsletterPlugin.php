@@ -12,6 +12,7 @@ use Newsletter\Setup\Activator;
 use Newsletter\Setup\Setup;
 use Newsletter\MenuPage\MenuPage;
 use Service\AdminAjax\AdminAjax;
+use Laminas\Mail\Protocol\Smtp\Auth\Plain as SMTPProtocol;
 use Laminas\Mail\Transport\Smtp;
 use Laminas\Mail\Transport\SmtpOptions;
 use Laminas\Mail\Transport\File;
@@ -61,11 +62,19 @@ $smtpTransport->setOptions(new SmtpOptions([
     ],
 ]));
 
+$protocol = new SMTPProtocol([
+    'username' => 'podrska@nonstopshop.rs',
+    'password' => 'E7Xfq.ucwKh0rtz',
+    'ssl'      => 'tls',
+    'host' => 'smtp-tkc.ha.rs',
+    'port' => 587,
+]);
+
 $mailer = new \Newsletter\Service\Mailer(
     new \Newsletter\Repository\Newsletter(new \Newsletter\Mapper\Newsletter()),
     new \Subscriber\Repository\Subscriber(new \Subscriber\Mapper\Subscriber()),
 //    $fileTransport
-    $smtpTransport
+    $protocol
 );
 
 /*Widget i njegov js nece da radi u setup ????*/

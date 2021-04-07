@@ -83,9 +83,10 @@ class Subscriber
     {
         $sql = "SELECT * FROM $this->tableName WHERE `email` = '$email';";
         $result = $this->db->get_results($sql, ARRAY_A);
-        if( count($result) > 0 )
+        if(count($result) > 0) {
             return $result[0];
-            
+        }
+
         return null;
     }
 
