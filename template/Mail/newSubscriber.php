@@ -70,7 +70,7 @@
                                 <tr>
                                     <td valign="top"
                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:20px;text-align:left;font-weight:none"
-                                        align="left"><span>Ukoliko ste se prijavili za newsletter NonStopShop.rs putem e-maila:</span><br>
+                                        align="left"><span>Ukoliko ste se prijavili za  newsletter CompanyNewsletter putem e-maila:</span><br>
                                         <span><a href="mailto:emailNewsletter" style="color: #2C5F2D;"
                                                  target="_blank">emailNewsletter</a></span>
                                     </td>
@@ -177,16 +177,6 @@
                                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#707070;font-size:12px;line-height:18px;text-align:center;font-weight:none"
                                                         align="center">
                                                         <br><span>Ova poruka Vam je poslata sa Internet prodavnice NonStopShop.rs</span><br>
-                                                    </td>
-                                                </tr>
-                                                <tr valign="top">
-                                                    <td align="center" style="padding-top:20px;padding-bottom:30px">
-                                                        <a href="" target="_blank"
-                                                           data-saferedirecturl="">
-                                                            <img src=""
-                                                                 width="114" border="0" alt="Newsletter"
-                                                                 style="display:block;color:#4c9ac9" class="CToWUd">
-                                                        </a>
                                                     </td>
                                                 </tr>
                                                 </tbody>
