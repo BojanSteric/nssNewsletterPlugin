@@ -70,7 +70,7 @@
                                 <tr>
                                     <td valign="top"
                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:20px;text-align:left;font-weight:none"
-                                        align="left"><span>Ukoliko ste se prijavili za CompanyNewsletter newsletter putem e-maila:</span><br>
+                                        align="left"><span>Ukoliko ste se prijavili za newsletter NonStopShop.rs putem e-maila:</span><br>
                                         <span><a href="mailto:emailNewsletter" style="color: #2C5F2D;"
                                                  target="_blank">emailNewsletter</a></span>
                                     </td>
@@ -118,8 +118,7 @@
                                                     <td valign="top"
                                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:24px;text-align:left;font-weight:none"
                                                         align="left">
-                                                        <span>Srdačno Vaš,</span><br>
-                                                        <span>CompanyNewsletter</span>
+                                                        <span>Pozdrav od nonstopshop.rs</span>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -177,7 +176,7 @@
                                                     <td valign="top"
                                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#707070;font-size:12px;line-height:18px;text-align:center;font-weight:none"
                                                         align="center">
-                                                        <br><span>Ova poruka vam je poslata od strane CompanyNewsletter</span><br>
+                                                        <br><span>Ova poruka Vam je poslata sa Internet prodavnice NonStopShop.rs</span><br>
                                                     </td>
                                                 </tr>
                                                 <tr valign="top">
