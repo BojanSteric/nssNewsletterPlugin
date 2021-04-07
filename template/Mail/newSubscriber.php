@@ -25,7 +25,7 @@
                                                     <td valign="top"
                                                         style="padding-top:0px;font-family:Helvetica neue,Helvetica,Arial,Verdana,sans-serif;color:#2C5F2D;font-size:20px;line-height:32px;text-align:left;font-weight:bold"
                                                         align="left">
-                                                        <span>Newssleter potvrda</span>
+                                                        <span>Newsletter potvrda</span>
                                                     </td>
                                                 </tr>
                                                 </tbody>
