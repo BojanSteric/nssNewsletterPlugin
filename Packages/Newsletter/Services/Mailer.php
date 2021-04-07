@@ -119,20 +119,20 @@ class Mailer
 //        $productIds = explode(',', $newsletter->getProducts());
         $newsletterPage = new NewsletterFrontPage();
         $unsubscribeUrl = $newsletterPage->getPageUrl().'/?action=unsubscribe&data='.$userActionLink;
-        $tpl = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/standard.php');
-        $body = '';
-        foreach (explode(',', $newsletter->getProducts()) as $id) {
-            /* @var \WC_Product $product */
-            $product = wc_get_product($id);
-            $link = $product->get_permalink();
-            $imageUrl = wp_get_attachment_url($product->get_image_id());
-            $title = $product->get_title();
-            $desc = $product->get_short_description();
-            $price = $product->get_price();
-            $body .= $this->parseTemplateItem($link, $imageUrl, $title, $desc, $price);
-        }
+        $tpl = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.html');
+//        $body = '';
+//        foreach (explode(',', $newsletter->getProducts()) as $id) {
+//            /* @var \WC_Product $product */
+//            $product = wc_get_product($id);
+//            $link = $product->get_permalink();
+//            $imageUrl = wp_get_attachment_url($product->get_image_id());
+//            $title = $product->get_title();
+//            $desc = $product->get_short_description();
+//            $price = $product->get_price();
+//            $body .= $this->parseTemplateItem($link, $imageUrl, $title, $desc, $price);
+//        }
 
-        return str_replace(['#unsubscribeUrl','#body'], [$unsubscribeUrl, $body], $tpl);
+        return str_replace('#unsubscribeUrl', $unsubscribeUrl, $tpl);
     }
 
     private function parseTemplateItem($link, $url, $title, $desc, $price)
