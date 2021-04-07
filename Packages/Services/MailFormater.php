@@ -40,7 +40,7 @@ class MailFormater {
 	}
 	public static function sendMailToNewSubscribers($email, $actionLink)
 	{
-		$company='NewsletterTeam';
+		$company='NonStopShop.rs';
 		$to=$email;
 		$subject='Newsletter Subscribe submit';
 		
