@@ -1,6 +1,18 @@
 {
+    "name"        : "bojansteric/nssnewsletterplugin",
+    "description" : "desc",
+    "keywords"    : ["wordpress"],
+    "license"     : "GPL-2.0+",
+    "type"        : "wordpress-theme",
+    "authors"     : [
+        {
+            "name"     : "Green Friends",
+            "email"    : ""
+        }
+    ],
     "require": {
         "laminas/laminas-mail": "^2.14",
         "laminas/laminas-servicemanager": "^3.6"
     }
 }
+
