@@ -3,7 +3,7 @@
     "description" : "desc",
     "keywords"    : ["wordpress"],
     "license"     : "GPL-2.0+",
-    "type"        : "wordpress-theme",
+    "type"        : "wordpress-plugin",
     "authors"     : [
         {
             "name"     : "Green Friends",
