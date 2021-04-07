@@ -43,12 +43,12 @@ class Newsletter
         return $this->make($this->mapper->getNewsletterById($newsletterId));
     }
 
-    public function update($data):
+    public function update($data)
     {
         $this->mapper->update($this->make($data));
     }
     
-    public function delete(int $newsletterId):
+    public function delete(int $newsletterId)
     {
         $this->mapper->delete($newsletterId);
     }
