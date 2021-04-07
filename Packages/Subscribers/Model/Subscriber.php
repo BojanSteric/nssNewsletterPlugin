@@ -94,7 +94,7 @@ class Subscriber
     /**
      * @return int
      */
-    public function getWpUserId(): ?int
+    public function getWpUserId()
     {
         return $this->wpUserId;
     }
@@ -142,7 +142,7 @@ class Subscriber
     /**
      * @return string
      */
-    public function getDateCreated($format = null): ?string
+    public function getDateCreated($format = null)
     {
         if ($this->createdAt !== '' && $this->createdAt !== null) {
             if ($format) {

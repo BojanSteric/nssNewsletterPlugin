@@ -19,12 +19,12 @@ class Setup {
 		$this->adminPage = $menuPage;
 	}
 
-	public function setup(): void
+	public function setup()
 	{
 		$this->shortCodeAndAction();
 	}
 
-	private function shortCodeAndAction(): void {
+	private function shortCodeAndAction() {
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueueAdminCss' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueueAdminJs' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueueWidgetJs' ] );
@@ -35,11 +35,11 @@ class Setup {
         $pageShortcode = new NewsletterPageShortcode();
         $pageShortcode->registerShortcode();
 	}
-	public function enqueueAdminCss(): void
+	public function enqueueAdminCss()
 	{
 		wp_enqueue_style('newsletterAdminCss', NEWSLETTER_DIR_URI . 'css/admin.css','','1');
 	}
-	public function enqueueAdminJs(): void
+	public function enqueueAdminJs()
 	{
 		wp_enqueue_script('newsletterAdminJs', NEWSLETTER_DIR_URI  . 'js/admin.js', ['jquery'], '1', true);
 		wp_localize_script( 'newsletterAdminJs', 'ajaxObject', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );

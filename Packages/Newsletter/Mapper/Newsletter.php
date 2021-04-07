@@ -24,7 +24,7 @@ class Newsletter
         $this->tableName = NEWSLETTER_TABLE_NAME;
     }
 
-    public function insert(\Newsletter\Model\Newsletter $model): ?int
+    public function insert(\Newsletter\Model\Newsletter $model)
     {
         $this->db->insert($this->tableName,[
             'newsStatus' => $model->getStatus(),
@@ -38,7 +38,7 @@ class Newsletter
         return $this->db->insert_id;
     }
 
-    public function update(\Newsletter\Model\Newsletter $model): void
+    public function update(\Newsletter\Model\Newsletter $model)
     {
         $this->db->update($this->tableName,
             [
@@ -52,7 +52,7 @@ class Newsletter
             ],['newsId' => $model->getId()],['%s', '%s', '%s', '%s', '%s', '%s', '%s']);
     }
 
-    public function delete(int $newsletterId): void
+    public function delete(int $newsletterId)
     {
         $sql = "DELETE FROM $this->tableName WHERE `newsId` = $newsletterId";
         $this->db->query($sql);

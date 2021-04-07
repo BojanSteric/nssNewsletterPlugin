@@ -26,7 +26,7 @@ class MenuPage {
 	}
 
 
-	public function createPage(): void
+	public function createPage()
 	{
 		add_action('admin_menu', function (){
 			add_menu_page($this->pageTitle,$this->menuTitle,$this->capability,
@@ -34,7 +34,7 @@ class MenuPage {
 		});
 	}
 
-	public function menuPage(): void
+	public function menuPage()
 	{
 		include NEWSLETTER_DIR . 'MenuPage/menuPageActions.php';
 	}

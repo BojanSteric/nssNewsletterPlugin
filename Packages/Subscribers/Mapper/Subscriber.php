@@ -24,7 +24,7 @@ class Subscriber
         $this->tableName = SUBSCRIBER_TABLE_NAME;
     }
 
-    public function insert(\Subscriber\Model\Subscriber $model): ?int
+    public function insert(\Subscriber\Model\Subscriber $model)
     {
         $this->db->insert($this->tableName,[
             'wpUserId' => $model->getWpUserId(),
@@ -40,7 +40,7 @@ class Subscriber
         return $this->db->insert_id;
     }
 
-    public function update(\Subscriber\Model\Subscriber $model): void
+    public function update(\Subscriber\Model\Subscriber $model)
     {
         $this->db->update($this->tableName,
             [
@@ -56,7 +56,7 @@ class Subscriber
             ],['userId' => $model->getId()],['%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s']);
     }
 
-    public function delete(int $subscriberId): void
+    public function delete(int $subscriberId)
     {
         $sql = "DELETE FROM $this->tableName WHERE `userId` = $subscriberId";
         $this->db->query($sql);

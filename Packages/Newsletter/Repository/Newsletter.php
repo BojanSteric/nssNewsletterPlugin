@@ -22,7 +22,7 @@ class Newsletter
         $this->mapper = $mapper;
     }
 
-    public function create($data): ?int
+    public function create($data): int
     {
         return $this->mapper->insert($this->make($data));
     }
@@ -43,12 +43,12 @@ class Newsletter
         return $this->make($this->mapper->getNewsletterById($newsletterId));
     }
 
-    public function update($data): void
+    public function update($data):
     {
         $this->mapper->update($this->make($data));
     }
     
-    public function delete(int $newsletterId): void
+    public function delete(int $newsletterId):
     {
         $this->mapper->delete($newsletterId);
     }

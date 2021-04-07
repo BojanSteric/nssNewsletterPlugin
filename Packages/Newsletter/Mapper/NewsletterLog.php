@@ -24,7 +24,7 @@ class NewsletterLog
         $this->tableName = NEWSLETTER_LOG_TABLE_NAME;
     }
 
-    public function insert($userId, $createdAt, $newsletterId): ?int
+    public function insert($userId, $createdAt, $newsletterId)
     {
         $this->db->insert($this->tableName,[
             'userId' => $userId,

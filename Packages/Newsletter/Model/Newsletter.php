@@ -89,7 +89,7 @@ class Newsletter
     /**
      * @return string
      */
-    public function getDateCreated($format = null): ?string
+    public function getDateCreated($format = null)
     {
         if ($this->createdAt !== '' && $this->createdAt !== null) {
             if ($format) {
@@ -104,7 +104,7 @@ class Newsletter
     /**
      * @return string
      */
-    public function getDateScheduled($format = null): ?string
+    public function getDateScheduled($format = null)
     {
         if ($this->scheduledAt !== '' && $this->scheduledAt !== null) {
             if ($format) {
@@ -127,7 +127,7 @@ class Newsletter
     /**
      * @return string
      */
-    public function getContent(): ?string
+    public function getContent()
     {
         return $this->content;
     }
@@ -135,14 +135,14 @@ class Newsletter
     /**
      * @return string
      */
-    public function getTemplateName(): ?string
+    public function getTemplateName()
     {
         return $this->templateName;
     }
 	/**
 	 * @return string
 	 */
-	public function getProducts(): ?string
+	public function getProducts()
 	{
 		return $this->products;
 	}
