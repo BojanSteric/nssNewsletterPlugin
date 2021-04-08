@@ -14,7 +14,7 @@ class Activator {
 		$this->db = $db;
 	}
 
-	public function init(): void
+	public function init()
 	{
 		$this->createSubscriberTable();
 		$this->createNewsletterTable();
