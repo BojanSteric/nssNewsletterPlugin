@@ -72,11 +72,11 @@ class Mailer
         $sent = 0;
         $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
         while (count($users) > 0 && $failover < $failoverLimit) {
-            $html = new Part();
-            $html->type = Mime::TYPE_HTML;
-            $html->charset = 'utf-8';
             /* @var \Subscriber\Model\Subscriber $user */
             foreach ($users as $user) {
+                $html = new Part();
+                $html->type = Mime::TYPE_HTML;
+                $html->charset = 'utf-8';
                 $mimeMessage = new MimeMessage();
                 $message = new Message();
                 $html->setContent($this->parseNewsletterBody($newsletter, $user->getActionLink()));
@@ -119,7 +119,8 @@ class Mailer
 //        $productIds = explode(',', $newsletter->getProducts());
         $newsletterPage = new NewsletterFrontPage();
         $unsubscribeUrl = $newsletterPage->getPageUrl().'/?action=unsubscribe&data='.$userActionLink;
-        $tpl = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.html');
+//        $tpl = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.html');
+        $tpl = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/aprilskaAkcija.html');
 //        $body = '';
 //        foreach (explode(',', $newsletter->getProducts()) as $id) {
 //            /* @var \WC_Product $product */

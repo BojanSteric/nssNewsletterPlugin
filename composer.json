@@ -11,8 +11,8 @@
         }
     ],
     "require": {
-        "laminas/laminas-mail": "^2.14",
-        "laminas/laminas-servicemanager": "^3.6"
+        "laminas/laminas-mail": "^2.11.1",
+        "laminas/laminas-servicemanager": "^3.5.2"
     }
 }
 
