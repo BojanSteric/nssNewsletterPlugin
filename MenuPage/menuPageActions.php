@@ -197,4 +197,8 @@ switch ( $action ) {
 		$importer->importData($mappedData);
 		fclose($handle);
 		break;
+    case 'templateBuilder':
+        $directoryIterator = new DirectoryIterator(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/boilerplate');
+        include NEWSLETTER_DIR . 'template/newsletterBuilder.php';
+        break;
 }

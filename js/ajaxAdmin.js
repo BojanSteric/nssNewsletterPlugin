@@ -198,5 +198,33 @@ jQuery(document).ready(function($){
         });
 
     });
-
+    $('#templateSelect').on('change', function () {
+        $.ajax({
+            url: ajax_url,
+            type: 'post',
+            data: {'action': 'getTemplate','templatePath': this.value},
+            dataType: 'text',
+            error: function (request, error) {
+                alert(" Can't do because: " + error);
+            },
+            success: function(response){
+                $('#templateWrapper').html($.parseHTML(response))
+            }
+        });
+    })
+    $(document).on('submit','#templateData', function (e) {
+        e.preventDefault();
+        let formData = $(this).serializeArray().reduce((obj, item) => ({ ...obj, ...{ [item.name]: item.value } }), {})
+        $.ajax({
+            url: ajax_url,
+            type: $(this).attr('method'),
+            data: {action: 'saveTemplateData', formData:formData},
+            error: function (request, error) {
+                alert(" Can't do because: " + error);
+            },
+            success: function(response){
+                console.log(response)
+            }
+        });
+    })
 });
