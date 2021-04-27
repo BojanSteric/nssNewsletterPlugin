@@ -130,7 +130,9 @@ switch ( $action ) {
 		wp_redirect( admin_url() . '?page=newsletter&action=templates'  );
 		break;*/
 	case 'createNewsletters':
-		$data = NewsletterPostFormatter::formatDataNewsForm( $_POST );
+	    $formatter = new NewsletterPostFormatter();
+	    $data = $formatter->formatDataNewsForm($_POST);
+
 		$newsletterRepo->create( $data );
 		wp_redirect( admin_url() . '?page=newsletter&action=newsletters'  );
 		break;
@@ -140,13 +142,9 @@ switch ( $action ) {
 		}
 		echo '<p>Uspešno ste obrisali newsletter</p> <a  class="" href="'.admin_url() . '?page=newsletter&action=templates"  >Vrati se nazad</a>';
 		break;
+		// @todo why is this called edit newsletters but prints on create newsletter?
 	case 'editNewsletters':
-		$path    = NEWSLETTER_DIR . 'template/Mail/NewsTemplate';
-		$files = array_diff(scandir($path,1), array('.', '..'));
-		$fileItem=[];
-		foreach ($files as $file) {
-			$fileItem[] =str_replace(['.php','.html'], "","$file");
-		}
+        $directoryIterator = new DirectoryIterator(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/form');
 		$newsletterPage = 'template/newsletterFormNews.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 
@@ -198,7 +196,7 @@ switch ( $action ) {
 		fclose($handle);
 		break;
     case 'templateBuilder':
-        $directoryIterator = new DirectoryIterator(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/boilerplate');
+        $directoryIterator = new DirectoryIterator(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/form');
         include NEWSLETTER_DIR . 'template/newsletterBuilder.php';
         break;
 }

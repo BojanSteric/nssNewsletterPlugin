@@ -62,7 +62,7 @@ class Activator {
 		  `title` varchar(30) NOT NULL,
 		  `content` TEXT DEFAULT NULL,
 		  `templateName` varchar(25) DEFAULT NULL,
-		  `products` varchar(200) DEFAULT NULL,
+		  `products` TEXT DEFAULT NULL,
 		  PRIMARY KEY  (newsId)
 		) $charset_collate;";
 

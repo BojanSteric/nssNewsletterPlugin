@@ -198,33 +198,23 @@ jQuery(document).ready(function($){
         });
 
     });
-    $('#templateSelect').on('change', function () {
-        $.ajax({
-            url: ajax_url,
-            type: 'post',
-            data: {'action': 'getTemplate','templatePath': this.value},
-            dataType: 'text',
-            error: function (request, error) {
-                alert(" Can't do because: " + error);
-            },
-            success: function(response){
-                $('#templateWrapper').html($.parseHTML(response))
+    $('#templateName').on('change', function () {
+        // If an actual template is selected and not the default 'choose a template' option call the ajax
+            if ($(this).val() !== '-1') {
+                $.ajax({
+                    url: ajax_url,
+                    type: 'post',
+                    data: {'action': 'getTemplate', 'templatePath': this.value},
+                    dataType: 'text',
+                    error: function (request, error) {
+                        alert(" Can't do because: " + error);
+                    },
+                    success: function (response) {
+                        $('#contentWrapper').html($.parseHTML(response))
+                    }
+                });
+            } else {
+                $('#contentWrapper').html('');
             }
-        });
-    })
-    $(document).on('submit','#templateData', function (e) {
-        e.preventDefault();
-        let formData = $(this).serializeArray().reduce((obj, item) => ({ ...obj, ...{ [item.name]: item.value } }), {})
-        $.ajax({
-            url: ajax_url,
-            type: $(this).attr('method'),
-            data: {action: 'saveTemplateData', formData:formData},
-            error: function (request, error) {
-                alert(" Can't do because: " + error);
-            },
-            success: function(response){
-                console.log(response)
-            }
-        });
     })
 });

@@ -156,8 +156,14 @@ div.mainAdminCategories {
 /*Newsletter Form*/
 
 .newsletterForm {font-family: Arial, Helvetica, sans-serif;}
+.newsletterForm form {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
 .newsletterForm form input[type=text], select, textarea {
-    width: 100%;
+    width: 300px;
+    display:block;
     padding: 6px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -225,4 +231,10 @@ div.mainAdminCategories {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
+}
+
+.contentLabel {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
 }

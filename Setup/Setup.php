@@ -38,6 +38,7 @@ class Setup {
 	public function enqueueAdminCss()
 	{
 		wp_enqueue_style('newsletterAdminCss', NEWSLETTER_DIR_URI . 'css/admin.css','','1');
+        wp_enqueue_style('newsletterTemplateForm', NEWSLETTER_DIR_URI . 'css/templates/newsletterCreateForm.css','','1');
 	}
 	public function enqueueAdminJs()
 	{

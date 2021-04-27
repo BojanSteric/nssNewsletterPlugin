@@ -5,6 +5,7 @@
 <div class="newsletterForm">
 
 	<form method="POST" action="<?php echo '?page=newsletter&action=createNewsletters&noheader=true'; ?>">
+        <div>
 		<label for="title">Title</label>
 		<input type="text" id="title" name="title" placeholder="Title.." required">
 
@@ -18,21 +19,32 @@
 
         <label for="templateName">Template</label>
         <select type=select id="templateName" name="templateName">
-            <?php  foreach($fileItem as $file):?>
-                <option value="<?= $file ?>"><?= $file ?></option>
-            <?php endforeach; ?>
+            <option value="-1">Izaberite šablon</option>
+            <?php
+            foreach ($directoryIterator as $templateFile) {
+                if (is_file($templateFile->getPathname())) {
+                    if ($templateFile->getExtension() === 'html') {
+                        echo sprintf(
+                            '<option value="%s">%s</option>',
+                            $templateFile->getPathname(),
+                            $templateFile->getBasename('.html')
+                        );
+                    }
+                }
+            }
+            ?>
         </select>
 
-		<label for="Sceduled">Sceduled at</label>
-		<input type="datetime-local" id="Sceduled" name="scheduledAt" required">
+		<label for="scheduled">Scheduled at</label>
+		<input type="datetime-local" id="scheduled" name="scheduledAt" required">
 
-        <label for="productId">Comma-separated  product id for newsletter </label>
-        <input type="text" id="productId" name="products" placeholder="id,id,id" required">
-
-		<label for="content">Content</label>
-		<textarea id="content" name="content" placeholder="Write something.." style="height:200px"></textarea>
-
-<input type="submit" value="Submit">
+        </div>
+        <div id="contentWrapper">
+            <span class="contentLabel">Content</span>
+        </div>
+        <div class="submitWrapper">
+            <input type="submit" value="Sačuvaj">
+        </div>
 </form>
 
 

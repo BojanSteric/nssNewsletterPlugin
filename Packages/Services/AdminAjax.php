@@ -88,10 +88,4 @@ class AdminAjax
         echo json_encode($response);
         wp_die();
     }
-
-    public function saveTemplateData()
-    {
-        echo '123';
-        wp_die();
-    }
 }

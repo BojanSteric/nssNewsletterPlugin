@@ -1,5 +1,5 @@
 <div class="wrap">
-<select id="templateSelect">
+<select name="templateSelect" id="templateSelect">
     <option>Izaberite šablon</option>
 <?php foreach ($directoryIterator as $templateFile){
     if (is_file($templateFile->getPathname())){
