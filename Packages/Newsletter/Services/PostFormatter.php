@@ -66,15 +66,19 @@ class PostFormatter {
     {
         $templateName = basename($params['templateName']);
         $templateContent = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/boilerplate/' . $templateName);
-        $templateContent = str_replace('#templateTitle',$params['templateTitle'],$templateContent);
+        $templateContent = str_replace('#templateTitle#',$params['templateTitle'],$templateContent);
         foreach ($params['url'] as $key => $value) {
-            $stringToBeReplaced = '#url' . $key;
+            $stringToBeReplaced = '#url' . $key . '#';
             $templateContent = str_replace($stringToBeReplaced, $value, $templateContent);
         }
         foreach ($params['src'] as $key => $value) {
-            $stringToBeReplaced = '#src' . $key;
+            $stringToBeReplaced = '#src' . $key . '#';
             $templateContent = str_replace($stringToBeReplaced, $value, $templateContent);
         }
+        if ($params['templateTitleUrl'] === '') {
+            $params['templateTitleUrl'] = get_home_url();
+        }
+        $templateContent = str_replace('#titleUrl#',$params['templateTitleUrl'],$templateContent);
         if (!$templateContent) {
             return '';
         }

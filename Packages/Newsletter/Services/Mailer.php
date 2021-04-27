@@ -120,7 +120,7 @@ class Mailer
         $newsletterPage = new NewsletterFrontPage();
         $unsubscribeUrl = $newsletterPage->getPageUrl().'/?action=unsubscribe&data='.$userActionLink;
 //        $tpl = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.html');
-        $tpl = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/aprilskaAkcija.html');
+        $tpl = $newsletter->getContent();
 //        $body = '';
 //        foreach (explode(',', $newsletter->getProducts()) as $id) {
 //            /* @var \WC_Product $product */
@@ -132,7 +132,6 @@ class Mailer
 //            $price = $product->get_price();
 //            $body .= $this->parseTemplateItem($link, $imageUrl, $title, $desc, $price);
 //        }
-
         return str_replace('#unsubscribeUrl', $unsubscribeUrl, $tpl);
     }
 
