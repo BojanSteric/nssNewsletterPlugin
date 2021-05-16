@@ -7,13 +7,13 @@ $importingSideBar = '';
 if (isset($_GET['action'])) {
     $status = $_GET['action'];
     switch ($status) {
-        case 'subscribers':
+        case 'subscribersList':
             $subscriberSideBar = 'active';
             break;
-        case 'newsletters':
+        case 'newslettersList':
             $newsletterSideBar = 'active';
             break;
-        case 'editSubscribers':
+        case 'subscriberForm':
             $createSubscriberSideBar = 'active';
             break;
         case 'newsletterForm':
