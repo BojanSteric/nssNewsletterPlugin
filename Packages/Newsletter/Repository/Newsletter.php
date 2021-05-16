@@ -5,6 +5,7 @@ namespace Newsletter\Repository;
 
 use Newsletter\Mapper\Newsletter as Mapper;
 use Newsletter\Model\Newsletter as Model;
+use Newsletter\Newsletter\Services\Scheduler;
 
 class Newsletter
 {
@@ -24,7 +25,15 @@ class Newsletter
 
     public function create($data): int
     {
-        return $this->mapper->insert($this->make($data));
+        try {
+            $id = $this->mapper->insert($this->make($data));
+            $scheduler = new Scheduler($id);
+            $scheduler->scheduleSend();
+            return $id;
+
+        }catch (\Exception $e) {
+            return false;
+        }
     }
 
     public function getAll(int $page, int $perPage): array
@@ -45,7 +54,15 @@ class Newsletter
 
     public function update($data)
     {
-        $this->mapper->update($this->make($data));
+        try {
+            $id = $this->mapper->update($this->make($data));
+            $scheduler = new Scheduler($id);
+            $scheduler->scheduleSend();
+            return $id;
+
+        }catch (\Exception $e) {
+            return false;
+        }
     }
     
     public function delete(int $newsletterId)

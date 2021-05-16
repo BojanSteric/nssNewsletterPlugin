@@ -92,6 +92,8 @@ switch ( $action ) {
         break;
     case 'newsletterForm':
         $newsletterId = $_GET['newsId'] ?? null;
+        $title = '';
+        $templateName = '';
         if ($newsletterId !== null) {
             $newsletter = $newsletterRepo->getNewsletterById((int)$newsletterId);
             $title = $newsletter->getTitle();
