@@ -1,6 +1,7 @@
 <?php
 
 use Newsletter\FrontPage\NewsletterFrontPage;
+use Newsletter\Subscribers\Actions\SubscribeAction;
 use Subscriber\Mapper\Subscriber as SubMapper;
 use Subscriber\Repository\Subscriber as SubRepository;
 use Subscriber\Service\PostFormatter as SubscriberPostFormatter;
@@ -25,7 +26,7 @@ class NewsletterWidget extends WP_Widget {
             array( 'description' => __( 'Custom newsletter widget by Green Friends', '' ), ) 
             );
             add_action('wp_ajax_subscribeToNewsletter', [$this,'subscribeToNewsletter']);
-	    add_action('wp_ajax_nopriv_subscribeToNewsletter', [$this,'subscribeToNewsletter']);
+	        add_action('wp_ajax_nopriv_subscribeToNewsletter', [$this,'subscribeToNewsletter']);
         }
           
     // Creating widget front-end
@@ -52,19 +53,10 @@ class NewsletterWidget extends WP_Widget {
           
     
     public function subscribeToNewsletter(){
-        $subscriberMapper = new SubMapper();
-	    $subscriberRepo = new SubRepository($subscriberMapper);
-	    $request = $_POST['request'];
-	    $subscriberEmail = $_POST['email'];
-	    $data = SubscriberPostFormatter::formatDataNewSubscribers( $_POST );
-        $subscriber = $subscriberRepo->create( $data );
-        $response ="You already signed in!";
-        $newsletterPage = new NewsletterFrontPage();
-        if ($subscriber) {
-            $subscriberActionLink = $newsletterPage->getPageUrl() . '/?action=confirmation&data=' . $subscriberRepo->getSubscriberByEmail($subscriberEmail)->getActionLink();
-            MailService::sendMailToNewSubscribers($subscriberEmail, $subscriberActionLink);
+        if (SubscribeAction::subscribe($_POST)){
+            wp_send_json_success([]);
         }
-        wp_send_json_success([]);
+        wp_send_json_error([]);
     }
 
 

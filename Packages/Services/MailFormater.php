@@ -6,7 +6,6 @@ namespace Service\MailFormater;
 use Laminas\Mail\Message;
 use Laminas\Mail\Protocol\Smtp\Auth\Plain as SMTPProtocol;
 use Laminas\Mail\Transport\Smtp;
-use Laminas\Mail\Transport\SmtpOptions;
 use Laminas\Mime\Part;
 
 
