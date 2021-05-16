@@ -4,14 +4,27 @@
 namespace Service\MailFormater;
 
 use Laminas\Mail\Message;
+use Laminas\Mail\Protocol\Smtp\Auth\Plain as SMTPProtocol;
+use Laminas\Mail\Transport\Smtp;
 use Laminas\Mail\Transport\SmtpOptions;
 use Laminas\Mime\Part;
 
 
 class MailFormater {
 
-	public  static function setupMail($email,$subject,$text)
+	public  static function setupMail($email, $subject, $text)
 	{
+        $protocol = new SMTPProtocol([
+            'username' => 'podrska@nonstopshop.rs',
+            'password' => 'E7Xfq.ucwKh0rtz',
+            'ssl'      => 'tls',
+            'host' => 'smtp-tkc.ha.rs',
+            'port' => 587,
+        ]);
+        $protocol->connect();
+        $transport = new Smtp();
+        $transport->setConnection($protocol);
+
 		$message = new Message();
 		$html = $text;
 		$part = new Part($html);
@@ -19,30 +32,18 @@ class MailFormater {
 		$body = new \Laminas\Mime\Message();
 		$body->setParts([$part]);
 		$message->addTo($email);
-		$message->addFrom('v.jankovic992@gmail.com');
+		$message->addFrom('podrska@nonstopshop.rs', 'Nonstopshop.rs');
 		$message->setSubject($subject);
 		$message->setBody($body);
 
-		$transport = new \Laminas\Mail\Transport\Smtp();
-		$options = new SmtpOptions([
-			'name'              => 'gmail',
-			'host'              => 'smtp.gmail.com',
-			'connection_class'  => 'plain',
-			'port' => '587',
-			'connection_config' => [
-				'username' => 'v.jankovic992@gmail.com',
-				'password' => 'Shingetsutan@qq11',
-				'ssl' => 'tls'
-			],
-		]);
-		$transport->setOptions($options);
-		$transport->send($message);
+
+        $transport->send($message);
 	}
 	public static function sendMailToNewSubscribers($email, $actionLink)
 	{
 		$company='NonStopShop.rs';
 		$to=$email;
-		$subject='Newsletter potvrda or smth';
+		$subject='Prijava na newsletter';
 		
 		$myfile = fopen(NEWSLETTER_DIR . 'template/Mail/newSubscriber.php', "r") or die("Unable to open file!");
 		$message= fread($myfile,filesize(NEWSLETTER_DIR . 'template/Mail/newSubscriber.php'));
@@ -52,13 +53,5 @@ class MailFormater {
 		fclose($myfile);
 
 		self::setupMail($to, $subject, $newmesage );
-	}
-	public static function sendMailToSubscribers($text)
-	{
-		$email="icefyre90@gmail.com";
-		$subject="Nesto Pokusavamo da napravimo";
-		$text=$text;
-		self::setupMail($email, $subject, $text );
-
 	}
 }

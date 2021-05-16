@@ -28,10 +28,10 @@ $templatesRepo = new Template();
 $page = $_GET['paginationPage'] ?? 1;
 
 switch ( $action ) {
-    case 'createSubscribers':
+    case 'createSubscriber':
         $data = SubscriberPostFormatter::formatDataNewsForm( $_POST );
         $subscriberRepo->create( $data );
-        wp_redirect( admin_url() . '?page=newsletter&action=subscribers'  );
+        wp_redirect( admin_url() . '?page=newsletter&action=subscribersList'  );
         break;
 	case 'subscribersList':
 		$subscriber = $subscriberRepo->getAll($page, 20);
@@ -54,17 +54,17 @@ switch ( $action ) {
 		$newsletterPage = 'template/subscriber/subscriberForm.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
-	case 'updateSubscribers':
+	case 'updateSubscriber':
 		$data = SubscriberPostFormatter::formatDataNewsForm( $_POST );
 		$data['userId'] = (int) $_GET['userId'];
 		$subscriberRepo->update( $data );
-		wp_redirect( admin_url() . '?page=newsletter&action=subscribers'  );
+		wp_redirect( admin_url() . '?page=newsletter&action=subscribersList'  );
 		break;
-	case 'deleteSubscribers':
+	case 'deleteSubscriber':
 		if ( isset( $_GET['userId'] ) ) {
 			$subscriberRepo->delete( (int) $_GET['userId'] );	
 		}
-		echo '<p>Uspešno ste obrisali subscriber</p> <a  class="" href="'.admin_url() . '?page=newsletter&action=subscribers"  >Vrati se nazad</a>';
+		echo '<p>Uspešno ste obrisali subscriber</p> <a  class="" href="'.admin_url() . '?page=newsletter&action=subscribersList"  >Vrati se nazad</a>';
 		break;
 
     case 'createNewsletter':

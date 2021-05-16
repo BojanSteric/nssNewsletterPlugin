@@ -1,8 +1,8 @@
 <?php
 
-$subaction = '?page=newsletter&action=createSubscribers&noheader=true';
-if (!isset($_GET['subaction'])) { 
-    $subaction = '?page=newsletter&action=updateSubscribers&userId=' . $userId.'&noheader=true'; 
+$action = '?page=newsletter&action=createSubscriber';
+if (isset($_GET['userId'])) {
+    $action = '?page=newsletter&action=updateSubscriber&userId=' . $userId;
 }
 ?>
 
@@ -69,7 +69,7 @@ if (!isset($_GET['subaction'])) {
 
 <div class="newsletterForm">
 
-	<form method="POST" action="<?= $subaction?>">
+	<form method="POST" action="<?=$action?>">
 		<label for="email"><?=__('Email', '')?></label>
 		<input type="email" id="email" name="email" placeholder="Email" value="<?= $email ?? ''?>" required>
 
