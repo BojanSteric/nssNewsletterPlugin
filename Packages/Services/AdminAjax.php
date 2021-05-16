@@ -3,6 +3,7 @@
 
 namespace Service\AdminAjax;
 
+use Newsletter\Template\Repository\Template;
 use Subscriber\Mapper\Subscriber as SubMapper;
 use Subscriber\Repository\Subscriber as SubRepository;
 use Subscriber\Service\PostFormatter as SubscriberPostFormatter;
@@ -48,8 +49,38 @@ class AdminAjax
     }
     public function getTemplate()
     {
+        $templatesRepo = new Template();
+        $newsletterId = empty($_POST['newsletterId']) ? null : $_POST['newsletterId'];
+
+        if ($newsletterId !== null) {
+            $template = $templatesRepo->getTemplateByNewsletterId((int)$newsletterId);
+            $templateData = unserialize($template->getData());
+            $templateTitle = $templateData['title']['title'] ?? null;
+            $templateTitleUrl = $templateData['title']['titleUrl'] ?? null;
+            unset($templateData['title']);
+            unset($templateData['templateName']);
+            $inputCounter = 0;
+            $images = [];
+            foreach ($templateData as $key => $imageData) {
+                if (!empty($imageData['src'])) {
+                    $images[$key]['src'] = $imageData['src'];
+                }
+                if (!empty($imageData['url'])) {
+                    $images[$key]['url'] = $imageData['url'];
+                }
+            }
+        }
         include $_POST['templatePath'];
         wp_die();
+    }
+    public function getTemplateInput($imageSize , $inputCounter, $images) {
+        $placeHolderSrc = $images[$inputCounter]['src'] ?? 'https://via.placeholder.com/'.$imageSize.'?text=Izaberite+sliku';
+        $imageSrc = $images[$inputCounter]['src'] ?? '';
+        $imageUrl = $images[$inputCounter]['url'] ?? '';
+        echo sprintf('<img class="imagePreview imageUpload" src="%s" alt="image preview">
+    <input value="%s" type="url" name="url[]" placeholder="Unesite putanju">
+    <input value="%s" name="src[]" class="imageInput" type="hidden">',$placeHolderSrc, $imageUrl, $imageSrc);
+        return ++$inputCounter;
     }
 
 ## Search record
@@ -65,8 +96,7 @@ class AdminAjax
         wp_die();
     }
 
-    public
-    function updateNewsletter()
+    public function updateNewsletter()
     {
         $response = [];
         $status = $_POST['newsSelectStatus'];

@@ -1,13 +1,13 @@
 <?php
 
 use Newsletter\Import\Importer;
+use Newsletter\Template\Repository\Template;
 use Subscriber\Mapper\Subscriber as SubMapper;
 use Subscriber\Repository\Subscriber as SubRepository;
 use Subscriber\Service\PostFormatter as SubscriberPostFormatter;
 
 
 use Newsletter\Mapper\Newsletter as NewsletterMapper;
-use Newsletter\Model\Newsletter;
 use Newsletter\Repository\Newsletter as NewsletterRepository;
 use Newsletter\Service\PostFormatter as NewsletterPostFormatter;
 
@@ -17,32 +17,28 @@ use Service\MailFormater\MailFormater as MailService;
 if ( isset( $_GET['action'] ) ) {
 	$action = $_GET['action'];
 } else {
-	$action = 'newsletters';
+	$action = 'newslettersList';
 }
-
-/*if ( isset( $_POST['Prijava'] ) ) {
-	$action = 'create';
-}*/
-
 $subscriberMapper = new SubMapper();
 $subscriberRepo = new SubRepository($subscriberMapper);
-
 $newsletterMapper = new NewsletterMapper();
 $newsletterRepo = new NewsletterRepository($newsletterMapper);
+$templatesRepo = new Template();
 
 $page = $_GET['paginationPage'] ?? 1;
 
 switch ( $action ) {
-	case 'newsletters':
-		$newsletterPage = 'template/newsletterNewsletter.php';
-		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
-		break;
-	case 'subscribers':
+    case 'createSubscribers':
+        $data = SubscriberPostFormatter::formatDataNewsForm( $_POST );
+        $subscriberRepo->create( $data );
+        wp_redirect( admin_url() . '?page=newsletter&action=subscribers'  );
+        break;
+	case 'subscribersList':
 		$subscriber = $subscriberRepo->getAll($page, 20);
-		$newsletterPage = 'template/newsletterSubscriber.php';
+		$newsletterPage = 'template/subscriber/subscriberList.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
-	case 'editSubscribers':
+	case 'subscriberForm':
 	    if (isset($_GET['userId'])) {
 			$subscriber = $subscriberRepo->getSubscriberById((int)$_GET['userId']);
 			$userId = $subscriber->getId();
@@ -52,20 +48,16 @@ switch ( $action ) {
 			$lastName = $subscriber->getLastName();
 			$createdAt = $subscriber->getDateCreated();
 			$updatedAt = $subscriber->getDateUpdated();
-		}
-		$updatedAt = date('Y-m-d H:i:s');
-		$newsletterPage = 'template/subscriberForm.php';
+		} else {
+            $updatedAt = date('Y-m-d H:i:s');
+        }
+		$newsletterPage = 'template/subscriber/subscriberForm.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
 	case 'updateSubscribers':
 		$data = SubscriberPostFormatter::formatDataNewsForm( $_POST );
 		$data['userId'] = (int) $_GET['userId'];
 		$subscriberRepo->update( $data );
-		wp_redirect( admin_url() . '?page=newsletter&action=subscribers'  );
-		break;
-	case 'createSubscribers':
-		$data = SubscriberPostFormatter::formatDataNewsForm( $_POST );
-		$subscriberRepo->create( $data );
 		wp_redirect( admin_url() . '?page=newsletter&action=subscribers'  );
 		break;
 	case 'deleteSubscribers':
@@ -75,80 +67,52 @@ switch ( $action ) {
 		echo '<p>Uspešno ste obrisali subscriber</p> <a  class="" href="'.admin_url() . '?page=newsletter&action=subscribers"  >Vrati se nazad</a>';
 		break;
 
-	case 'templates':
-		$path    = NEWSLETTER_DIR . 'template/Mail/NewsTemplate';
-		$files = array_diff(scandir($path,1), array('.', '..'));
-		$fileItem=[];
-		$fileDate=[];
-		foreach($files as $file){
-			$fileItem[] = str_replace(".php", "","$file");
-			$fileDate[] = date ("Y-m-d H:i:s", filemtime(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$file));
-		}
-		$newsletterPage = 'template/newsletterTemplates.php';
-		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
-		break;
+    case 'createNewsletter':
+        $formatter = new NewsletterPostFormatter();
+        $data = $formatter->formatDataNewsForm($_POST);
+        $newsletterId = $newsletterRepo->create($data);
+        $templatesRepo->create(['name' => $data['templateName'], 'data' => $data['products'],'newsletterId' => $newsletterId]);
+        wp_redirect( admin_url() . '?page=newsletter&action=newslettersList');
+        break;
+    case 'updateNewsletter':
+        $formatter = new NewsletterPostFormatter();
+        $newsletterId = $_GET['newsId'];
+        $data = $formatter->formatDataNewsForm($_POST);
+        $data['newsId'] = $newsletterId;
+        $newsletterRepo->update($data);
+        $template = $templatesRepo->getTemplateByNewsletterId($newsletterId);
+        $templatesRepo->update(['name' => $data['templateName'], 'data' => $data['products'],'newsletterId' => $newsletterId,
+            'templateId' => $template->getId()]);
+        wp_redirect( admin_url() . '?page=newsletter&action=newslettersList');
+        break;
+    case 'newslettersList':
+        $newsletters = $newsletterRepo->getAll(1,50);
+        $newsletterPage = 'template/newsletter/newsletterList.php';
+        include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
+        break;
+    case 'newsletterForm':
+        $newsletterId = $_GET['newsId'] ?? null;
+        if ($newsletterId !== null) {
+            $newsletter = $newsletterRepo->getNewsletterById((int)$newsletterId);
+            $title = $newsletter->getTitle();
+            $templateName = $newsletter->getTemplateName();
+            //This is the format that needs to be inside html datetime-local input
+            $scheduledDate = date("Y-m-d\TH:i", strtotime($newsletter->getDateScheduled()));
+        }
 
-	case 'editTemplates':
-		if (isset($_GET['templateName'])) {
-			$templateName=$_GET['templateName'];
-		}
-		$newsletterPage = 'template/newsletterTemplateForm.php';
-		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
-		break;
-	case 'updateTemplates':
-		/*$file=$_POST['file'];
-		$templateName=$_POST['nameTemplate'];
-		$currentTemplate=$_POST['currentTemplate'];
-		$upload=file_get_contents($_FILES['file']['tmp_name']);
+        $directoryIterator = new DirectoryIterator(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/form');
+        $newsletterPage = 'template/newsletter/newsletterForm.php';
+        include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 
-		if ( ! function_exists( 'wp_handle_upload' ) )
-			require_once( ABSPATH . 'wp-admin/includes/file.php' );
-		$uploadedfile = $_FILES['file'];
-		$upload_overrides = array( 'test_form' => false );
-		$movefile = wp_handle_upload( $uploadedfile, $upload_overrides );
-		if ( $movefile ) {
-			echo "File is valid, and was successfully uploaded.\n";
-			WP_Filesystem();
-			$unzip = unzip_file(wp_upload_dir()['path'].'/dakadnesto.zip', NEWSLETTER_DIR . 'template/Mail/NewsTemplate/');
-			$zipname=explode('.',$_FILES['file']['name'])[0];
-			rename (NEWSLETTER_DIR . 'template/Mail/NewsTemplate/dakad.php',NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.php');
-		} else {
-			echo "Possible file upload attack!\n";
-		}
-		if(isset($_POST['file'])){
-			if(file_exists(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$currentTemplate.'.php')){
-				unlink(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$currentTemplate.'.php');
-			}
-			$handle=fopen(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.php','w');
-			fwrite($handle,file_get_contents($_FILES['file']['tmp_name']));
-			fclose($handle);
-		}else{
-			if($templateName!=$currentTemplate){
-				rename(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$currentTemplate.'.php',NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.php');
-			}
-		}
-		wp_redirect( admin_url() . '?page=newsletter&action=templates'  );
-		break;*/
-	case 'createNewsletters':
-	    $formatter = new NewsletterPostFormatter();
-	    $data = $formatter->formatDataNewsForm($_POST);
-
-		$newsletterRepo->create( $data );
-		wp_redirect( admin_url() . '?page=newsletter&action=newsletters'  );
-		break;
-	case 'deleteTemplates':
+        break;
+	case 'deleteNewsletter':
 		if ( isset( $_GET['newsId'] ) ) {
 			$newsletterRepo->delete( (int) $_GET['newsId'] );
 		}
 		echo '<p>Uspešno ste obrisali newsletter</p> <a  class="" href="'.admin_url() . '?page=newsletter&action=templates"  >Vrati se nazad</a>';
 		break;
-		// @todo why is this called edit newsletters but prints on create newsletter?
-	case 'editNewsletters':
-        $directoryIterator = new DirectoryIterator(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/form');
-		$newsletterPage = 'template/newsletterFormNews.php';
-		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 
-		break;
+
 	case 'sendNewsToSubsc':
 //        wp_schedule_single_event(time() + 60, 'gfNewsletterSend');
 //		$status='pending';
@@ -185,7 +149,6 @@ switch ( $action ) {
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
 	case 'import':
-		// var_dump(file_get_contents($_FILES['parsingFile']['tmp_name']));
 		$handle = fopen($_FILES['parsingFile']['tmp_name'], "r");
 		$header = \Newsletter\Import\Parser::getHeader($handle);
 		$data = \Newsletter\Import\Parser::getData($header, $handle);
@@ -195,8 +158,4 @@ switch ( $action ) {
 		$importer->importData($mappedData);
 		fclose($handle);
 		break;
-    case 'templateBuilder':
-        $directoryIterator = new DirectoryIterator(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/form');
-        include NEWSLETTER_DIR . 'template/newsletterBuilder.php';
-        break;
 }

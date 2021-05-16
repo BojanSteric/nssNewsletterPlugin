@@ -46,7 +46,8 @@ class Setup {
 		wp_localize_script( 'newsletterAdminJs', 'ajaxObject', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 
 		wp_enqueue_script('newsletterAjaxJs', NEWSLETTER_DIR_URI  . 'js/ajaxAdmin.js', ['jquery'], '1', true);
-		wp_localize_script( 'newsletterAjaxJs', 'ajaxObject', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+		wp_localize_script( 'newsletterAjaxJs', 'ajaxObject', array( 'ajax_url' => admin_url( 'admin-ajax.php' ),
+            'newsletterPage' => admin_url('/?page=newsletter') ) );
 
 	}
 	public function enqueueWidgetJs()

@@ -19,11 +19,12 @@ use Laminas\Mail\Transport\File;
 use Laminas\Mail\Transport\FileOptions;
 
 global $wpdb;
-define('NEWSLETTER_DIR_URI', plugin_dir_url(__DIR__ . '/newsletter/'));
-define('NEWSLETTER_DIR', __DIR__ . '/');
+DEFINE('NEWSLETTER_DIR_URI', plugin_dir_url(__DIR__ . '/newsletter/'));
+DEFINE('NEWSLETTER_DIR', __DIR__ . '/');
 DEFINE('NEWSLETTER_TABLE_NAME', $wpdb->prefix . 'gf_newsletter');
 DEFINE('NEWSLETTER_LOG_TABLE_NAME', $wpdb->prefix . 'gf_newsletter_log');
 DEFINE('SUBSCRIBER_TABLE_NAME', $wpdb->prefix . 'gf_newsletter_subscriber');
+DEFINE('NEWSLETTER_TEMPLATES_TABLE', $wpdb->prefix . 'gf_newsletter_templates');
 
 include NEWSLETTER_DIR . 'autoloader.php';
 

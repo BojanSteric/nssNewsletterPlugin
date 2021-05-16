@@ -19,6 +19,7 @@ class Activator {
 		$this->createSubscriberTable();
 		$this->createNewsletterTable();
 		$this->createNewsletterLogTable();
+		$this->createTemplatesTable();
 		$newsletterPage = new NewsletterFrontPage();
 		$newsletterPage->activate();
 	}
@@ -85,5 +86,24 @@ class Activator {
 
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
         dbDelta( $sql2 );
+    }
+
+    private function createTemplatesTable()
+    {
+        global $wpdb;
+        $charsetCollate = $wpdb->get_charset_collate();
+        $tableName = NEWSLETTER_TEMPLATES_TABLE;
+
+        $sql = "CREATE TABLE IF NOT EXISTS $tableName(
+            `templateId` int(50) NOT NULL AUTO_INCREMENT,
+            `name` varchar(30) NOT NULL UNIQUE,
+            `newsletterId` int(50) NOT NULL UNIQUE,
+            `data` longtext NOT NULL,
+            `createdAt` datetime DEFAULT CURRENT_TIMESTAMP,
+            `updatedAt` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            PRIMARY KEY (templateId)
+        )$charsetCollate";
+        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+        dbDelta($sql);
     }
 }

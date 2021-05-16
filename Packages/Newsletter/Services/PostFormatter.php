@@ -11,8 +11,8 @@ class PostFormatter {
 		$data['scheduledAt'] = (string)$postData['scheduledAt'];
 		$data['title'] = (string)$postData['title'];
 		$data['content'] = $this->parseNewsletterContent($postData);
-		$data['templateName'] = str_replace('.html','',basename($postData['templateName']));
-		$data['products'] = $this->serializeNewsletterProducts($_POST);
+		$data['templateName'] = str_replace('.php','',basename($postData['templateName']));
+		$data['products'] = $this->serializeTemplateInfo($postData);
 
 		return $data;
 	}
@@ -24,17 +24,17 @@ class PostFormatter {
      * @param $productImagesSrc
      * @return string
      */
-    private function serializeNewsletterProducts($params): string
+    private function serializeTemplateInfo($params): string
     {
         $mergedProductParams = array_merge($params['url'],$params['src']);
-        $productInfo = [];
+        $templateInfo = [];
         $i = 0;
         $countNumberOfProducts = count($mergedProductParams);
         foreach($mergedProductParams as $mergedProductParam) {
             // The product info is in one array, to get the matching pairs we divide the whole array by to and add 1 for each loop
             $mappedSrcToUrl = ($countNumberOfProducts / 2) + $i;
             $productSrc = $mergedProductParams[$mappedSrcToUrl];
-            $productInfo[] = [
+            $templateInfo[] = [
                 'url' => $mergedProductParam,
                 'src' => $productSrc
             ];
@@ -44,17 +44,17 @@ class PostFormatter {
                 break;
             }
         }
-        // Append the title info
-        if ($params['templateTitleUrl'] === '') {
-            $params['templateTitleUrl'] = get_home_url();
+
+        if (isset($params['templateName'])) {
+            $templateInfo['templateName'] = str_replace('.php','', basename($params['templateName']));
         }
-        if (isset($productInfo['title'])) {
-            $productInfo['title'] = [
+        if (isset($params['title'])) {
+            $templateInfo['title'] = [
                 'title' => $params['templateTitle'],
                 'titleUrl' => $params['templateTitleUrl']
             ];
         }
-        return serialize($productInfo);
+        return serialize($templateInfo);
     }
 
     /**
@@ -64,7 +64,9 @@ class PostFormatter {
      */
     private function parseNewsletterContent($params): string
     {
+        //Forms for inputs are php files but boilerplate templates are html
         $templateName = basename($params['templateName']);
+        $templateName = str_replace('.php','.html',$templateName);
         $templateContent = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/boilerplate/' . $templateName);
         $templateContent = str_replace('#templateTitle#',$params['templateTitle'],$templateContent);
         foreach ($params['url'] as $key => $value) {
