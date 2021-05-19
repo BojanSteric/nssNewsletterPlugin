@@ -238,3 +238,11 @@ div.mainAdminCategories {
     margin: 0 auto;
     display: block;
 }
+.validationError{
+    border:1px solid red !important;
+}
+.errorMsg {
+    margin: 5px;
+    text-align: center;
+    color: red;
+}

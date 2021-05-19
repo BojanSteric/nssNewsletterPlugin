@@ -51,7 +51,8 @@ class AdminAjax
     {
         $templatesRepo = new Template();
         $newsletterId = empty($_POST['newsletterId']) ? null : $_POST['newsletterId'];
-
+        $inputCounter = 0;
+        $images = [];
         if ($newsletterId !== null) {
             $template = $templatesRepo->getTemplateByNewsletterId((int)$newsletterId);
             $templateData = unserialize($template->getData());
@@ -59,7 +60,6 @@ class AdminAjax
             $templateTitleUrl = $templateData['title']['titleUrl'] ?? null;
             unset($templateData['title']);
             unset($templateData['templateName']);
-            $inputCounter = 0;
             $images = [];
             foreach ($templateData as $key => $imageData) {
                 if (!empty($imageData['src'])) {
