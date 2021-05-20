@@ -96,7 +96,7 @@ class Activator {
 
         $sql = "CREATE TABLE IF NOT EXISTS $tableName(
             `templateId` int(50) NOT NULL AUTO_INCREMENT,
-            `name` varchar(30) NOT NULL UNIQUE,
+            `name` varchar(30) NOT NULL,
             `newsletterId` int(50) NOT NULL UNIQUE,
             `data` longtext NOT NULL,
             `createdAt` datetime DEFAULT CURRENT_TIMESTAMP,

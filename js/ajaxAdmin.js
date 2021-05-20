@@ -55,10 +55,10 @@ jQuery(document).ready(function($){
         // AJAX request
         var data = {
             'action': 'deleteNewsletter',
-            'newsletterDeleteId': id
+            'newsletterId': id
         };
         $.ajax({
-            url: ajax_url,
+            url: newsletterPage+'&action=deleteNewsletter',
             type: 'post',
             data: data,
             dataType: 'text',

@@ -7,6 +7,7 @@ namespace Newsletter\Template\Repository;
 use Composer\Installers\TheliaInstaller;
 use Newsletter\Template\Mapper\Template as Mapper;
 use Newsletter\Template\Model\Template as Model;
+use PHPMailer\PHPMailer\Exception;
 
 class Template
 {
@@ -28,12 +29,22 @@ class Template
      */
     public function create(array $data)
     {
-        $this->mapper->insert($this->make($data));
+        try {
+            $this->mapper->insert($this->make($data));
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
     }
 
     public function update(array $data)
     {
-        $this->mapper->update($this->make($data));
+        try {
+            $this->mapper->update($this->make($data));
+        } catch (Exception $e){
+            echo $e->getMessage();
+        }
+
     }
 
     /**

@@ -1,6 +1,3 @@
-<?php
-
-?>
 <div>
     <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
            class="m_-1619213263088667308table_shrink" align="center">
@@ -19,28 +16,18 @@
                                     <td>
                                         <div>
                                             <table width="100%" cellpadding="0" cellspacing="0" border="0"
-                                                   bgcolor="#ffffff" class="m_-1619213263088667308table_shrink">
+                                                   bgcolor="#F45411" class="m_-1619213263088667308table_shrink">
                                                 <tbody>
                                                 <tr>
                                                     <td valign="top"
-                                                        style="padding-top:0px;font-family:Helvetica neue,Helvetica,Arial,Verdana,sans-serif;color:#2C5F2D;font-size:20px;line-height:32px;text-align:left;font-weight:bold"
+                                                        style="padding:30px;color:#ffffff;font-size:20px;text-align:center;font-weight:bold"
                                                         align="left">
-                                                        <span>Newsletter potvrda</span>
+                                                        <span>Newsletter potvrda prijave</span>
                                                     </td>
                                                 </tr>
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="color:#cccccc;padding-top:10px" valign="top">
-                                        <hr color="#cccccc" size="1">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top" align="left">
-                                        <div></div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -71,7 +58,7 @@
                                     <td valign="top"
                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:20px;text-align:left;font-weight:none"
                                         align="left"><span>Ukoliko ste se prijavili za newsletter CompanyNewsletter putem e-maila:</span><br>
-                                        <span><a href="mailto:emailNewsletter" style="color: #2C5F2D;"
+                                        <span><a href="mailto:emailNewsletter" style="color: #F45411;"
                                                  target="_blank">emailNewsletter</a></span>
                                     </td>
                                 </tr>
@@ -95,8 +82,8 @@
                                         <table border="0" cellspacing="0" cellpadding="0" align="left">
                                             <tbody>
                                             <tr>
-                                                <td align="center" style="padding-bottom:20px;padding-top:20px"><a
-                                                            style="font-size:16px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;font-weight:none;color:#ffffff;text-decoration:none;background-color:#2C5F2D;border-top:11px solid #2C5F2D;border-bottom:11px solid #2C5F2D;border-left:20px solid #2C5F2D;border-right:20px solid #2C5F2D;border-radius:5px;display:inline-block"
+                                                <td align="center" bgcolor="#F45411" style="border: 1px solid #F45411;border-radius: 10px;padding: 10px 20px;"><a
+                                                            style="text-decoration:none;color:white;display:inline-block"
                                                             href="confirmLink"
                                                             target="_blank"
                                                             data-saferedirecturl="confirmLink">Prijavi se</a></td>
@@ -118,7 +105,7 @@
                                                     <td valign="top"
                                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:24px;text-align:left;font-weight:none"
                                                         align="left">
-                                                        <span>Pozdrav od <a href="https://nonstopshop.rs">nonstopshop.rs</a></span>
+                                                        <span>Pozdrav od <a style="color: #f45411" href="<?=get_home_url()?>">nonstopshop.rs</a></span>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -176,7 +163,7 @@
                                                     <td valign="top"
                                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#707070;font-size:12px;line-height:18px;text-align:center;font-weight:none"
                                                         align="center">
-                                                        <br><span>Ova poruka Vam je poslata sa Internet prodavnice <a href="https://nonstopshop.rs">NonStopShop.rs</a></span><br>
+                                                        <br><span>Ova poruka Vam je poslata sa Internet prodavnice <a style="color: #F45411" href="<?=get_home_url()?>">NonStopShop.rs</a></span><br>
                                                     </td>
                                                 </tr>
                                                 </tbody>

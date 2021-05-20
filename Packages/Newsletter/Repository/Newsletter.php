@@ -27,8 +27,10 @@ class Newsletter
     {
         try {
             $id = $this->mapper->insert($this->make($data));
-            $scheduler = new Scheduler($id);
-            $scheduler->scheduleSend();
+            if ($data['scheduledAt'] !== '') {
+                $scheduler = new Scheduler($id);
+                $scheduler->scheduleSend();
+            }
             return $id;
 
         }catch (\Exception $e) {
@@ -56,8 +58,10 @@ class Newsletter
     {
         try {
             $id = $this->mapper->update($this->make($data));
-            $scheduler = new Scheduler($id);
-            $scheduler->scheduleSend();
+            if ($data['scheduledAt'] !== '') {
+                $scheduler = new Scheduler($id);
+                $scheduler->scheduleSend();
+            }
             return $id;
 
         }catch (\Exception $e) {

@@ -43,4 +43,12 @@ class Scheduler
         }
     }
 
+    public function deleteSchedule()
+    {
+        $nextSchedule = wp_next_scheduled('gfNewsletterSend', ['newsletterId' => $this->newsletter->getId()]);
+        if ($nextSchedule) {
+            wp_unschedule_event($nextSchedule, 'gfNewsletterSend', ['newsletterId' => $this->newsletter->getId()]);
+        }
+    }
+
 }

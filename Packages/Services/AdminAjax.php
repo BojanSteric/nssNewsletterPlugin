@@ -31,7 +31,12 @@ class AdminAjax
 
     public function sendNewsletter()
     {
-        wp_schedule_single_event(time() + 10, 'gfNewsletterSend', [$_POST['newsletterId']]);
+        //In case there is already scheduled event first delete it, to avoid sending same newsletter multiple times
+        $nextSchedule = wp_next_scheduled('gfNewsletterSend', ['newsletterId' => $_POST['newsletterId']]);
+        if ($nextSchedule) {
+            wp_unschedule_event($nextSchedule, 'gfNewsletterSend', ['newsletterId' => $_POST['newsletterId']]);
+        }
+        wp_schedule_single_event(time() + 10, 'gfNewsletterSend', ['newsletterId' => $_POST['newsletterId']]);
     }
 
 
@@ -103,17 +108,6 @@ class AdminAjax
         $newsId = $_POST['newsletterId'];
         $newsletterMapper = new NewsletterMapper();
         $response = $newsletterMapper->updateStatusNewsletter($status, $newsId);
-
-        echo json_encode($response);
-        wp_die();
-    }
-
-    public function deleteNewsletter()
-    {
-        $response = [];
-        $newsId = $_POST['newsletterDeleteId'];
-        $newsletterMapper = new NewsletterMapper();
-        $response = $newsletterMapper->delete($newsId);
 
         echo json_encode($response);
         wp_die();

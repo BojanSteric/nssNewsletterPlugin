@@ -1,6 +1,7 @@
 <?php
 
 use Newsletter\Import\Importer;
+use Newsletter\Newsletter\Services\Scheduler;
 use Newsletter\Template\Repository\Template;
 use Subscriber\Mapper\Subscriber as SubMapper;
 use Subscriber\Repository\Subscriber as SubRepository;
@@ -108,10 +109,12 @@ switch ( $action ) {
 
         break;
 	case 'deleteNewsletter':
-		if ( isset( $_GET['newsId'] ) ) {
-			$newsletterRepo->delete( (int) $_GET['newsId'] );
+		if (isset($_POST['newsletterId'])) {
+		    $id = (int)$_POST['newsletterId'];
+            $scheduler = new Scheduler($id);
+            $scheduler->deleteSchedule();
+			$newsletterRepo->delete($id);
 		}
-		echo '<p>Uspešno ste obrisali newsletter</p> <a  class="" href="'.admin_url() . '?page=newsletter&action=templates"  >Vrati se nazad</a>';
 		break;
 
 
