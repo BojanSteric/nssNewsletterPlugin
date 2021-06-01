@@ -95,5 +95,5 @@ class DashboardPage
     }
 }
 
-$dashboardPage = new DashboardPage();
-$dashboardPage->hooksAndFilters();
+//$dashboardPage = new DashboardPage();
+//$dashboardPage->hooksAndFilters();
