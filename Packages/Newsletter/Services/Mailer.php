@@ -63,10 +63,10 @@ class Mailer
         $this->protocol->connect();
         $transport = new Smtp();
         $transport->setConnection($this->protocol);
-        $bulkAmount = 1;
+        $bulkAmount = 80000;
         // used in order to prevent too much damage if something goes wrong with the loop
         // should be ceil(totalUsersToSend/bulkAmount)
-        $failoverLimit = 5;
+        $failoverLimit = 3;
         $failover = 1;
         $page = 0;
         $sent = 0;
