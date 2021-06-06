@@ -22,7 +22,7 @@ class MenuPage {
 		$this->menuTitle = $menuTitle;
 		$this->capability = $capability;
 		$this->menuSlug = $menuSlug;
-//		$this->createPage();
+		$this->createPage();
 	}
 
 

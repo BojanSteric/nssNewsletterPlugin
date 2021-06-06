@@ -46,25 +46,23 @@ class NewsletterPageShortcode
                 case 'confirmation':
                     $userCode = $_GET['data'] ?? '';
                     if ($userCode === '') {
-                        echo 'Dogodila se neocekivana greska, kontaktirajte admina stranice';
+                        echo 'Dogodila se neočekivana greška, molimo vas kontaktirajte tehničku podršku.';
                     } else {
                         $subscribersMapper = new Subscriber();
                         $subscribersRepo = new \Subscriber\Repository\Subscriber($subscribersMapper);
                         $user = $subscribersRepo->getUserBy('actionLink', $userCode);
                         if ($user){
-                            $user->setActiveSince(date("Y-m-d H:i:s"));
-                            $user->setEmailStatus('confirmed');
                             $subscribersRepo->confirmUser($user);
-                            echo '<p>Uspesno ste se prijavili na newsletter</p>';
+                            echo '<p>Vaša email adresa je sada potvrđena, i od sada ćete primati naš newsletter.</p><br />>';
                         }
-                        echo sprintf('<a title="back to home" href="%s">Nazad na početnu</a>', get_home_url());
+                        echo sprintf('<a title="back to home" href="%s">Nazad na početnu</a>', get_home_url()) . '<br />';
                     }
 //                    include NEWSLETTER_DIR . '/template/subscribersPage.php';
                     break;
                 case 'unsubscribe':
                     $userCode = $_GET['data'] ?? '';
                     if ($userCode === '') {
-                        echo 'Dogodila se neocekivana greska, kontaktirajte admina stranice';
+                        echo 'Dogodila se neočekivana greška, molimo vas kontaktirajte tehničku podršku.';
                     } else {
                         $subscribersMapper = new Subscriber();
                         $subscribersRepo = new \Subscriber\Repository\Subscriber($subscribersMapper);

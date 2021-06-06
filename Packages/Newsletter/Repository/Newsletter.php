@@ -32,8 +32,7 @@ class Newsletter
                 $scheduler->scheduleSend();
             }
             return $id;
-
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
     }
@@ -42,9 +41,12 @@ class Newsletter
     {
         $items = [];
         $data = $this->mapper->getAll($page, $perPage);
-
         foreach ($data as $item) {
-                $items[] = $this->make($item);
+            $object = $this->make($item);
+            if ($object->getStatus() === 'sending') {
+                $object->setStats($this->mapper->getStatsFor($object->getId()));
+            }
+            $items[] = $object;
         }
         return $items;
     }
@@ -52,6 +54,23 @@ class Newsletter
     public function getNewsletterById(int $newsletterId) : Model
     {
         return $this->make($this->mapper->getNewsletterById($newsletterId));
+    }
+
+    public function markAsSent(int $newsletterId)
+    {
+        $data = $this->mapper->getNewsletterById($newsletterId);
+        $data['newsStatus'] = 'sent';
+        $this->mapper->cacheStatsFor($newsletterId);
+
+        return $this->update($data);
+    }
+
+    public function markAsSending(int $newsletterId)
+    {
+        $data = $this->mapper->getNewsletterById($newsletterId);
+        $data['newsStatus'] = 'sending';
+
+        return $this->update($data);
     }
 
     public function update($data)
@@ -63,8 +82,7 @@ class Newsletter
                 $scheduler->scheduleSend();
             }
             return $id;
-
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
     }
@@ -109,9 +127,10 @@ class Newsletter
 	    if (isset($data['products'])) {
 		    $products = $data['products'];
 	    }
+	    if (isset($data['sentCount'])) {
+            $sentCount = $data['sentCount'];
+	    }
 
-        return new Model($newsId, $newsStatus, $createdAt, $scheduledAt, $title, $content, $templateName,$products);
+        return new Model($newsId, $newsStatus, $createdAt, $scheduledAt, $title, $content, $templateName, $products, $sentCount);
     }
-
-
 }

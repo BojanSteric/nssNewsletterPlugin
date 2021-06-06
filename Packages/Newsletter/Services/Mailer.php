@@ -50,26 +50,27 @@ class Mailer
     public function log($msg)
     {
         $file = WP_CONTENT_DIR . '/uploads/gfnewsletter.log';
-        touch($file);
-        $data = file_get_contents($file) . PHP_EOL . $msg;
+        $msg = date('Y/m/d H:i:s') .' : '. $msg;
+        $data = file_get_contents($file) . PHP_EOL . PHP_EOL . $msg;
         file_put_contents($file, $data);
     }
 
     public function send($newsletterId)
     {
         $logMapper = new \Newsletter\Mapper\NewsletterLog();
-
         $this->log('started nl sending');
         $newsletter = $this->newsletter->getNewsletterById($newsletterId);
-        $bulkAmount = 4;
-        $failoverLimit = 5;
         $this->protocol->connect();
         $transport = new Smtp();
         $transport->setConnection($this->protocol);
-
+        $bulkAmount = 1;
+        // used in order to prevent too much damage if something goes wrong with the loop
+        // should be ceil(totalUsersToSend/bulkAmount)
+        $failoverLimit = 5;
         $failover = 1;
         $page = 0;
         $sent = 0;
+        $this->newsletter->markAsSending($newsletterId);
         $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
         while (count($users) > 0 && $failover < $failoverLimit) {
             /* @var \Subscriber\Model\Subscriber $user */
@@ -100,16 +101,18 @@ class Mailer
                         ]);
                         continue;
                     }
-                    echo $e->getMessage();
+                    // implement failed log in mysql
+//                    echo $e->getMessage();
                     $this->log('failed sending' . $e->getMessage());
-                    die();
                 }
             }
             $failover++;
-            $this->log(sprintf('sent %s items', $sent));
+            $this->log(sprintf('total items sent: %s', $sent));
+
             $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
         }
         $this->protocol->quit();
+        $this->newsletter->markAsSent($newsletterId);
         $this->log('nl sent');
     }
 
@@ -119,8 +122,12 @@ class Mailer
 //        $productIds = explode(',', $newsletter->getProducts());
         $newsletterPage = new NewsletterFrontPage();
         $unsubscribeUrl = $newsletterPage->getPageUrl().'/?action=unsubscribe&data='.$userActionLink;
+
+//        $templateName = 'nl11';
 //        $tpl = file_get_contents(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/'.$templateName.'.html');
+
         $tpl = $newsletter->getContent();
+
 //        $body = '';
 //        foreach (explode(',', $newsletter->getProducts()) as $id) {
 //            /* @var \WC_Product $product */
@@ -132,7 +139,8 @@ class Mailer
 //            $price = $product->get_price();
 //            $body .= $this->parseTemplateItem($link, $imageUrl, $title, $desc, $price);
 //        }
-        return str_replace('#unsubscribeUrl', $unsubscribeUrl, $tpl);
+//        return str_replace('#unsubscribeUrl', $unsubscribeUrl, $tpl);
+        return str_replace('#unsubscribeLink', $unsubscribeUrl, $tpl);
     }
 
     private function parseTemplateItem($link, $url, $title, $desc, $price)

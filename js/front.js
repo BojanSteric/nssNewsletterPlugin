@@ -7,15 +7,14 @@
                 type: 'POST',
                 data:{
                     action:'subscribeToNewsletter',
-                    email: email,
+                    email: email
                 },
-                success: function(data) {
-                    alert('Uspešno ste se prijavili na newsletter, molimo Vas da potvrdite prijavu klikom na link u emailu koji smo vam poslali.');
+                success: function(result) {
+                    alert(result.data.msg);
                 },
-                error: function(data) {
-                    alert('Dogodila se neočekivana greška ');
-
-                },
+                error: function(result) {
+                    alert(result.data.msg);
+                }
             });
             event.preventDefault();
         });

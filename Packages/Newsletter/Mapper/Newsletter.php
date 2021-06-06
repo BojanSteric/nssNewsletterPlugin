@@ -13,6 +13,7 @@ class Newsletter
      * @var string
      */
     private $tableName;
+    private $logTableName;
 
     /**
      * Newsletter constructor.
@@ -22,6 +23,7 @@ class Newsletter
         global $wpdb;
         $this->db = $wpdb;
         $this->tableName = NEWSLETTER_TABLE_NAME;
+        $this->logTableName = NEWSLETTER_TABLE_NAME . '_log';
     }
 
     public function insert(\Newsletter\Model\Newsletter $model)
@@ -101,5 +103,18 @@ class Newsletter
     {
         $sql = "SELECT * FROM $this->tableName WHERE newsStatus = '$status';";
         return $this->db->get_results($sql, ARRAY_A)[0];
+    }
+
+    public function getStatsFor($nlId)
+    {
+        $sql = "SELECT COUNT(*) as count FROM $this->logTableName WHERE newsletterId = {$nlId};";
+        return $this->db->get_results($sql, ARRAY_A)[0]['count'];
+    }
+
+    public function cacheStatsFor($nlId)
+    {
+        $sentCount = $this->getStatsFor($nlId);
+        $sql = "UPDATE $this->tableName SET sentCount = {$sentCount} WHERE newsId = {$nlId};";
+        return $this->db->query($sql);
     }
 }

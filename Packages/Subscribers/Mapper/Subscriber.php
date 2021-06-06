@@ -3,6 +3,8 @@
 
 namespace Subscriber\Mapper;
 
+use Subscriber\Model\Subscriber as Model;
+
 class Subscriber
 {
     /**
@@ -24,7 +26,7 @@ class Subscriber
         $this->tableName = SUBSCRIBER_TABLE_NAME;
     }
 
-    public function insert(\Subscriber\Model\Subscriber $model)
+    public function insert(Model $model)
     {
         $this->db->insert($this->tableName,[
             'wpUserId' => $model->getWpUserId(),
@@ -40,7 +42,7 @@ class Subscriber
         return $this->db->insert_id;
     }
 
-    public function update(\Subscriber\Model\Subscriber $model)
+    public function update(Model $model)
     {
         $this->db->update($this->tableName,
             [
@@ -98,18 +100,19 @@ class Subscriber
             $offset = $page * $limit;
         }
         $logTable = NEWSLETTER_LOG_TABLE_NAME;
-        $sql = "SELECT * FROM $this->tableName WHERE emailStatus = 'confirmed' AND userId NOT IN (
+        $status = Model::STATUS_CONFIRMED;
+        $sql = "SELECT * FROM $this->tableName WHERE emailStatus = {$status} AND userId NOT IN (
             SELECT userId FROM {$logTable} WHERE newsletterId = {$newsletterId}
         ) LIMIT $limit OFFSET $offset;";
 
         return $this->db->get_results($sql, ARRAY_A);
     }
 
-    public function getAllActive()
-    {
-        $sql = "SELECT * FROM $this->tableName WHERE 'activeSince' IS NOT NULL;";
-        return $this->db->get_results($sql, ARRAY_A);
-    }
+//    public function getAllActive()
+//    {
+//        $sql = "SELECT * FROM $this->tableName WHERE 'activeSince' IS NOT NULL;";
+//        return $this->db->get_results($sql, ARRAY_A);
+//    }
 
     public function getUserBy($field, $value)
     {
@@ -119,11 +122,6 @@ class Subscriber
             return $result[0];
         }
         return $result;
-    }
-
-    public function confirm($user)
-    {
-        $this->update($user);
     }
 
     public function unsubscribe(\Subscriber\Model\Subscriber $user)

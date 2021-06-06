@@ -62,8 +62,6 @@
                                                  target="_blank">emailNewsletter</a></span>
                                     </td>
                                 </tr>
-
-
                                 <tr>
                                     <td valign="top" align="left">
                                         <div>
@@ -73,7 +71,7 @@
                                 <tr>
                                     <td valign="top"
                                         style="padding-top:10px;font-family:Helvetica,Helvetica neue,Arial,Verdana,sans-serif;color:#333333;font-size:14px;line-height:20px;text-align:left;font-weight:none"
-                                        align="left">Potvrdite vaše prijavljivanje, klikom na dugme ispod, usuprotno ignorišite ovaj mail.
+                                        align="left">Potvrdite vašu prijavu klikom na dugme ispod, u suprotnom ignorišite ovaj mail.
                                     </td>
                                 </tr>
 

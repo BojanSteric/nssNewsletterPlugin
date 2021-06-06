@@ -51,14 +51,9 @@ class NewsletterWidget extends WP_Widget {
         echo $args['after_widget'];
     }
           
-    
-    public function subscribeToNewsletter(){
-        if (SubscribeAction::subscribe($_POST)){
-            wp_send_json_success([]);
-        }
-        wp_send_json_error([]);
+    public function subscribeToNewsletter() {
+        SubscribeAction::subscribe($_POST);
     }
-
 
     // Widget Backend 
     public function form( $instance ) {

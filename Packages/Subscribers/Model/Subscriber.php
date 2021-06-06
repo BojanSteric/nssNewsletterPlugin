@@ -5,6 +5,11 @@ namespace Subscriber\Model;
 
 class Subscriber
 {
+    const STATUS_NEW = 0;
+    const STATUS_CONFIRMED = 1;
+    const STATUS_UNSUBSCRIBED = -1;
+    const STATUS_BOUNCED = -2;
+
     /**
      * @var int $userId
      */
@@ -45,7 +50,14 @@ class Subscriber
      * @var string $updatedAt
      */
     private $activeSince;
-    
+
+    public $hrEmailStatus = [
+        self::STATUS_NEW => 'new',
+        self::STATUS_CONFIRMED => 'confirmed',
+        self::STATUS_UNSUBSCRIBED => 'unsubscribed',
+        self::STATUS_BOUNCED => 'bounced',
+    ];
+
     /**
      * Subscriber constructor.
      * @param int|null $userId
@@ -81,6 +93,11 @@ class Subscriber
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->activeSince = $activeSince;
+    }
+
+    public function getHrEmailStatus()
+    {
+        return $this->hrEmailStatus[$this->emailStatus];
     }
 
     /**

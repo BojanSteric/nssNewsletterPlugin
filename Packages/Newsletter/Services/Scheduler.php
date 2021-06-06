@@ -39,7 +39,7 @@ class Scheduler
             }
             wp_schedule_single_event($date, 'gfNewsletterSend', ['newsletterId' => $this->newsletter->getId()]);
         } else {
-            throw new Exception('Vreme zakazivanja je u proslosti');
+            throw new \Exception('Vreme zakazivanja je u proslosti');
         }
     }
 

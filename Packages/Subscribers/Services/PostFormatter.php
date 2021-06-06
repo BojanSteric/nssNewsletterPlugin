@@ -2,33 +2,39 @@
 
 namespace Subscriber\Service;
 
+use Subscriber\Model\Subscriber;
+
 class PostFormatter {
 
 	public static function formatDataNewsForm($postData)
 	{
-        $data['email'] = (string)$postData['email'];
+        $data['email'] = (string) $postData['email'];
         $user = get_user_by( 'email', $data['email'] );
 		if($user){
 			$data['wpUserId'] = $user->ID;
 		}
-        $data['emailStatus'] = (string)$postData['emailStatus'];
+        $data['emailStatus'] = $postData['emailStatus'];
 		$data['createdAt'] = $postData['createdAt'] ?? date("Y-m-d H:i:s");
 		$data['updatedAt'] = $postData['updatedAt'] ?? date("Y-m-d H:i:s");
-		$data['firstName'] = (string)$postData['firstName'];
-        $data['lastName'] = (string)$postData['lastName'];
+		$data['firstName'] = (string) $postData['firstName'];
+        $data['lastName'] = (string) $postData['lastName'];
 		$data['actionLink'] = emailHash($postData['email']);
 		return $data;
 	}
+
 	public static function formatDataNewSubscribers($postData)
 	{
-		$data['email'] = (string)$postData['email'];
+		$data['email'] = (string) $postData['email'];
 		$user = get_user_by( 'email', $data['email'] );
-		$data['wpUserId'] = $user->ID;
-		$data['emailStatus'] = 'not confirmed';
+        $data['wpUserId'] = null;
+		if ($user) {
+            $data['wpUserId'] = $user->ID;
+        }
+		$data['emailStatus'] = Subscriber::STATUS_NEW;
 		$data['createdAt'] =  date("Y-m-d H:i:s") ;
-		$data['updatedAt'] = (string)$postData['updatedAt'] ?? NULL;
-		$data['firstName'] = (string)$postData['firstName'] ?? NULL;
-		$data['lastName'] = (string)$postData['lastName'] ?? NULL;
+		$data['updatedAt'] = $postData['updatedAt'] ?? null;
+		$data['firstName'] = $postData['firstName'] ?? null;
+		$data['lastName'] = $postData['lastName'] ?? null;
 		$data['actionLink'] = emailHash($postData['email']);
 		return $data;
 	}

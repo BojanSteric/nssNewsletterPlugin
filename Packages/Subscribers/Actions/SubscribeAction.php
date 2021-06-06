@@ -5,25 +5,34 @@ namespace Newsletter\Subscribers\Actions;
 
 use Newsletter\FrontPage\NewsletterFrontPage;
 use Subscriber\Mapper\Subscriber as SubMapper;
+use Subscriber\Model\Subscriber;
 use Subscriber\Repository\Subscriber as SubRepository;
 use Subscriber\Service\PostFormatter as SubscriberPostFormatter;
 use Service\MailFormater\MailFormater as MailService;
 
 class SubscribeAction
 {
-    public static function subscribe($data): bool
+    public static function subscribe($data): int
     {
         $subscriberMapper = new SubMapper();
         $subscriberRepo = new SubRepository($subscriberMapper);
-        $subscriberEmail = $data['email'];
         $data = SubscriberPostFormatter::formatDataNewSubscribers($data);
-        $subscriber = $subscriberRepo->create($data);
-        $newsletterPage = new NewsletterFrontPage();
-        if ($subscriber) {
-            $subscriberActionLink = $newsletterPage->getPageUrl() . '/?action=confirmation&data=' . $subscriberRepo->getSubscriberByEmail($subscriberEmail)->getActionLink();
-            MailService::sendMailToNewSubscribers($subscriberEmail, $subscriberActionLink);
-            return true;
+        $existing = $subscriberRepo->getSubscriberByEmail($data['email']);
+        if (!$existing) {
+            $subscriber = $subscriberRepo->create($data);
+            if ($subscriber) {
+                $newsletterPage = new NewsletterFrontPage();
+                $subscriberActionLink = $newsletterPage->getPageUrl() . '/?action=confirmation&data=' . $subscriber->getActionLink();
+                MailService::sendMailToNewSubscribers($data['email'], $subscriberActionLink);
+                $msg = 'Uspešno ste se prijavili na newsletter, molimo Vas da potvrdite prijavu klikom na link u emailu koji smo vam poslali.';
+                wp_send_json_success(['msg' => $msg]);
+            }
         }
-        return false;
+        if (get_class($existing) === Subscriber::class) {
+            $msg = 'Već ste prijavljeni na newsletter.';
+            wp_send_json_success(['msg' => $msg]);
+        }
+        $msg = 'Dogodila se neočekivana greška';
+        wp_send_json_error(['msg' => $msg]);
     }
 }

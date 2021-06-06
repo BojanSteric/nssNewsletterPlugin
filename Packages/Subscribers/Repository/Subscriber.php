@@ -22,11 +22,18 @@ class Subscriber
         $this->mapper = $mapper;
     }
 
+    /**
+     * @param $data
+     * @return int|\Subscriber\Model\Subscriber
+     */
     public function create($data)
     {
         if($this->mapper->getSubscriberByEmail($data['email']) === null)
         {
-            return $this->mapper->insert($this->make($data));
+            $subscriber = $this->make($data);
+            if ($this->mapper->insert($subscriber)) {
+                return $this->getSubscriberByEmail($data['email']);
+            }
         }
         return null;
     }
@@ -52,9 +59,13 @@ class Subscriber
         return $this->make($this->mapper->getSubscriberById($userId));
     }
     
-    public function getSubscriberByEmail(string $email) : Model
+    public function getSubscriberByEmail(string $email)
     {
-        return $this->make($this->mapper->getSubscriberByEmail($email));
+        $data = $this->mapper->getSubscriberByEmail($email);
+        if (!$data) {
+            return null;
+        }
+        return $this->make($data);
     }
 
     public function update($data)
@@ -82,7 +93,8 @@ class Subscriber
         $wpUserId = null;
         $email = null;
         $emailStatus = null;
-        $actionLink = password_hash($data['email'], PASSWORD_BCRYPT, ["cost" => 8]);
+        $actionLink = '';
+//        $actionLink = password_hash($data['email'], PASSWORD_BCRYPT, ["cost" => 8]);
         $firstName = '';
         $lastName = '';
         $createdAt = null;
@@ -123,9 +135,11 @@ class Subscriber
         return new Model($userId, $wpUserId, $email, $emailStatus, $actionLink, $firstName, $lastName, $createdAt, $updatedAt, $activeSince);
     }
 
-    public function confirmUser($user)
+    public function confirmUser(Model $user)
     {
-        $this->mapper->confirm($user);
+        $user->setActiveSince(date("Y-m-d H:i:s"));
+        $user->setEmailStatus(Model::STATUS_CONFIRMED);
+        $this->mapper->update($user);
     }
 
     public function getUserBy($field, $value)

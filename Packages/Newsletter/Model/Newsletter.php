@@ -38,6 +38,9 @@ class Newsletter
      */
     public $products;
 
+    private $stats;
+    private $sentCount;
+
     /**
      * Newsletter constructor.
      * @param int|null $id
@@ -51,23 +54,24 @@ class Newsletter
      */
     public function __construct(
         int $id = null,
-        string $newsStatus,
+        string $status,
         string $createdAt = null,
         string $scheduledAt = null,
         string $title,
         string $content = null,
 	    string $templateName = null,
-        string $products = null
+        string $products = null,
+        string $sentCount = null
     ) {
         $this->id = $id;
-        $this->status = $newsStatus;
+        $this->status = $status;
         $this->createdAt = $createdAt;
         $this->scheduledAt = $scheduledAt;
         $this->title = $title;
         $this->content = $content;
         $this->templateName = $templateName;
 	    $this->products = $products;
-
+	    $this->sentCount = $sentCount;
     }
 
     /**
@@ -130,6 +134,16 @@ class Newsletter
     public function getContent()
     {
         return $this->content;
+    }
+
+    public function setStats($stats)
+    {
+        $this->stats = $stats;
+    }
+
+    public function getStats()
+    {
+        return ($this->status === 'sending') ? $this->stats : $this->sentCount;
     }
     
     /**
