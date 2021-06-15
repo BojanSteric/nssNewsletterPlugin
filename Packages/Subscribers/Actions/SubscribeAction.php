@@ -18,8 +18,14 @@ class SubscribeAction
         $subscriberRepo = new SubRepository($subscriberMapper);
         $data = SubscriberPostFormatter::formatDataNewSubscribers($data);
         $existing = $subscriberRepo->getSubscriberByEmail($data['email']);
-        if (!$existing) {
-            $subscriber = $subscriberRepo->create($data);
+        //If there is no email registered or there is one but it was unsubed
+        if (!$existing || $existing->getEmailStatus() === '-1') {
+            $subscriber = $existing;
+
+            //Try to create new subscriber only if status is new subsriber
+            if ($existing->getEmailStatus() === '0'){
+                $subscriber = $subscriberRepo->create($data);
+            }
             if ($subscriber) {
                 $newsletterPage = new NewsletterFrontPage();
                 $subscriberActionLink = $newsletterPage->getPageUrl() . '/?action=confirmation&data=' . $subscriber->getActionLink();
@@ -42,15 +48,19 @@ class SubscribeAction
         $subscriberRepo = new SubRepository($subscriberMapper);
         $data = SubscriberPostFormatter::formatDataNewSubscribers($data);
         $existing = $subscriberRepo->getSubscriberByEmail($data['email']);
-        if (!$existing) {
-            $subscriber = $subscriberRepo->create($data);
+        if (!$existing || $existing->getEmailStatus() === '-1') {
+            $subscriber = $existing;
+
+            //Try to create new subscriber only if status is new subsriber
+            if ($existing->getEmailStatus() === '0'){
+                $subscriber = $subscriberRepo->create($data);
+            }
             if ($subscriber) {
                 $newsletterPage = new NewsletterFrontPage();
                 $subscriberActionLink = $newsletterPage->getPageUrl() . '/?action=confirmation&data=' . $subscriber->getActionLink();
                 MailService::sendMailToNewSubscribers($data['email'], $subscriberActionLink);
                 $msg = 'Uspešno ste se prijavili na newsletter, molimo Vas da potvrdite prijavu klikom na link u emailu koji smo vam poslali.';
-//                wp_send_json_success(['msg' => $msg]);
-                return true;
+                wp_send_json_success(['msg' => $msg]);
             }
         }
         if (get_class($existing) === Subscriber::class) {
