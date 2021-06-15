@@ -2,8 +2,7 @@
 ?>
 <div class="wrap subsciberDiv">
     <h2>Lista newslettera</h2>
-    <div id='div_search'><input type='text' id='search' placeholder="Enter search text" /></div>
-    <table class="subscriberList" id="empTable">
+    <table class="subscriberList striped" id="empTable">
         <thead>
         <tr class="table-header">
             <th class="col col-1">#</th>
@@ -42,7 +41,9 @@
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script>
         jQuery(document).ready(function () {
-            jQuery('#subscriberList').DataTable();
+            jQuery('#empTable').DataTable({
+                order: [[ 4, "desc" ]]
+            });
         });
     </script>
 </div>

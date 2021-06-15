@@ -28,6 +28,10 @@
                 searchDelay: 1500,
                 pageLength: 25,
                 lengthMenu: [ 10, 25, 50, 75, 100,250,500, 1000 ],
+                fnInitComplete : function () {
+                    jQuery("#DataTables_Table_0_info").clone().insertBefore(jQuery("#DataTables_Table_0")).css('margin', '5px') ;
+                    jQuery("#DataTables_Table_0_paginate").clone().insertBefore(jQuery("#DataTables_Table_0")).css('margin', '5px') ;
+                },
                 ajax: {
                     url: 'admin-ajax.php',
                     type: 'POST',
@@ -38,6 +42,7 @@
                 language: {
                     "emptyTable": "Nije pronadjena nijedan pretplatnik sa zadatim filterima"
                 },
+
                 columns: [
                     {
                         name:'orderNumber',

@@ -87,11 +87,19 @@ class Subscriber
                 }
                 if (isset($arg['order'])){
                     foreach ($arg['order'] as $name => $value) {
+                        if ($name === 'orderNumber') {
+                           continue;
+                        }
                         $sql.= " ORDER BY `{$name}` {$value}";
                     }
+                } else {
+                    $sql.= " ORDER BY `createdAt` DESC";
                 }
             }
+        } else {
+            $sql.= " ORDER BY `createdAt` DESC";
         }
+
         $sql .= " LIMIT $limit OFFSET $offset;";
         return $this->db->get_results($sql, ARRAY_A);
     }
