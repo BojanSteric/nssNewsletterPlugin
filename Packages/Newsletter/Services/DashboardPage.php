@@ -1,28 +1,13 @@
 <?php
 
 
-namespace Newsletter\Newsletter\Services;
-
-
-use Subscriber\Repository\Subscriber;
-
+namespace Newsletter\Services;
+use Newsletter\Subscribers\Actions\SubscribeAction;
+use Newsletter\Subscribers\Actions\UnsubscribeAction;
+use Subscriber\Mapper\Subscriber as SubMapper;
+use Subscriber\Repository\Subscriber as SubRepository;
 class DashboardPage
 {
-    /**
-     * @var Subscriber
-     */
-    private $subscriberRepo;
-
-
-    /**
-     * DashboardPage constructor.
-     */
-    public function __construct()
-    {
-        $subscriberMapper = new \Subscriber\Mapper\Subscriber();
-        $this->subscriberRepo = new Subscriber($subscriberMapper);
-    }
-
     public function hooksAndFilters()
     {
         add_action('woocommerce_account_newsletter-account_endpoint', [$this, 'newsletterMenuPage']);
@@ -47,11 +32,24 @@ class DashboardPage
      */
     public function newsletterMenuPage()
     {
+        $subscriberMapper = new SubMapper();
+        $subscriberRepo = new SubRepository($subscriberMapper);
+        $user = wp_get_current_user();
+        $subscriber = $subscriberRepo->getUserBy('wpUserId', $user->ID);
+        $email = $user->user_email ?? null;
+        if ($subscriber){
+            if ($subscriber->getEmailStatus() === '1') {
+                $subActive = 'checked';
+            } else {
+                $subInactive = 'checked';
+            }
+        }
+
         ?>
         <h4>Da li želite da primate promotivne emailove</h4>
-        <input class="emailPref" type="radio" name="emailNotification" value="1">
+        <input <?=$subActive ?? ''?> class="emailPref" type="radio" name="emailNotification" value="1">
         <label for="male">Da</label><br>
-        <input class="emailPref" type="radio" name="emailNotification" value="0">
+        <input <?=$subInactive ?? ''?> class="emailPref" type="radio" name="emailNotification" value="0">
         <label for="female">Ne</label><br>
 
         <script>
@@ -61,15 +59,17 @@ class DashboardPage
                     type: 'post',
                     data: {
                         'action': 'dashboardNewsletter',
-                        'userId': '<?=get_current_user_id()?>',
-                        'subscribe': e.target.value
+                        'subscribe': e.target.value,
+                        'email': '<?=$email?>',
+                        'emailStatus':'<?=$subscriber->getEmailStatus() ?? ''?> ',
+                        'userCode': '<?=$subscriber->getActionLink() ?? ''?>'
                     },
                     dataType: 'json',
                     error: function (response, error) {
                         alert('Snimanje nije uspešno, razlog greške je: ' + error);
                     },
                     success: function(response){
-                        alert('Uspešno ste snimili podešavanja');
+                        alert(response.data.msg);
                     }
                 });
             })
@@ -91,9 +91,20 @@ class DashboardPage
      */
     public function newsletterDashboardHandler()
     {
-
+        $subscriberMapper = new SubMapper();
+        $subscriberRepo = new SubRepository($subscriberMapper);
+        if ($_POST['subscribe'] === '1') {
+            return SubscribeAction::subscribe($_POST);
+        }
+        $userCode = $_POST['userCode'] ?? null;
+        if ($userCode && $userCode === $subscriberRepo->getSubscriberByEmail($_POST['email'])->getActionLink()){
+           return UnsubscribeAction::unsubscribe($userCode);
+        }
+        $msg = 'Forma nije ispravna';
+        wp_send_json_error(['msg' => $msg]);
+        return false;
     }
 }
 
-//$dashboardPage = new DashboardPage();
-//$dashboardPage->hooksAndFilters();
+$dashboardPage = new DashboardPage();
+$dashboardPage->hooksAndFilters();

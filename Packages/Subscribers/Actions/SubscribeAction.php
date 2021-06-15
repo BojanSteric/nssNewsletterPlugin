@@ -25,7 +25,7 @@ class SubscribeAction
                 self::sendConfirmationEmail($subscriber, $data);
                 return true;
             }
-        } elseif ($existingSubscriber->getEmailStatus() === '-1'){ //if user was registered then unsubed and want to subsribe again
+        } elseif ($existingSubscriber->getEmailStatus() === '-1'){ //if user was registered then unsubed and want to subscribe again
             self::sendConfirmationEmail($existingSubscriber, $data);
             return true;
         }
