@@ -64,14 +64,35 @@ class Subscriber
         $this->db->query($sql);
     }
 
-    public function getAll(int $page, int $perPage)
+    public function getAll(int $page, int $perPage, $args = [])
     {
         $limit = $perPage;
         $offset = 0;
         if ($page !== 1) {
             $offset = $page * $limit;
         }
-        $sql = "SELECT * FROM $this->tableName LIMIT $limit OFFSET $offset;";
+        $sql = "SELECT * FROM $this->tableName";
+        if (count($args) !== 0) {
+            foreach ($args as $arg) {
+                if (isset($arg['search'])){
+                    $i = 0;
+                    foreach ($arg['search'] as $name => $value) {
+                        if ($i === 0) {
+                            $sql.= " WHERE `{$name}` LIKE '%{$value}%'";
+                        } else {
+                            $sql.= " AND `{$name}` LIKE '%{$value}%'";
+                        }
+                        $i++;
+                    }
+                }
+                if (isset($arg['order'])){
+                    foreach ($arg['order'] as $name => $value) {
+                        $sql.= " ORDER BY `{$name}` {$value}";
+                    }
+                }
+            }
+        }
+        $sql .= " LIMIT $limit OFFSET $offset;";
         return $this->db->get_results($sql, ARRAY_A);
     }
 
@@ -127,6 +148,12 @@ class Subscriber
     public function unsubscribe(\Subscriber\Model\Subscriber $user)
     {
         $this->update($user);
+    }
+
+    public function getTotalCount()
+    {
+        $sql = "SELECT COUNT(*) FROM $this->tableName";
+        return $this->db->get_results($sql, ARRAY_N)[0];
     }
 
 }

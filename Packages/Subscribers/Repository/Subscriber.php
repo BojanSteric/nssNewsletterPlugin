@@ -38,14 +38,18 @@ class Subscriber
         return null;
     }
 
-    public function getAll(int $page, int $perPage): array
+    public function getAll(int $page, int $perPage, $args = []): array
     {
         $items = [];
-        $data = $this->mapper->getAll($page, $perPage);
+        $data = $this->mapper->getAll($page, $perPage, $args);
         foreach ($data as $item) {
                 $items[] = $this->make($item);
         }
         return $items;
+    }
+
+    public function getTotalCount(){
+        return $this->mapper->getTotalCount();
     }
 	public function getAllAjax(int $page, int $perPage): array
 	{
