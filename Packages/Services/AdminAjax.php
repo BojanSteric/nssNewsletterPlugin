@@ -5,6 +5,7 @@ namespace Service\AdminAjax;
 
 use Newsletter\Template\Repository\Template;
 use Subscriber\Mapper\Subscriber as SubMapper;
+use Subscriber\Model\Subscriber;
 use Subscriber\Repository\Subscriber as SubRepository;
 use Subscriber\Service\PostFormatter as SubscriberPostFormatter;
 
@@ -26,6 +27,7 @@ class AdminAjax
         add_action('wp_ajax_sendNewsletter', [$this, 'sendNewsletter']);
         add_action('wp_ajax_getTemplate', [$this, 'getTemplate']);
         add_action('wp_ajax_saveTemplateData', [$this, 'saveTemplateData']);
+        add_action('wp_ajax_getSubscribers', [$this, 'getSubscribers']);
     }
 
 
@@ -111,5 +113,57 @@ class AdminAjax
 
         echo json_encode($response);
         wp_die();
+    }
+
+    public function getSubscribers(): void
+    {
+        $subRepo = new SubRepository(new SubMapper());
+        $offset = $_POST['start'];
+        $limit = $_POST['length'];
+        if ($offset === '0') {
+            $page = 1;
+        } else {
+            $page = $limit / $offset;
+            if ($page === 1) {
+                $page = 2;
+            }
+        }
+        $args = [];
+        if (isset($_POST['search']) && $_POST['search']['value'] !== ''){
+            $args[] = ['search'=> ['email' => $_POST['search']['value']]];
+        }
+        if (isset($_POST['order']) && $_POST['order'][0]['column'] !== '0'){
+            $columnIndex = $_POST['order'][0]['column'];
+            $sortDirection = $_POST['order'][0]['dir'];
+            $columnName = $_POST['columns'][$columnIndex]['name'];
+            $args[] = ['order' => [$columnName => $sortDirection]];
+        }
+        $subscribers = $subRepo->getAll($page,25, $args);
+        $countTotal = $subRepo->getTotalCount();
+        $subData = [];
+        $i = 1;
+        /** @var Subscriber $subscriber */
+        foreach ($subscribers as $subscriber) {
+            $subData[] = [
+                $i,
+                $subscriber->getEmail(),
+                $subscriber->getHrEmailStatus(),
+                $subscriber->getFirstName().' '.$subscriber->getLastName(),
+                 sprintf(
+                    '<a href="%s?page=newsletter&action=subscriberForm&userId=%s" 
+                            class="btn btn-sm btn-info updateUser subscriberUpdate">Update</a>
+                            <a href="%s?page=newsletter&action=deleteSubscriber&userId=%s" 
+                            class="btn btn-sm btn-danger deleteUser subscriberDelete">Delete</a>
+                            ',admin_url(),$subscriber->getId(),admin_url(),$subscriber->getId())
+            ];
+            $i++;
+        }
+        $data = [
+            'draw' => (int)$_POST['draw'],
+            'recordsTotal' => $countTotal,
+            'recordsFiltered' => count($subscribers),
+            'data' => $subData
+        ];
+        wp_send_json($data);
     }
 }

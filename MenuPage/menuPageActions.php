@@ -65,7 +65,7 @@ switch ( $action ) {
 		if ( isset( $_GET['userId'] ) ) {
 			$subscriberRepo->delete( (int) $_GET['userId'] );	
 		}
-		echo '<p>Uspešno ste obrisali subscriber</p> <a  class="" href="'.admin_url() . '?page=newsletter&action=subscribersList"  >Vrati se nazad</a>';
+		echo '<p>Uspešno ste obrisali subscribera</p> <a  class="" href="'.admin_url() . '?page=newsletter&action=subscribersList"  >Vrati se nazad</a>';
 		break;
 
     case 'createNewsletter':

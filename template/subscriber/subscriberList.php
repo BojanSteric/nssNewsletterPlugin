@@ -7,7 +7,6 @@
         <thead>
         <tr class="table-header">
             <th class="col col-1">Br</th>
-<!--            <th class="col col-2">Označi</th>-->
             <th class="col col-3">Email</th>
             <th class="col col-4">Status</th>
             <th class="col col-5">Ime i Prezime</th>
@@ -15,28 +14,54 @@
         </tr>
         </thead>
         <tbody>
-		<?php
-		/** @var Subscriber\Model\Subscriber $sub */
-		$i = 1;
-		foreach ($subscriber as $sub):?>
-            <tr class="table-row">
-                <td class="col col-1"><?= $i?></td>
-                <td class="col col-3"><?=$sub->getEmail()?></td>
-                <td class="col col-4"><?=$sub->getHrEmailStatus()?></td>
-                <td class="col col-5"><?=$sub->getFirstName()?> <?=$sub->getLastName()?></td>
-                <td class="col col-6"><a href="<?=admin_url() . '?page=newsletter&action=subscriberForm&userId=' . $sub->getId()?>" class='btn btn-sm btn-info updateUser subscriberUpdate'  >Update</a>-
-                    <a href="<?=admin_url() . '?page=newsletter&action=deleteSubscriber&userId=' . $sub->getId()?>" class='btn btn-sm btn-danger deleteUser subscriberDelete' >Delete</a> </td>
-            </tr>
-		<?php
-			$i++;
-		endforeach; ?>
+
         </tbody>
     </table>
     <link href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script>
         jQuery(document).ready(function () {
-            jQuery('#subscriberList').DataTable();
+            jQuery('.subscriberList').DataTable({
+                processing: true,
+                serverSide: true,
+                searching: true,
+                searchDelay: 1500,
+                pageLength: 25,
+                lengthMenu: [ 10, 25, 50, 75, 100,250,500, 1000 ],
+                ajax: {
+                    url: 'admin-ajax.php',
+                    type: 'POST',
+                    data:{
+                        action:'getSubscribers'
+                    }
+                },
+                language: {
+                    "emptyTable": "Nije pronadjena nijedan pretplatnik sa zadatim filterima"
+                },
+                columns: [
+                    {
+                        name:'orderNumber',
+                        orderable:false,
+                    },
+                    {
+                        name: "email",
+                        orderable:false,
+                    },
+
+                    {
+                        name: "emailStatus",
+                        orderable:true,
+                    },
+                    {
+                        name: "fullName",
+                        orderable:false,
+                    },
+                    {
+                        name: "options",
+                        orderable:false,
+                    }
+                ]
+            });
         });
     </script>
 </div>
