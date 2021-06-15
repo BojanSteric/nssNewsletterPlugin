@@ -3,7 +3,7 @@
 
 <div class="wrap subsciberDiv">
     <h2>Lista subscribera</h2>
-    <table class="subscriberList">
+    <table class="subscriberList stripe">
         <thead>
         <tr class="table-header">
             <th class="col col-1">Br</th>
