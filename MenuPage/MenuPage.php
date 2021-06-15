@@ -29,8 +29,8 @@ class MenuPage {
 	public function createPage()
 	{
 		add_action('admin_menu', function (){
-			add_menu_page($this->pageTitle,$this->menuTitle,$this->capability,
-				$this->menuSlug, [$this, 'menuPage'],'dashicons-email-alt');
+			add_submenu_page('nss-panel',$this->pageTitle,$this->menuTitle,$this->capability,
+				$this->menuSlug, [$this, 'menuPage']);
 		});
 	}
 

@@ -138,7 +138,7 @@ class AdminAjax
             $columnName = $_POST['columns'][$columnIndex]['name'];
             $args[] = ['order' => [$columnName => $sortDirection]];
         }
-        $subscribers = $subRepo->getAll($page,25, $args);
+        $subscribers = $subRepo->getAll($page, $limit, $args);
         $countTotal = $subRepo->getTotalCount();
         $subData = [];
         $i = 1;
@@ -161,7 +161,7 @@ class AdminAjax
         $data = [
             'draw' => (int)$_POST['draw'],
             'recordsTotal' => $countTotal,
-            'recordsFiltered' => count($subscribers),
+            'recordsFiltered' => $countTotal,
             'data' => $subData
         ];
         wp_send_json($data);
