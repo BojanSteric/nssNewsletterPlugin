@@ -67,10 +67,7 @@ class Subscriber
     public function getAll(int $page, int $perPage, $args = [])
     {
         $limit = $perPage;
-        $offset = 0;
-        if ($page !== 1) {
-            $offset = $page * $limit;
-        }
+        $offset = ($page -1) * $limit;
         $sql = "SELECT * FROM $this->tableName";
         if (count($args) !== 0) {
             foreach ($args as $arg) {

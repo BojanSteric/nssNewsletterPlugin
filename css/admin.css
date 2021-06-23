@@ -14,9 +14,7 @@ table{
     padding: 2px 0 0;
     width: 120px;
     background-color: #f1f1f1;
-    position: fixed;
     height: 100%;
-    overflow: auto;
     font-size: 14px;
 }
 .sidenavAdminCategories a {
@@ -34,35 +32,16 @@ table{
     color: white;
 
 }
-div.mainAdminCategories {
-    margin: 20px 0 0 150px;
-    padding: 1px 16px;
-    height: 1000px;
+.mainAdminCategories {
+    display: flex;
 }
-@media screen and (max-width: 700px) {
-    .sidenavAdminCategories {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    .sidenavAdminCategories a {float: left;}
-    div.mainAdminCategories {margin-left: 0;}
-}
-@media screen and (max-width: 400px) {
-    .sidenavAdminCategories a {
-        text-align: center;
-        float: none;
-    }}
 
 /* SUBSCRIBER TABLE*/
 
 
 .subsciberDiv {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    min-width: 85%;
+    padding-left: 30px;
 }
 .subscriberList{
     width: 100%;

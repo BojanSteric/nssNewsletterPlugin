@@ -3,7 +3,7 @@ jQuery(document).ready(function($){
 
     // AJAX url
     var ajax_url = ajaxObject.ajax_url;
-    var newsletterPage = ajaxObject.newsletterPage;
+    var newsletterPage = '?page=newsletter';
 
     $('#empTable').on('click','.pauseNewsletter',function(){
         var data = {

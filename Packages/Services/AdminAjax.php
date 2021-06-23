@@ -115,7 +115,7 @@ class AdminAjax
         wp_die();
     }
 
-    public function getSubscribers(): void
+    public function getSubscribers()
     {
         $subRepo = new SubRepository(new SubMapper());
         $offset = $_POST['start'];
@@ -123,10 +123,7 @@ class AdminAjax
         if ($offset === '0') {
             $page = 1;
         } else {
-            $page = $limit / $offset;
-            if ($page === 1) {
-                $page = 2;
-            }
+            $page = ($offset / $limit) + 1;
         }
         $args = [];
         if (isset($_POST['search']) && $_POST['search']['value'] !== ''){
@@ -150,11 +147,11 @@ class AdminAjax
                 $subscriber->getHrEmailStatus(),
                 $subscriber->getFirstName().' '.$subscriber->getLastName(),
                  sprintf(
-                    '<a href="%s?page=newsletter&action=subscriberForm&userId=%s" 
+                    '<a href="?page=newsletter&action=subscriberForm&userId=%s" 
                             class="btn btn-sm btn-info updateUser subscriberUpdate">Update</a>
-                            <a href="%s?page=newsletter&action=deleteSubscriber&userId=%s" 
+                            <a href="?page=newsletter&action=deleteSubscriber&userId=%s" 
                             class="btn btn-sm btn-danger deleteUser subscriberDelete">Delete</a>
-                            ',admin_url(),$subscriber->getId(),admin_url(),$subscriber->getId())
+                            ',$subscriber->getId(),$subscriber->getId())
             ];
             $i++;
         }

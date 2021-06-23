@@ -1,7 +1,4 @@
-<?php
-?>
-
-<div class="wrap subsciberDiv">
+<div class="subsciberDiv">
     <h2>Lista subscribera</h2>
     <table class="subscriberList stripe">
         <thead>
@@ -27,11 +24,8 @@
                 searching: true,
                 searchDelay: 1500,
                 pageLength: 25,
+                dom: 'lfriptrip',
                 lengthMenu: [ 10, 25, 50, 75, 100,250,500, 1000 ],
-                fnInitComplete : function () {
-                    jQuery("#DataTables_Table_0_info").clone().insertBefore(jQuery("#DataTables_Table_0")).css('margin', '5px') ;
-                    jQuery("#DataTables_Table_0_paginate").clone().insertBefore(jQuery("#DataTables_Table_0")).css('margin', '5px') ;
-                },
                 ajax: {
                     url: 'admin-ajax.php',
                     type: 'POST',

@@ -1,6 +1,4 @@
-<?php
-?>
-<div class="wrap subsciberDiv">
+<div class="subsciberDiv">
     <h2>Lista newslettera</h2>
     <table class="subscriberList striped" id="empTable">
         <thead>

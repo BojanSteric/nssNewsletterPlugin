@@ -1,9 +1,9 @@
-<?php if (!$newsletterId): $action = '?page=newsletter&action=createNewsletter';?>
-<h3>Kreirajte newsletter</h3>
-<?php else: $action = '?page=newsletter&action=updateNewsletter&newsId='.$newsletterId?>
-    <h3>Izmenite newsletter</h3>
-<?php endif;?>
 <div class="newsletterForm">
+    <?php if (!$newsletterId): $action = '?page=newsletter&action=createNewsletter';?>
+    <h3>Kreirajte newsletter</h3>
+    <?php else: $action = '?page=newsletter&action=updateNewsletter&newsId='.$newsletterId?>
+        <h3>Izmenite newsletter</h3>
+    <?php endif;?>
 	<form id="newsletterForm" data-newsletterid="<?=$newsletterId ?? null?>" method="POST" action="<?=$action?>">
         <div>
 		<label for="title">Title</label>
@@ -45,7 +45,7 @@
 
         </div>
         <div id="contentWrapper">
-            <span class="contentLabel">Content</span>
+            <span class="contentLabel"></span>
         </div>
         <div class="submitWrapper">
             <input type="submit" value="Sačuvaj">
