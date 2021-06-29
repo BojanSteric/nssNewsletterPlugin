@@ -30,7 +30,7 @@ class PostFormatter {
 		if ($user) {
             $data['wpUserId'] = $user->ID;
         }
-		$data['emailStatus'] = Subscriber::STATUS_NEW;
+		$data['emailStatus'] = $postData['emailStatus'] ?? Subscriber::STATUS_NEW;
 		$data['createdAt'] =  date("Y-m-d H:i:s") ;
 		$data['updatedAt'] = $postData['updatedAt'] ?? null;
 		$data['firstName'] = $postData['firstName'] ?? null;

@@ -149,11 +149,11 @@ class AdminAjax
                 $subscriber->getHrEmailStatus(),
                 $subscriber->getFirstName().' '.$subscriber->getLastName(),
                  sprintf(
-                    '<a href="%s?page=newsletter&action=subscriberForm&userId=%s" 
+                    '<a href="?page=newsletter&action=subscriberForm&userId=%s" 
                             class="btn btn-sm btn-info updateUser subscriberUpdate">Update</a>
-                            <a href="%s?page=newsletter&action=deleteSubscriber&userId=%s" 
+                            <a href="?page=newsletter&action=deleteSubscriber&userId=%s" 
                             class="btn btn-sm btn-danger deleteUser subscriberDelete">Delete</a>
-                            ',admin_url(),$subscriber->getId(),admin_url(),$subscriber->getId())
+                            ',$subscriber->getId(),$subscriber->getId())
             ];
         }
         $data = [
