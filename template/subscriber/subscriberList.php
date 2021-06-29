@@ -6,7 +6,7 @@
     <table class="subscriberList stripe">
         <thead>
         <tr class="table-header">
-            <th class="col col-1">Br</th>
+            <th class="col col-1">Id</th>
             <th class="col col-3">Email</th>
             <th class="col col-4">Status</th>
             <th class="col col-5">Ime i Prezime</th>
@@ -28,10 +28,7 @@
                 searchDelay: 1500,
                 pageLength: 25,
                 lengthMenu: [ 10, 25, 50, 75, 100,250,500, 1000 ],
-                fnInitComplete : function () {
-                    jQuery("#DataTables_Table_0_info").clone().insertBefore(jQuery("#DataTables_Table_0")).css('margin', '5px') ;
-                    jQuery("#DataTables_Table_0_paginate").clone().insertBefore(jQuery("#DataTables_Table_0")).css('margin', '5px') ;
-                },
+                dom: 'lfriptrip',
                 ajax: {
                     url: 'admin-ajax.php',
                     type: 'POST',
@@ -45,7 +42,7 @@
 
                 columns: [
                     {
-                        name:'orderNumber',
+                        name:'subscriberId',
                         orderable:false,
                     },
                     {
