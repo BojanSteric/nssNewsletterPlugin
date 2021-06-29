@@ -35,20 +35,19 @@ class NewsletterWidget extends WP_Widget {
         $title = apply_filters( 'widget_title', $instance['title'] );
             
         // before and after widget arguments are defined by themes
-        echo $args['before_widget'];
+        echo '<div class="newsLetterWidgetContainer">';
         if ( ! empty( $title ) )
             echo $args['before_title'] . $title . $args['after_title'];
             
         // This is where you run the code and display the output
     ?>
-
     <form class="newsletterForm" action="" type="post">
         <input class="newsletterInput" aria-label="email for newsletter" type="email" id="newsletter" name="email" placeholder="Unesite Vaš email" required>
         <input class="newsletterSubmit" type="submit" value="Prijavi se">
     </form>
 
     <?php
-        echo $args['after_widget'];
+        echo '</div>';
     }
           
     public function subscribeToNewsletter() {

@@ -32,10 +32,9 @@ switch ( $action ) {
     case 'createSubscriber':
         $data = SubscriberPostFormatter::formatDataNewsForm( $_POST );
         $subscriberRepo->create( $data );
-        wp_redirect( admin_url() . '?page=newsletter&action=subscribersList'  );
+        wp_redirect( '?page=newsletter&action=subscribersList'  );
         break;
 	case 'subscribersList':
-		$subscriber = $subscriberRepo->getAll($page, 20);
 		$newsletterPage = 'template/subscriber/subscriberList.php';
 		include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
 		break;
@@ -59,7 +58,7 @@ switch ( $action ) {
 		$data = SubscriberPostFormatter::formatDataNewsForm( $_POST );
 		$data['userId'] = (int) $_GET['userId'];
 		$subscriberRepo->update( $data );
-		wp_redirect( admin_url() . '?page=newsletter&action=subscribersList'  );
+		wp_redirect(  '?page=newsletter&action=subscribersList'  );
 		break;
 	case 'deleteSubscriber':
 		if ( isset( $_GET['userId'] ) ) {
@@ -73,7 +72,7 @@ switch ( $action ) {
         $data = $formatter->formatDataNewsForm($_POST);
         $newsletterId = $newsletterRepo->create($data);
         $templatesRepo->create(['name' => $data['templateName'], 'data' => $data['products'],'newsletterId' => $newsletterId]);
-        wp_redirect( admin_url() . '?page=newsletter&action=newslettersList');
+        wp_redirect( '?page=newsletter&action=newslettersList');
         break;
     case 'updateNewsletter':
         $formatter = new NewsletterPostFormatter();
@@ -84,7 +83,7 @@ switch ( $action ) {
         $template = $templatesRepo->getTemplateByNewsletterId($newsletterId);
         $templatesRepo->update(['name' => $data['templateName'], 'data' => $data['products'],'newsletterId' => $newsletterId,
             'templateId' => $template->getId()]);
-        wp_redirect( admin_url() . '?page=newsletter&action=newslettersList');
+        wp_redirect(  '?page=newsletter&action=newslettersList');
         break;
     case 'newslettersList':
         $newsletters = $newsletterRepo->getAll(1,50);
@@ -147,7 +146,7 @@ switch ( $action ) {
 //		fclose($myfile);
 //
 //		$send = MailService::sendMailToSubscribers($message);
-		wp_redirect( admin_url() . '?page=newsletter&action=newsletters'  );
+		wp_redirect( '?page=newsletter&action=newsletters'  );
 		break;
 	case 'uploadDatabase':
 		$newsletterPage = 'template/newsletterImport.php';

@@ -115,7 +115,7 @@ class AdminAjax
         wp_die();
     }
 
-    public function getSubscribers(): void
+    public function getSubscribers()
     {
         $subRepo = new SubRepository(new SubMapper());
         $offset = $_POST['start'];
@@ -123,10 +123,7 @@ class AdminAjax
         if ($offset === '0') {
             $page = 1;
         } else {
-            $page = $limit / $offset;
-            if ($page === 1) {
-                $page = 2;
-            }
+            $page = ($offset / $limit) + 1;
         }
         $args = [];
         if (isset($_POST['search']) && $_POST['search']['value'] !== ''){
