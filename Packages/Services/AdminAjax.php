@@ -138,11 +138,10 @@ class AdminAjax
         $subscribers = $subRepo->getAll($page, $limit, $args);
         $countTotal = $subRepo->getTotalCount();
         $subData = [];
-        $i = 1;
         /** @var Subscriber $subscriber */
         foreach ($subscribers as $subscriber) {
             $subData[] = [
-                $i,
+                $subscriber->getId(),
                 $subscriber->getEmail(),
                 $subscriber->getHrEmailStatus(),
                 $subscriber->getFirstName().' '.$subscriber->getLastName(),
@@ -153,7 +152,6 @@ class AdminAjax
                             class="btn btn-sm btn-danger deleteUser subscriberDelete">Delete</a>
                             ',$subscriber->getId(),$subscriber->getId())
             ];
-            $i++;
         }
         $data = [
             'draw' => (int)$_POST['draw'],

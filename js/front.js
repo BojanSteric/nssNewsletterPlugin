@@ -1,6 +1,6 @@
-
-    jQuery( document ).ready(function(){
-        jQuery('.newsletterForma').on('submit', function(event){
+ jQuery( document ).ready(function(){
+        jQuery('.newsletterForm').on('submit', function(event){
+            console.log('radim')
             var email=jQuery('#newsletter').val();
             jQuery.ajax({
                 url: ajaxObject.ajax_url,

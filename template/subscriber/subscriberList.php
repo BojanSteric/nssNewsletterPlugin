@@ -3,7 +3,7 @@
     <table class="subscriberList stripe">
         <thead>
         <tr class="table-header">
-            <th class="col col-1">Br</th>
+            <th class="col col-1">Id</th>
             <th class="col col-3">Email</th>
             <th class="col col-4">Status</th>
             <th class="col col-5">Ime i Prezime</th>
@@ -39,7 +39,7 @@
 
                 columns: [
                     {
-                        name:'orderNumber',
+                        name:'subscriberId',
                         orderable:false,
                     },
                     {
