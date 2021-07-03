@@ -19,7 +19,7 @@
         </table>
         <br><br>
     </div>
-    <div style="text-align:center;font-weight:bold;margin:40px 0 10px"><span style="font-size:medium">🤝10 godina poverenja</span><span style="font-size:medium">🤝</span></div>
+    <div style="text-align:center;font-weight:bold;margin:40px 0 10px"><span style="font-size:medium">🤝11 godina poverenja</span><span style="font-size:medium">🤝</span></div>
     <div style="text-align:center;font-weight:bold;margin:40px 0 10px"><a href="https://nonstopshop.rs/?nltr=MjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLzs7MmExMWQ0OGZlN2M5NzM0ZTE4ZmExODBhN2Y3ZTkxYmI%3D" rel="noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://nonstopshop.rs/?nltr%3DMjI0OzIwNzUzMjtodHRwczovL25vbnN0b3BzaG9wLnJzLzs7MmExMWQ0OGZlN2M5NzM0ZTE4ZmExODBhN2Y3ZTkxYmI%253D&amp;source=gmail&amp;ust=1617472194265000&amp;usg=AFQjCNGlbDebVMLironKW_uejrkVQMnOpg">Nonstopshop.rs</a></div>
     <div style="text-align:center;font-weight:bold;margin:40px 0 10px">
         <div style="margin:40px 0px 10px"><font size="3">Telefon za naručivanje: 011/7450-380</font></div>
