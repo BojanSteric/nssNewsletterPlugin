@@ -10,13 +10,11 @@
 		<input value="<?=$title?>" type="text" id="title" name="title" placeholder="Title.." required">
 
 		<label for="newStatus">Status</label>
-		<select type=select id="newStatus" name="newsStatus" ">
-			<option value="active">active</option>
-			<option value="pending">pending</option>
-			<option value="paused">paused</option>
-			<option value="complite">complete</option>
+		<select id="newStatus" name="newsStatus">
+            <?php foreach ($statuses as $status): if ($status === $activeStatus) $selected = 'selected'?>
+			<option <?=$selected?> value="<?=$status?>"><?=ucfirst($status)?></option>
+            <?php endforeach;?>
 		</select>
-
         <label for="templateName">Template</label>
         <select type=select id="templateName" name="templateName">
             <option value="-1">Izaberite šablon</option>
