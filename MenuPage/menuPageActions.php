@@ -100,7 +100,6 @@ switch ( $action ) {
             $templateName = $newsletter->getTemplateName();
             $activeStatus = $newsletter->getStatus();
             $statuses = ['active', 'pending', 'paused', 'complete', 'sent'];
-            $selected = '';
             //This is the format that needs to be inside html datetime-local input
             $scheduledDate = date("Y-m-d\TH:i", strtotime($newsletter->getDateScheduled()));
         }

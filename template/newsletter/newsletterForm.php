@@ -11,7 +11,7 @@
 
 		<label for="newStatus">Status</label>
 		<select id="newStatus" name="newsStatus">
-            <?php foreach ($statuses as $status): if ($status === $activeStatus) $selected = 'selected'?>
+            <?php foreach ($statuses as $status): $selected = ''; if ($status === $activeStatus) $selected = 'selected'?>
 			<option <?=$selected?> value="<?=$status?>"><?=ucfirst($status)?></option>
             <?php endforeach;?>
 		</select>
