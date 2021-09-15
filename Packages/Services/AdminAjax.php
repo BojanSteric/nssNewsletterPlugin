@@ -25,11 +25,22 @@ class AdminAjax
         add_action('wp_ajax_updateNewsletter', [$this, 'updateNewsletter']);
         add_action('wp_ajax_deleteNewsletter', [$this, 'deleteNewsletter']);
         add_action('wp_ajax_sendNewsletter', [$this, 'sendNewsletter']);
+        add_action('wp_ajax_sendTestNewsletter', [$this, 'sendTestNewsletter']);
         add_action('wp_ajax_getTemplate', [$this, 'getTemplate']);
         add_action('wp_ajax_saveTemplateData', [$this, 'saveTemplateData']);
         add_action('wp_ajax_getSubscribers', [$this, 'getSubscribers']);
     }
 
+    public function sendTestNewsletter()
+    {
+        global $mailer;
+        $data['status'] = false;
+        if ($mailer->sendTest($_POST['newsletterId'], $_POST['email'])) {
+            $data['status'] = true;
+        }
+
+        wp_send_json($data);
+    }
 
     public function sendNewsletter()
     {
@@ -40,7 +51,6 @@ class AdminAjax
         }
         wp_schedule_single_event(time() + 10, 'gfNewsletterSend', ['newsletterId' => $_POST['newsletterId']]);
     }
-
 
     public function allNewsletter()
     {
@@ -54,6 +64,7 @@ class AdminAjax
         echo json_encode($response);
         wp_die();
     }
+
     public function getTemplate()
     {
         $templatesRepo = new Template();
@@ -80,6 +91,7 @@ class AdminAjax
         include $_POST['templatePath'];
         wp_die();
     }
+
     public function getTemplateInput($imageSize , $inputCounter, $images) {
         $placeHolderSrc = $images[$inputCounter]['src'] ?? 'https://via.placeholder.com/'.$imageSize.'?text=Izaberite+sliku';
         $imageSrc = $images[$inputCounter]['src'] ?? '';

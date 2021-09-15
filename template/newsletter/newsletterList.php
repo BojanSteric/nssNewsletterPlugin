@@ -28,8 +28,14 @@
             <td class="col col-8">
                 <button class='btn btn-sm btn-info updateNewsletter' data-id="<?=$newsletter->getId()?>">Edit</button>
                 <button class='btn btn-sm btn-info sendNewsletter' data-id="<?=$newsletter->getId()?>">Send now</button>
-<!--                <button class='btn btn-sm btn-info pauseNewsletter' data-id="<?=$newsletter->getId()?>">Pause</button> -->
+                <button class='btn btn-sm btn-info testNewsletter' data-id="<?=$newsletter->getId()?>">Send test</button>
                 <button class='btn btn-sm btn-danger deleteNewsletter' data-id="<?=$newsletter->getId()?>">Delete</button>
+                <div class="nlTestEmailWrapper" style="display: none">
+                    Email: <input type="text" id="email" />
+                    <input type="button" id="sendTestNewsletter" data-id="<?=$newsletter->getId()?>" value="Send" />
+                    <input type="button" id="close" value="Close" />
+                </div>
+
             </td>
         </tr>
         <?php endforeach;?>

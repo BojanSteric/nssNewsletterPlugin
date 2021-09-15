@@ -71,6 +71,38 @@ jQuery(document).ready(function($){
         });
 
     });
+
+    $('#empTable').on('click','.testNewsletter',function() {
+        $('.nlTestEmailWrapper').hide();
+        $(this).siblings('.nlTestEmailWrapper').show();
+    });
+
+    $('#empTable').on('click','#close',function() {
+        $(this).parent().hide();
+    });
+
+    //test nl
+    $('#empTable').on('click','#sendTestNewsletter',function() {
+        console.log($(this).data('id'));
+        var data = {
+            'action': 'sendTestNewsletter',
+            'newsletterId': $(this).data('id'),
+            'email': $(this).siblings('#email').val()
+        };
+        $.ajax({
+            url: ajax_url,
+            type: 'post',
+            data: data,
+            dataType: 'json',
+            error: function (request, error) {
+                alert("Neuspelo: " + error);
+            },
+            success: function(response){
+                alert('Test newsletter je poslat.');
+            }
+        });
+    });
+
     let templateSelect = $('#templateName');
     templateSelect.on('change', getTemplate);
     if (templateSelect.val() !== undefined && templateSelect.val() !== '-1'){

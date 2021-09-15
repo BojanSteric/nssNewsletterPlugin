@@ -33,6 +33,16 @@ class Mailer
     private $protocol;
 
     /**
+     * @var TransportInterface
+     */
+    private $transport;
+
+    /**
+     * @var \Newsletter\Mapper\NewsletterLog
+     */
+    private $logMapper;
+
+    /**
      * Mailer constructor.
      * @param Newsletter $newsletter
      * @param Subscriber $subscribers
@@ -42,6 +52,10 @@ class Mailer
         $this->newsletter = $newsletter;
         $this->subscribers = $subscribers;
         $this->protocol = $protocol;
+        $this->protocol->connect();
+        $this->transport = new Smtp();
+        $this->transport->setConnection($this->protocol);
+        $this->logMapper = new \Newsletter\Mapper\NewsletterLog();
         add_action('init', function() {
             add_action( 'gfNewsletterSend', [$this, 'send']);
         });
@@ -55,14 +69,25 @@ class Mailer
         file_put_contents($file, $data);
     }
 
+    public function sendTest($newsletterId, $email)
+    {
+        $user = $this->subscribers->getSubscriberByEmail($email);
+        $newsletter = $this->newsletter->getNewsletterById($newsletterId);
+        if ($this->sendMail($user, $newsletter)) {
+            return true;
+        }
+        return false;
+    }
+
     public function send($newsletterId)
     {
-        $logMapper = new \Newsletter\Mapper\NewsletterLog();
         $this->log('started nl sending');
         $newsletter = $this->newsletter->getNewsletterById($newsletterId);
-        $this->protocol->connect();
-        $transport = new Smtp();
-        $transport->setConnection($this->protocol);
+        if ($newsletter->getStatus() !== 'active') {
+            return;
+        }
+        echo 'sending nl id ' . $newsletterId;
+
         $bulkAmount = 80000;
         // used in order to prevent too much damage if something goes wrong with the loop
         // should be ceil(totalUsersToSend/bulkAmount)
@@ -75,45 +100,51 @@ class Mailer
         while (count($users) > 0 && $failover < $failoverLimit) {
             /* @var \Subscriber\Model\Subscriber $user */
             foreach ($users as $user) {
-                $html = new Part();
-                $html->type = Mime::TYPE_HTML;
-                $html->charset = 'utf-8';
-                $mimeMessage = new MimeMessage();
-                $message = new Message();
-                $html->setContent($this->parseNewsletterBody($newsletter, $user->getActionLink()));
-                $mimeMessage->addPart($html);
-                $message
-                    ->addTo($user->getEmail())
-                    ->setFrom('podrska@nonstopshop.rs', 'Nonstopshop.rs')
-                    ->setSubject($newsletter->getTitle())
-                    ->setBody($mimeMessage);
-                try {
-                    $transport->send($message);
-                    $logMapper->insert($user->getId(), date('Y-m-d H:i:s'), $newsletterId);
+                if ($this->sendMail($user, $newsletter)) {
                     $sent++;
-                } catch (\Exception $e) {
-                    if (false !== strpos($e->getMessage(), 'bouncing address')) {
-                        $this->subscribers->update([
-                            'userId' => $user->getId(),
-                            'wpUserId' => $user->getWpUserId(),
-                            'email' => $user->getEmail(),
-                            'emailStatus' => 'bounce',
-                        ]);
-                        continue;
-                    }
-                    // implement failed log in mysql
-//                    echo $e->getMessage();
-                    $this->log('failed sending' . $e->getMessage());
                 }
             }
             $failover++;
             $this->log(sprintf('total items sent: %s', $sent));
-
             $users = $this->subscribers->getForSending($newsletterId, $page, $bulkAmount);
         }
         $this->protocol->quit();
         $this->newsletter->markAsSent($newsletterId);
         $this->log('nl sent');
+    }
+
+    private function sendMail(\Subscriber\Model\Subscriber $user, Newsletter $newsletter)
+    {
+        $html = new Part();
+        $html->type = Mime::TYPE_HTML;
+        $html->charset = 'utf-8';
+        $mimeMessage = new MimeMessage();
+        $message = new Message();
+        $html->setContent($this->parseNewsletterBody($newsletter, $user->getActionLink()));
+        $mimeMessage->addPart($html);
+        $message
+            ->addTo($user->getEmail())
+            ->setFrom('podrska@nonstopshop.rs', 'Nonstopshop.rs')
+            ->setSubject($newsletter->getTitle())
+            ->setBody($mimeMessage);
+        try {
+            $this->transport->send($message);
+            $this->logMapper->insert($user->getId(), date('Y-m-d H:i:s'), $newsletter->getId());
+        } catch (\Exception $e) {
+            if (false !== strpos($e->getMessage(), 'bouncing address')) {
+                $this->subscribers->update([
+                    'userId' => $user->getId(),
+                    'wpUserId' => $user->getWpUserId(),
+                    'email' => $user->getEmail(),
+                    'emailStatus' => 'bounce',
+                ]);
+            }
+            // @TODO implement failed log in mysql
+//                    echo $e->getMessage();
+            $this->log('failed sending' . $e->getMessage());
+            return false;
+        }
+        return true;
     }
 
     private function parseNewsletterBody(Newsletter $newsletter, $userActionLink)

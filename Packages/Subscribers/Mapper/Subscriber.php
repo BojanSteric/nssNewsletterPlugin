@@ -134,12 +134,6 @@ class Subscriber
         return $this->db->get_results($sql, ARRAY_A);
     }
 
-//    public function getAllActive()
-//    {
-//        $sql = "SELECT * FROM $this->tableName WHERE 'activeSince' IS NOT NULL;";
-//        return $this->db->get_results($sql, ARRAY_A);
-//    }
-
     public function getUserBy($field, $value)
     {
         $sql = "SELECT * FROM $this->tableName WHERE `{$field}` = '{$value}'";
