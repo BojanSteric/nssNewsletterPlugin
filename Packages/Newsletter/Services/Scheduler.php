@@ -31,6 +31,7 @@ class Scheduler
      */
     public function scheduleSend()
     {
+        date_default_timezone_set('Europe/Belgrade');
         $date = strtotime($this->newsletter->getDateScheduled());
         if ($date > time()) {
             $nextSchedule = wp_next_scheduled('gfNewsletterSend', ['newsletterId' => $this->newsletter->getId()]);
