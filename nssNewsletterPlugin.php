@@ -58,14 +58,14 @@ $smtpTransport->setOptions(new SmtpOptions([
     'connection_class'  => 'plain',
     'connection_config' => [
         'username' => 'podrska@nonstopshop.rs',
-        'password' => 'E7Xfq.ucwKh0rtz',
+        'password' => NEWSLETTER_SMTP_PASS,
         'ssl'      => 'tls',
     ],
 ]));
 
 $protocol = new SMTPProtocol([
     'username' => 'podrska@nonstopshop.rs',
-    'password' => 'E7Xfq.ucwKh0rtz',
+    'password' => NEWSLETTER_SMTP_PASS,
     'ssl'      => 'tls',
     'host' => 'smtp-tkc.ha.rs',
     'port' => 587,
