@@ -94,12 +94,12 @@ switch ( $action ) {
         $newsletterId = $_GET['newsId'] ?? null;
         $title = '';
         $templateName = '';
+        $statuses = ['active', 'pending', 'paused', 'complete', 'sent', 'sending'];
         if ($newsletterId !== null) {
             $newsletter = $newsletterRepo->getNewsletterById((int)$newsletterId);
             $title = $newsletter->getTitle();
             $templateName = $newsletter->getTemplateName();
             $activeStatus = $newsletter->getStatus();
-            $statuses = ['active', 'pending', 'paused', 'complete', 'sent', 'sending'];
             //This is the format that needs to be inside html datetime-local input
             $scheduledDate = date("Y-m-d\TH:i", strtotime($newsletter->getDateScheduled()));
         }
@@ -107,7 +107,6 @@ switch ( $action ) {
         $directoryIterator = new DirectoryIterator(NEWSLETTER_DIR . 'template/Mail/NewsTemplate/form');
         $newsletterPage = 'template/newsletter/newsletterForm.php';
         include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
-
         break;
 	case 'deleteNewsletter':
 		if (isset($_POST['newsletterId'])) {
