@@ -73,9 +73,12 @@ class Mailer
     {
         $user = $this->subscribers->getSubscriberByEmail($email);
         $newsletter = $this->newsletter->getNewsletterById($newsletterId);
+        $this->log("Trying to send test mail to: $email");
         if ($this->sendMail($user, $newsletter)) {
+            $this->log("Test mail sent to: $email");
             return true;
         }
+        $this->log("Test mail not sent to: $email");
         return false;
     }
 
