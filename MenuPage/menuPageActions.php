@@ -86,7 +86,7 @@ switch ( $action ) {
         wp_redirect(  '?page=newsletter&action=newslettersList');
         break;
     case 'newslettersList':
-        $newsletters = $newsletterRepo->getAll(1,50);
+        $newsletters = $newsletterRepo->getAll(1, 1000);
         $newsletterPage = 'template/newsletter/newsletterList.php';
         include NEWSLETTER_DIR . 'template/newsletterMainPanel.php';
         break;
